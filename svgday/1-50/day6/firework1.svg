@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <radialGradient id="maskGrad">
+      <stop offset="2.5%" stop-color="#eeeeee" />
+      <stop id="fire" stop-color="orange">
+        <animate attributeName="offset" dur="0.7s" values="0.05 ; 0.1; 0.05;" calcMode="discrete"
+          repeatCount="indefinite">
+        </animate>
+        <animate attributeName="offset" dur="1.25s" values="0.05 ;0.05; 0.15;0.05; 0.05;" calcMode="discrete"
+          repeatCount="indefinite" additive="sum">
+        </animate>
+        <animate attributeName="offset" dur="1.66s" values="0.05 ;0.05; 0.2;0.05; 0.05;" calcMode="discrete"
+          repeatCount="indefinite" additive="sum">
+        </animate>
+      </stop>
+      <stop offset="90%" stop-color="#111111" />
+    </radialGradient>
+    <mask id="mask1">
+      <circle fill="url(#maskGrad)" cx="100" cy="100" r="100" />
+    </mask>
+  </defs>
+  <rect width="200" height="200" fill="#111111" />
+  <circle fill="url(#maskGrad)" cx="100" cy="100" r="100" />
+  <line x1="100" x2="100" y1="0" y2="100" stroke="green" opacity="0.3" stroke-linecap="round" />
+</svg>

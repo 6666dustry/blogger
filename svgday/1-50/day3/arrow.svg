@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <polyline id="arrow" points="100,70 130,100 100 130" fill="none" stroke-width="10" stroke-linecap="round" />
+  </defs>
+  <g>
+    <animateTransform attributeName="transform" values="-30 0;0 0" type="translate" dur="1s" keySplines="0.1 0.8 0.2 1;"
+      calcMode="spline" repeatCount="indefinite">
+    </animateTransform>
+    <animate attributeName="stroke-opacity" dur="1s" values="0;1;0" repeatCount="indefinite"></animate>
+    <use x="-25" href="#arrow" stroke="black"></use>
+    <use x="15" href="#arrow" stroke="black"></use>
+  </g>
+</svg>

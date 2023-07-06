@@ -1,0 +1,5 @@
+<p>千里の道も一歩から。</p>
+<p>このシリーズは一日一枚svgのデザインをつくるというシンプルな企画です。</p>
+<p>今日はn日目。</p>
+<p>svgの中身</p>
+<pre class="prettyprint linenums"></pre>

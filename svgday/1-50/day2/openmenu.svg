@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <g cursor="pointer" id="lines" stroke="black" stroke-width="20" stroke-linecap="round">
+    <line x1="50" x2="150" y1="50" y2="50">
+      <animate attributeName="y2" to="150" fill="freeze" begin="lines.click" dur="0.2s">
+      </animate>
+      <animate attributeName="y2" to="50" fill="freeze" begin="close.click" dur="0.2s">
+      </animate>
+    </line>
+    <line stroke-opacity="1" x1="50" x2="150" y1="100" y2="100">
+      <animate attributeName="stroke-opacity" begin="lines.click" to="0" dur="0.25s" fill="freeze">
+      </animate>
+      <animate attributeName="stroke-opacity" to="1" fill="freeze" begin="close.click" dur="0.25s">
+      </animate>
+    </line>
+    <line x1="50" x2="150" y1="150" y2="150">
+      <animate attributeName="y2" to="50" fill="freeze" begin="lines.click" dur="0.2s">
+      </animate>
+      <animate attributeName="y2" to="150" fill="freeze" begin="close.click" dur="0.2s">
+      </animate>
+    </line>
+    <animate begin="click" attributeName="stroke" dur="0.2s" to="crimson" fill="freeze">
+    </animate>
+    <animate begin="close.click" attributeName="stroke" dur="0.2s" to="black" fill="freeze">
+    </animate>
+    <rect width="200" height="200" fill-opacity="0" fill="black" stroke="none">
+  </g>
+  <rect id="close" width="0" height="200" fill-opacity="0.1" fill="black">
+    <animate begin="lines.click" attributeName="width" to="200" dur="0.1s" fill="freeze">
+    </animate>
+    <animate begin="click" attributeName="width" to="0" dur="0.1s" fill="freeze">
+    </animate>
+</svg>

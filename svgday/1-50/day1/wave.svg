@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg id="svg5" version="1.1" viewBox="0 0 200 200" height="200" width="200" sodipodi:docname="wave.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+   <sodipodi:namedview id="namedview7" pagecolor="#505050" bordercolor="#ffffff" borderopacity="1"
+      inkscape:showpageshadow="0" inkscape:pageopacity="0" inkscape:pagecheckerboard="1" inkscape:deskcolor="#505050"
+      inkscape:document-units="mm" showgrid="false" inkscape:zoom="8.36" inkscape:cx="42.4" inkscape:cy="30.2"
+      inkscape:window-width="1920" inkscape:window-height="1009" inkscape:window-x="-8" inkscape:window-y="-8"
+      inkscape:window-maximized="1" inkscape:current-layer="layer1" />
+   <defs id="defs2">
+      <pattern patternUnits="userSpaceOnUse" width="50" height="20" patternTransform="translate(0,10)" id="pattern646">
+         <path style="fill:lightyellow;fill-rule:evenodd;stroke-width:1.00157"
+            d="m 25,7.95 c 1.2,1.2 2.4,2.45 3.6,3.55 2.4,2.1 4.7,3.7 7.1,4.3 2.4,0.5 4.8,-0.1 7.2,-1.6 2.3,-1.5 4.7,-3.8 7.1,-6.25"
+            id="path644" />
+         <path style="fill:lightgreen;fill-rule:evenodd;stroke-width:1.00157"
+            d="M 0,7.95 C 2.38,5.57 4.76,3.21 7.14,1.73 9.52,0.243 11.9,-0.337 14.3,0.193 16.7,0.723 19,2.35 21.4,4.5 22.6,5.57 23.8,6.76 25,7.95"
+            id="path489" />
+      </pattern>
+   </defs>
+   <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1">
+      <animateTransform attributeName="transform" attributeType="XML" type="translate" from="-100 0" to="100 0"
+         dur="10s" repeatCount="indefinite">
+
+
+      </animateTransform>
+      <animateTransform attributeName="transform" attributeType="XML" type="translate" values="0,-5;0,5;0,-5"
+         calcMode="spline" keySplines="0.5 0 0.5 1; 0.5 0 0.5 1;" fill="freeze" dur="4s" repeatCount="indefinite"
+         additive="sum">
+      </animateTransform>
+      <rect x="-100" y="-20" width="400" height="118" fill="lightyellow" />
+      <rect x="-100" y="98" width="400" height="118" fill="lightgreen" />
+      <rect style="fill:url(#pattern646);fill-rule:evenodd;stroke-width:1.00157;fill-opacity:1.0" id="rect1632"
+         width="400" height="20" x="-100" y="90" />
+   </g>
+</svg>

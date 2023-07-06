@@ -1,0 +1,92 @@
+<svg viewBox="0 0 200 100">
+  <title>直角三角形での三角関数の図</title>
+  <desc>直角三角形の図を使ってsin,cos,tanを説明しています</desc>
+  <polygon id="tri" fill="none" stroke="black" stroke-miterlimit="6" stroke-linejoin="miter"
+    points="100,25 100,75 13.4,75">
+  </polygon>
+  <g id="lines">
+    <line class="cos tan" x1="13.4" x2="100" y1="75" y2="75" stroke="black" />
+    <line class="sin cos" x1="13.4" x2="100" y1="75" y2="25" stroke="black" />
+    <line class="sin tan" x1="100" x2="100" y1="25" y2="75" stroke="black" />
+  </g>
+  <path fill="none" stroke="black" d="M 30.4 75 A 20 20 0 0 0 28 67"></path>
+  <g class="edges" font-size="7.5">
+    <text x="32" y="72" font-style="italic" fill-opacity="1">Θ</text>
+    <text class="sin tan" x="105" y="50">a</text>
+    <text class="cos tan" x="56.7" y="85">b</text>
+    <text class="sin cos " x="57" y="40">c</text>
+  </g>
+  <g font-size="10" x="0" transform="translate(125 35)">
+    <g class="sin">
+      <text y="0">sin<tspan font-style="italic" font-weight="bold">Θ</tspan>=</text>
+      <g transform="translate(40 -0.6)">
+        <text y="0" text-anchor="middle">
+          <tspan x="0" dy="-5">
+            a
+          </tspan>
+          <tspan x="-1.2" dy="10">
+            c
+          </tspan>
+        </text>
+        <line x1="-7" y1="-2.5" x2="5" y2="-2.5" stroke="black"></line>
+      </g>
+    </g>
+    <g class="cos" transform="translate(0 20)">
+      <text y="0">cos<tspan font-style="italic" font-weight="bold">Θ</tspan>=</text>
+      <g transform="translate(40 -0.6)">
+        <text y="0" text-anchor="middle">
+          <tspan x="0" dy="-5">
+            b
+          </tspan>
+          <tspan x="-1.2" dy="10">
+            c
+          </tspan>
+        </text>
+        <line x1="-7" y1="-2.5" x2="5" y2="-2.5" stroke="black"></line>
+      </g>
+    </g>
+    <g class="tan" transform="translate(0 40)">
+      <text y="0">tan<tspan font-style="italic" font-weight="bold">Θ</tspan>=</text>
+      <g transform="translate(40 -0.6)">
+        <text y="0" text-anchor="middle">
+          <tspan x="0" dy="-5">
+            a
+          </tspan>
+          <tspan x="-1.2" dy="12">
+            b
+          </tspan>
+        </text>
+        <line x1="-7" y1="-2.5" x2="5" y2="-2.5" stroke="black"></line>
+      </g>
+    </g>
+  </g>
+  <style>
+    <![CDATA[
+    #lines {
+      stroke-opacity: 0;
+    }
+
+    svg:has(.sin:hover,
+      .cos:hover,
+      .tan:hover) :is(#tri, .edges) {
+      stroke-opacity: 0.33;
+      fill-opacity: 0.33;
+    }
+
+    svg:has(.sin:hover) .sin {
+      fill-opacity: 1;
+      stroke-opacity: 1;
+    }
+
+    svg:has(.cos:hover) .cos {
+      fill-opacity: 1;
+      stroke-opacity: 1;
+    }
+
+    svg:has(.tan:hover) .tan {
+      fill-opacity: 1;
+      stroke-opacity: 1;
+    }
+    ]]>
+  </style>
+</svg>

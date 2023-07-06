@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <pattern patternUnits="userSpaceOnUse" viewBox="0 0 10 5" width="40" height="20" id="borders">
+      <rect width="10" height="2.5" fill="pink" />
+      <rect y="2.5" width="10" height="2.5" fill="white" />
+    </pattern>
+  </defs>
+  <rect x="-100" y="-100" transform="rotate(45 100 100)" width="400" height="400" fill="url(#borders)">
+    <animateTransform attributeName="transform" calcMode="spline" type="translate" values="0 0; -20 20" dur="0.6s"
+      keySplines="0.5 0 0.5 1" repeatCount="indefinite" additive="sum">
+    </animateTransform>
+  </rect>
+  <rect width="200" height="200" fill="white" opacity="0">
+    <animate attributeName="opacity" dur="0.6s" values="0;1;0" repeatCount="indefinite"></animate>
+  </rect>
+</svg>
