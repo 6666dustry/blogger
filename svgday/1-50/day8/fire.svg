@@ -26,6 +26,7 @@
   <circle cx="100" cy="200" fill="url(#light)" r="25" />
 
   <script>
+    //<![CDATA[
     const fire=  document.getElementById("fire1")
     const svg=document.getElementById("svg1")
     for(let i=0; i<30 ;i++){
@@ -38,6 +39,7 @@
 
       svg.appendChild(cloned)
     }
+      // ]]>
   </script>
 
 </svg>
