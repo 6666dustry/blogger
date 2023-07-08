@@ -1,0 +1,2 @@
+時々、GitHubのプレビュー機能やその他一部のSVG Viewerで正常に表示されない(scriptが埋め込んであるものが大半)SVGがあります。
+その場合はブログから見るか、このサイトを使って(https://codebeautify.org/svg-viewer)見れば正常に表示されるはずです。
