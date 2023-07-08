@@ -1,0 +1,45 @@
+<svg id="svg1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <g id="point">
+      <animate attributeName="opacity" dur="2s" values="1;0" repeatCount="indefinite"></animate>
+      <circle r="2"></circle>
+      <polygon points="-2 ,0 2,0 0,10" opacity="0.5" />
+    </g>
+    <g id="boom">
+      <circle r="10">
+        <animate attributeName="opacity" values="0;0;0.75;0" dur="2s" repeatCount="indefinite">
+        </animate>
+        <animate attributeName="r" dur="2s" values="0;0;0;40" repeatCount="indefinite"></animate>
+      </circle>
+
+    </g>
+    <g id="firework">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 -200;" dur="2s" calcMode="spline"
+        keySplines="0 1 1 0.75" repeatCount="indefinite">
+      </animateTransform>
+      <use href="#boom">
+
+      </use>
+      <use href="#point">
+        <animateTransform attributeName="transform" type="scale" dur="2s" additive="sum" repeatCount="indefinite"
+          values="1;0.1">
+        </animateTransform>
+      </use>
+    </g>
+  </defs>
+  <rect width="200" height="200" fill="#111111" />
+  <use class="firework-ins" x="100" y="250" href="#firework" fill="pink">
+  </use>
+  <script>
+    //<![CDATA[
+    for (let i=0;i<10;i++){
+      const use=document.createElementNS("http://www.w3.org/2000/svg" ,"use")
+      use.setAttributeNS(null,"href","#firework")
+      use.setAttributeNS(null,"x",`${Math.random()*200}`)
+      use.setAttributeNS(null,"y",`${250+(Math.random()-0.5)*100}`)
+      use.setAttributeNS(null,"fill",`hsl(${Math.random()*360},75%,50%)`)
+     document.getElementById("svg1").appendChild(use)
+    }
+   // ]]>
+  </script>
+</svg>
