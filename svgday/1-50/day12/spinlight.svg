@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <g id="point">
+      <circle r="2"></circle>
+      <polygon points="-2 ,0 2,0 0,10" opacity="0.5" />
+    </g>
+    <g id="boom">
+      <circle r="10">
+        <animate attributeName="opacity" values="0.75;0" dur="1s" repeatCount="indefinite">
+        </animate>
+        <animate attributeName="r" dur="1s" values="1;40" repeatCount="indefinite"></animate>
+      </circle>
+
+    </g>
+    <g id="firework">
+      </animateTransform>
+      <use href="#boom"></use>
+      <use href="#point"></use>
+    </g>
+  </defs>
+  <rect width="200" height="200" fill="#111111" />
+
+  <g transform="translate(0 -13)">
+    <animateTransform attributeName="transform" type="rotate" values="0 100 113;360 100 113" dur="3s"
+      repeatCount="indefinite" additive="sum">
+    </animateTransform>
+    <use x="100" y="60" href="#firework" fill="orange" transform="rotate(90 100 60)" />
+    <use x="53.82" y="140" href="#firework" fill="lightgreen" transform="rotate(-45 53.82 140)" />
+    <use x="146.18" y="140" href="#firework" fill="pink" transform="rotate(-135 146.18 140)" />
+  </g>
+</svg>
