@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg width="300" height="200" viewBox="0 0 300 200" version="1.1" id="svg5"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)" sodipodi:docname="nazotoki.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+   <sodipodi:namedview id="namedview7" pagecolor="#505050" bordercolor="#ffffff" borderopacity="1"
+      inkscape:showpageshadow="0" inkscape:pageopacity="0" inkscape:pagecheckerboard="1" inkscape:deskcolor="#505050"
+      inkscape:document-units="mm" showgrid="false" inkscape:zoom="2.95" inkscape:cx="73.7" inkscape:cy="100"
+      inkscape:window-width="1920" inkscape:window-height="1009" inkscape:window-x="-8" inkscape:window-y="-8"
+      inkscape:window-maximized="1" inkscape:current-layer="layer1" />
+   <defs id="defs2" />
+   <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1">
+      <text xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.667px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:1.00157"
+         x="37.2" y="52.7" id="text236">
+
+         <tspan id="tspan234" x="37.2" y="52.7" sodipodi:role="line"
+            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.667px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">鯛＋木　＝　鯛焼き
+         </tspan>
+      </text>
+      <text xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.667px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#020201;fill-opacity:1;fill-rule:evenodd;stroke-width:1.00157"
+         x="36.9" y="105" id="text1474">
+         <tspan sodipodi:role="line" id="tspan1472" x="36.9" y="105">樺＋木　＝　蒲焼</tspan>
+      </text>
+      <text xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.667px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#020201;fill-opacity:1;fill-rule:evenodd;stroke-width:1.00157"
+         x="36.1" y="159" id="text1482">
+         <tspan sodipodi:role="line" id="tspan1480" x="36.1" y="159">亜＋樫　＝　</tspan>
+      </text>
+      <text opacity="0" xml:space="preserve"
+            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.333px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:black;fill-opacity:1;fill-rule:evenodd;stroke-width:1.00157"
+            x="194" y="160" id="text3832">
+                       <animate attributeName="opacity" to="1" dur="1s" begin="open.begin" fill="freeze"></animate>
+            <tspan sodipodi:role="line" id="tspan3830" x="194" y="160">妖</tspan>
+         </text>
+
+      <g id="g305">
+         <animate id="open" attributeName="opacity" dur="1s" begin="click" to="0"  fill="freeze"  restart="never" ></animate>
+         <rect style="fill:#ff2020;fill-opacity:1;fill-rule:evenodd;stroke-width:1.00157" id="rect1488" width="30.8"
+            height="31.1" x="195" y="133" />
+         <text xml:space="preserve"
+            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:33.333px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-width:1.00157"
+            x="194" y="160" id="text3832">
+            <tspan sodipodi:role="line" id="tspan3830" x="194" y="160">？</tspan>
+         </text>
+      </g>
+   </g>
+</svg>
