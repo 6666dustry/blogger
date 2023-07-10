@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <g id="point">
+      <circle r="2"></circle>
+    </g>
+    <g id="boom">
+      <circle r="10">
+        <animate attributeName="opacity" values="0.75;0" dur="1s" repeatCount="indefinite">
+        </animate>
+        <animate attributeName="r" dur="1s" values="1;40" repeatCount="indefinite"></animate>
+      </circle>
+
+    </g>
+    <g id="firework">
+      </animateTransform>
+      <use href="#boom"></use>
+      <use href="#point"></use>
+    </g>
+  </defs>
+  <rect width="200" height="200" fill="#111111" />
+  <g transform="translate(0 -13)">
+    <animateTransform attributeName="transform" type="rotate" values="0 100 113;360 100 113" dur="3s"
+      repeatCount="indefinite" additive="sum">
+    </animateTransform>
+    <use x="100" y="60" href="#firework" fill="orange">
+      <animate attributeName="y" values="60;113;60" dur="5s" repeatCount="indefinite"></animate>
+    </use>
+    <use x="53.82" y="140" href="#firework" fill="lightgreen">
+      <animate attributeName="x" values="53.82;100;53.82" dur="5s" repeatCount="indefinite"></animate>
+      <animate attributeName="y" values="140;113;140" dur="5s" repeatCount="indefinite"></animate>
+    </use>
+    <use x="146.18" y="140" href="#firework" fill="pink">
+      <animate attributeName="x" values="146.18;100;146.18" dur="5s" repeatCount="indefinite"></animate>
+      <animate attributeName="y" values="140;113;140" dur="5s" repeatCount="indefinite"></animate>
+    </use>
+  </g>
+</svg>
