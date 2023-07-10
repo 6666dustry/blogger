@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <g fill="gray">
+    <animateTransform attributeName="transform" type="rotate" dur="1.25s" repeatCount="indefinite" calcMode="spline"
+      keySplines="0.5 0.5 0.5 0.2" values="0 100 100;360 100 100">
+    </animateTransform>
+    <circle r="2" cx="100" cy="150" transform="rotate(45 100 100)" />
+    <circle r="2" cx="100" cy="150" transform="rotate(30 100 100)" />
+    <circle r="2" cx="100" cy="150" transform="rotate(15 100 100)" />
+    <circle r="2" cx="100" cy="150" opacity="0.8" />
+    <circle r="2" cx="100" cy="150" transform="rotate(-15 100 100)" opacity="0.6" />
+    <circle r="2" cx="100" cy="150" transform="rotate(-30 100 100)" opacity="0.4" />
+    <circle r="2" cx="100" cy="150" transform="rotate(-45 100 100)" opacity="0.2" />
+  </g>
+  <text x="100" y="170" text-anchor="middle">
+    Now loading<tspan>...
+      <animate attributeName="dy" dur="1s" values="200 200 200;0 200 200;0 0 200;0 0 0" calcMode="discrete"
+        repeatCount="indefinite">
+      </animate>
+    </tspan>
+  </text>
+  <rect rx="1.5" ry="3" width="150" height="10" fill="none" x="25" y="180" stroke="black" />
+  <rect rx="1.5" ry="3" width="150" height="10" fill="blck" x="25" y="180">
+    <animate id="bar" attributeName="width" dur="10s" calcMode="spline" keySplines="0 0 1 0.2;0 1 1 0; 0.2 0.7 0.4 0.8"
+      values="0;50;100;150" begin="0s;bar.end+1s"></animate>
+  </rect>
+</svg>
