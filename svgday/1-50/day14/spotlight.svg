@@ -44,6 +44,7 @@
       </mask>
 
    </defs>
+   <rect width="200" height="200"  fill="#111"/>
    <rect id="masked" width="200" height="200" fill="white" mask="url(#mask)">
    </rect>
 </svg>
