@@ -13,9 +13,8 @@ f = open(f"summary{i}-{i+rangeNum}.txt", "w", encoding="utf-8")
 f.write("<h2>10日間のまとめ</h2>\n")
 f.write("<ul>\n")
 for i in range(i, i + rangeNum):
-    
     f.write(
-        f'  <li>\n    <a href="https://kindnessforme.blogspot.com/{date.strftime("%Y/%m")}/day{i}.html">{i}日目</a>\n  </li>\n'
+        f'  <li>\n    <a href="https://kindnessforme.blogspot.com/{date.strftime("%Y/%m")}/1day1svg-day{i}.html">{i}日目</a>\n  </li>\n'
     )
 f.write("</ul>\n")
 f.close()
