@@ -12,6 +12,7 @@ savePath= savePath.rsplit('/', 1)[0] + f"/1Day,1SVG-Day{i}.html"
 
 f = open(savePath, "w", encoding="utf-8")
 f.write("<p>千里の道も一歩から。</p>\n<p>このシリーズは一日一枚svgのデザインをつくるというシンプルな企画です。</p>\n")
+f.write("<p>コメントでのリクエストも受け付けています。</p>")
 f.write(f"<p>今日は{i}日目。</p>\n")
 try:
     svg =open(path, "r", encoding="utf-8")
