@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <rect id="domino" width="10" height="50" rx="1" fill="darkblue"> 
+       <animateTransform id="fallDown" attributeName="transform" 
+       repeatCount="indefinite"
+    type="rotate" calcMode="spline"   keySplines="0 0 1 1;0 0.1 0.5 0.5;0 0 1 1" dur="8s" >
+    </animateTransform>
+    </rect>
+     <defs>
+    <!-- Filter declaration -->
+    <filter id="shadowFilter" filterUnits="userSpaceOnUse"
+            x="0" y="0"
+            width="200" height="120">
+
+      <!-- offsetBlur -->
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"/>
+      <feOffset in="blur" dx="4" dy="4" result="offsetBlur"/>
+
+      <!-- litPaint -->
+      <feSpecularLighting in="blur" surfaceScale="5" specularConstant=".75"
+                          specularExponent="20" lighting-color="#bbbbbb"
+                          result="specOut">
+        <fePointLight x="-5000" y="-10000" z="20000"/>
+      </feSpecularLighting>
+      <feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOut"/>
+      <feComposite in="SourceGraphic" in2="specOut" operator="arithmetic"
+                   k1="0" k2="1" k3="1" k4="0" result="litPaint"/>
+
+      <!-- merge offsetBlur + litPaint -->
+      <feMerge>
+        <feMergeNode in="offsetBlur"/>
+        <feMergeNode in="litPaint"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+    
+  </defs>
+  <text filter="url(#shadowFilter)" x="100" y="50" text-anchor="middle" font-size="45">
+    DOMINO
+  </text>
+  <g id="dominos">
+    
+
+  </g>
+  <script>
+    //<![CDATA[
+   const dominos=  document.getElementById("dominos")
+   const dominoFrom= document.getElementById("domino")
+    for(let i=0; i<10;i++){
+      const domino=dominoFrom.cloneNode(true)
+      domino.setAttributeNS(null,"href","#domino")
+      domino.setAttributeNS(null,"x",
+       String((i*20)))
+      domino.setAttributeNS(null,"y","150")
+      const appendAnim=domino.querySelector("animateTransform")
+   
+      appendAnim.setAttributeNS(null, "begin",i*0.3+"s")
+      appendAnim.setAttributeNS(null,"values",`0 ${i*20+10} 200;0 ${i*20+10} 200; 90 ${i*20+10} 200; 90 ${i*20+10} 200`)
+
+
+      dominos.appendChild(domino)
+    }
+  //]]>
+  </script>
+</svg>
