@@ -25,7 +25,7 @@
     </animate>
     <rect width="200" height="200" fill-opacity="0" fill="black" stroke="none">
   </g>
-  <rect id="close" width="0" height="200" fill-opacity="0.1" fill="black">
+  <rect  cursor="pointer" id="close" width="0" height="200" fill-opacity="0.1" fill="black">
     <animate begin="lines.click" attributeName="width" to="200" dur="0.1s" fill="freeze">
     </animate>
     <animate begin="click" attributeName="width" to="0" dur="0.1s" fill="freeze">
