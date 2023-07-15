@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 200">
+<g id="button" transform="scale(0.1)">
+  <g cursor="pointer" id="lines" stroke="black" stroke-width="20" stroke-linecap="round">
+    <line x1="50" x2="150" y1="50" y2="50">
+      <animate attributeName="y2" to="150" fill="freeze" begin="lines.click" dur="0.2s">
+      </animate>
+      <animate attributeName="y2" to="50" fill="freeze" begin="close.click" dur="0.2s">
+      </animate>
+    </line>
+    <line stroke-opacity="1" x1="50" x2="150" y1="100" y2="100">
+      <animate attributeName="stroke-opacity" begin="lines.click" to="0" dur="0.25s" fill="freeze">
+      </animate>
+      <animate attributeName="stroke-opacity" to="1" fill="freeze" begin="close.click" dur="0.25s">
+      </animate>
+    </line>
+    <line x1="50" x2="150" y1="150" y2="150">
+      <animate attributeName="y2" to="50" fill="freeze" begin="lines.click" dur="0.2s">
+      </animate>
+      <animate attributeName="y2" to="150" fill="freeze" begin="close.click" dur="0.2s">
+      </animate>
+    </line>
+    <animate begin="click" attributeName="stroke" dur="0.2s" to="crimson" fill="freeze">
+    </animate>
+    <animate begin="close.click" attributeName="stroke" dur="0.2s" to="black" fill="freeze">
+    </animate>
+    <rect width="200" height="200" fill-opacity="0" fill="black" stroke="none">
+  </g>
+  <rect cursor="pointer" id="close" width="0" height="200" fill-opacity="0.1" fill="black">
+    <animate begin="lines.click" attributeName="width" to="200" dur="0.1s" fill="freeze">
+    </animate>
+    <animate begin="click" attributeName="width" to="0" dur="0.1s" fill="freeze">
+    </animate>
+    </g>
+    <g id="texts">
+      <rect x="-50" height="190" width="70"  fill="none" stroke="gray" >
+        <animate attributeName="width" dur="0.25s" to="60" begin="lines.click" fill="freeze"></animate>
+         <animate attributeName="width" dur="0.25s" to="70" begin="close.click" fill="freeze"></animate>
+        </rect>
+      <animateTransform attributeName="transform" type="translate" begin="lines.click" dur="0.25s" values="0;55;50" fill="freeze" >
+      </animateTransform>
+       <animateTransform attributeName="transform" type="translate" begin="close.click" dur="0.25s" values="50;55;0" fill="freeze" >
+      </animateTransform>
+      <text x="0" y="33.3"  text-anchor="end">
+        Menu1
+      </text>
+      <text x="0" y="66.6"  text-anchor="end">
+        Menu2
+      </text>
+      <text x="0" y="100"  text-anchor="end">
+        Menu3
+      </text>
+       <text x="0" y="133.3"  text-anchor="end">
+        Menu4
+      </text>
+       <text x="0" y="166.6"  text-anchor="end">
+        Menu5
+      </text>
+    </g>
+</svg>
