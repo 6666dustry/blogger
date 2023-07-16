@@ -1,0 +1,56 @@
+<p>千里の道も一歩から。</p>
+<p>このシリーズは一日一枚svgのデザインをつくるというシンプルな企画です。</p>
+<p>コメントでのリクエストも受け付けています。</p><p>今日は15日目。</p>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <g fill="gray">
+    <animateTransform attributeName="transform" type="rotate" dur="1.25s" repeatCount="indefinite" calcMode="spline"
+      keySplines="0.5 0.5 0.5 0.2" values="0 100 100;360 100 100">
+    </animateTransform>
+    <circle r="2" cx="100" cy="150" transform="rotate(45 100 100)" />
+    <circle r="2" cx="100" cy="150" transform="rotate(30 100 100)" />
+    <circle r="2" cx="100" cy="150" transform="rotate(15 100 100)" />
+    <circle r="2" cx="100" cy="150" opacity="0.8" />
+    <circle r="2" cx="100" cy="150" transform="rotate(-15 100 100)" opacity="0.6" />
+    <circle r="2" cx="100" cy="150" transform="rotate(-30 100 100)" opacity="0.4" />
+    <circle r="2" cx="100" cy="150" transform="rotate(-45 100 100)" opacity="0.2" />
+  </g>
+  <text x="100" y="170" text-anchor="middle">
+    Now loading<tspan>...
+      <animate attributeName="dy" dur="1s" values="200 200 200;0 200 200;0 0 200;0 0 0" calcMode="discrete"
+        repeatCount="indefinite">
+      </animate>
+    </tspan>
+  </text>
+  <rect rx="1.5" ry="3" width="150" height="10" fill="none" x="25" y="180" stroke="black" />
+  <rect rx="1.5" ry="3" width="150" height="10" fill="blck" x="25" y="180">
+    <animate id="bar" attributeName="width" dur="10s" calcMode="spline" keySplines="0 0 1 0.2;0 1 1 0; 0.2 0.7 0.4 0.8"
+      values="0;50;100;150" begin="0s;bar.end+1s"></animate>
+  </rect>
+</svg>
+<p>svgの中身</p>
+<pre class="prettyprint linenums">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 200 200&quot;&gt;
+  &lt;g fill=&quot;gray&quot;&gt;
+    &lt;animateTransform attributeName=&quot;transform&quot; type=&quot;rotate&quot; dur=&quot;1.25s&quot; repeatCount=&quot;indefinite&quot; calcMode=&quot;spline&quot;
+      keySplines=&quot;0.5 0.5 0.5 0.2&quot; values=&quot;0 100 100;360 100 100&quot;&gt;
+    &lt;/animateTransform&gt;
+    &lt;circle r=&quot;2&quot; cx=&quot;100&quot; cy=&quot;150&quot; transform=&quot;rotate(45 100 100)&quot; /&gt;
+    &lt;circle r=&quot;2&quot; cx=&quot;100&quot; cy=&quot;150&quot; transform=&quot;rotate(30 100 100)&quot; /&gt;
+    &lt;circle r=&quot;2&quot; cx=&quot;100&quot; cy=&quot;150&quot; transform=&quot;rotate(15 100 100)&quot; /&gt;
+    &lt;circle r=&quot;2&quot; cx=&quot;100&quot; cy=&quot;150&quot; opacity=&quot;0.8&quot; /&gt;
+    &lt;circle r=&quot;2&quot; cx=&quot;100&quot; cy=&quot;150&quot; transform=&quot;rotate(-15 100 100)&quot; opacity=&quot;0.6&quot; /&gt;
+    &lt;circle r=&quot;2&quot; cx=&quot;100&quot; cy=&quot;150&quot; transform=&quot;rotate(-30 100 100)&quot; opacity=&quot;0.4&quot; /&gt;
+    &lt;circle r=&quot;2&quot; cx=&quot;100&quot; cy=&quot;150&quot; transform=&quot;rotate(-45 100 100)&quot; opacity=&quot;0.2&quot; /&gt;
+  &lt;/g&gt;
+  &lt;text x=&quot;100&quot; y=&quot;170&quot; text-anchor=&quot;middle&quot;&gt;
+    Now loading&lt;tspan&gt;...
+      &lt;animate attributeName=&quot;dy&quot; dur=&quot;1s&quot; values=&quot;200 200 200;0 200 200;0 0 200;0 0 0&quot; calcMode=&quot;discrete&quot;
+        repeatCount=&quot;indefinite&quot;&gt;
+      &lt;/animate&gt;
+    &lt;/tspan&gt;
+  &lt;/text&gt;
+  &lt;rect rx=&quot;1.5&quot; ry=&quot;3&quot; width=&quot;150&quot; height=&quot;10&quot; fill=&quot;none&quot; x=&quot;25&quot; y=&quot;180&quot; stroke=&quot;black&quot; /&gt;
+  &lt;rect rx=&quot;1.5&quot; ry=&quot;3&quot; width=&quot;150&quot; height=&quot;10&quot; fill=&quot;blck&quot; x=&quot;25&quot; y=&quot;180&quot;&gt;
+    &lt;animate id=&quot;bar&quot; attributeName=&quot;width&quot; dur=&quot;10s&quot; calcMode=&quot;spline&quot; keySplines=&quot;0 0 1 0.2;0 1 1 0; 0.2 0.7 0.4 0.8&quot;
+      values=&quot;0;50;100;150&quot; begin=&quot;0s;bar.end+1s&quot;&gt;&lt;/animate&gt;
+  &lt;/rect&gt;
+&lt;/svg&gt;</pre>
