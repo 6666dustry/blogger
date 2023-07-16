@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <g id="point">
+      <circle r="2"></circle>
+      <polygon points="-2 ,0 2,0 0,30" opacity="0.5">
+        <animateTransform attributeName="transform" type="rotate" values="0;-360" dur="3s" repeatCount="indefinite">
+
+        </animateTransform>
+      </polygon>
+    </g>
+    <g id="boom">
+      <circle r="10">
+        <animate attributeName="opacity" values="0.75;0" dur="1s" repeatCount="indefinite">
+        </animate>
+        <animate attributeName="r" dur="1s" values="1;15" repeatCount="indefinite"></animate>
+      </circle>
+
+    </g>
+    <g id="meteor">
+      </animateTransform>
+      <use href="#boom"></use>
+      <use href="#point"></use>
+    </g>
+    <g id="star">
+      <circle r="2"></circle>
+      <polygon transform="rotate(-90)" points="-2 ,0 2,0 0,30" opacity="0.5">
+    </g>
+
+  </defs>
+  <rect width="200" height="200" fill="#111111" />
+
+  <g transform="translate(0 -13)">
+    <animateTransform attributeName="transform" type="rotate" values="0 100 113;360 100 113" dur="3s"
+      repeatCount="indefinite" additive="sum">
+    </animateTransform>
+    <animateTransform attributeName="transform" type="translate" values="20 20;20 -20;-20 -20;-20 20;20 20" dur="5s"
+      repeatCount="indefinite" additive="sum">
+    </animateTransform>
+    <use x="100" y="60" href="#meteor" fill="silver" transform="rotate(90 100 60)" />
+    <use x="53.82" y="140" href="#meteor" fill="lightyellow" transform="rotate(90 53.82 140)" />
+    <use x="146.18" y="140" href="#meteor" fill="white" transform="rotate(90 146.18 140)" />
+  </g>
+  <g>
+    <use opacity="0.5" x="200" y="" fill="white" opacity="0.5" transform="scale(1,1)" href="#star">
+      <animate attributeName="x" repeatCount="indefinite"   dur="1.5s" values="200;0" begin="0s"></animate>
+    </use>
+    <use x="200" y="87" fill="white" href="#star">
+      <animate attributeName="x" repeatCount="indefinite" dur="2.55s" values="200;0" begin="0.74s"></animate>
+    </use>
+    <use x="200" y="175" fill="white" href="#star">
+      <animate attributeName="x" repeatCount="indefinite" dur="1.47s" values="200;0" begin="2.11s"></animate>
+    </use>
+    <use x="200" y="28" fill="white" href="#star">
+      <animate attributeName="x" repeatCount="indefinite" dur="2.12s" values="200;0" begin="1.34s"></animate>
+    </use>
+    <use x="200" y="118" fill="white" href="#star">
+      <animate attributeName="x" repeatCount="indefinite" dur="2.65s" values="200;0" begin="2.54s"></animate>
+    </use>
+    <use x="200" y="91" fill="white" href="#star">
+      <animate attributeName="x" repeatCount="indefinite" dur="1.59s" values="200;0" begin="0.96s"></animate>
+    </use>
+    <use x="200" y="54" fill="white" href="#star">
+      <animate attributeName="x" repeatCount="indefinite" dur="1.86s" values="200;0" begin="2.70s"></animate>
+    </use>
+    <use x="200" y="199" fill="white" href="#star">
+      <animate attributeName="x" repeatCount="indefinite" dur="1.04s" values="200;0" begin="2.85s"></animate>
+    </use>
+<use x="200" y="57" opacity="0.5" transform="scale(1.08,1.08)" fill="white" href="#star">
+    <animate attributeName="x" repeatCount="indefinite" dur="744ms" values="200;0" begin="472ms"></animate>
+</use>
+<use x="200" y="85" opacity="0.6" transform="scale(0.51,0.51)" fill="white" href="#star">
+    <animate attributeName="x" repeatCount="indefinite" dur="2s" values="200;0" begin="1.36s"></animate>
+</use>
+<use x="200" y="122" opacity="0.25" transform="scale(0.9,0.9)" fill="white" href="#star">
+    <animate attributeName="x" repeatCount="indefinite" dur="2.25s" values="200;0" begin="2.35s"></animate>
+</use>
+<use x="200" y="173" opacity="0.2" transform="scale(0.89,0.89)" fill="white" href="#star">
+    <animate attributeName="x" repeatCount="indefinite" dur="950ms" values="200;0" begin="2.43s"></animate>
+</use>
+<use x="200" y="92" opacity="0.32" transform="scale(1.2,1.2)" fill="white" href="#star">
+    <animate attributeName="x" repeatCount="indefinite" dur="1.42s" values="200;0" begin="1.15s"></animate>
+</use>
+<use x="200" y="132" opacity="0.15" transform="scale(0.78,0.78)" fill="white" href="#star">
+    <animate attributeName="x" repeatCount="indefinite" dur="1.23s" values="200;0" begin="2.06s"></animate>
+</use>
+<use x="200" y="195" opacity="0.48" transform="scale(0.36,0.36)" fill="white" href="#star">
+    <animate attributeName="x" repeatCount="indefinite" dur="1.68s" values="200;0" begin="1.42s"></animate>
+</use>
+<use x="200" y="169" opacity="0.66" transform="scale(0.95,0.95)" fill="white" href="#star">
+    <animate attributeName="x" repeatCount="indefinite" dur="2.93s" values="200;0" begin="2.77s"></animate>
+</use>
+<use x="200" y="67" opacity="0.43" transform="scale(1.05,1.05)" fill="white" href="#star">
+    <animate attributeName="x" repeatCount="indefinite" dur="1.82s" values="200;0" begin="2.91s"></animate>
+</use>
+<use x="200" y="183" opacity="0.61" transform="scale(1.24,1.24)" fill="white" href="#star">
+    <animate attributeName="x" repeatCount="indefinite" dur="2.13s" values="200;0" begin="1.88s"></animate>
+</use>
+
+  </g>
+</svg>
