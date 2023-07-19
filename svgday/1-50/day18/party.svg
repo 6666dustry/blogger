@@ -7,7 +7,7 @@
         <feSpotLight x="100" y="0" z="0" pointsAtX="100" pointsAtY="30" limitingConeAngle="7.5">
           <animate attributeName="pointsAtX" keySplines="0.4 0.6 0.5 0.5;0.4 0.6 0.5 0.5" calcMode="spline" dur="2s"
             values="0;200;0" repeatCount="indefinite"></animate>
-          </fepotLight>
+          </feSpotLight>
       </feSpecularLighting>
       <feSpecularLighting result="spotlight2" specularConstant="1.5" specularExponent="5" lighting-color="green">
         <feSpotLight x="0" y="0" z="0" pointsAtX="100" pointsAtY="30" limitingConeAngle="7.5">
