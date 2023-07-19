@@ -15,7 +15,7 @@
             repeatCount="indefinite"></animate>
           <animate attributeName="pointsAtY" keySplines="0.4 0.6 0.5 0.5;" calcMode="spline" dur="2s" values="-50;250;"
             repeatCount="indefinite"></animate>
-          </fepotLight>
+          </feSpotLight>
       </feSpecularLighting>
       <feSpecularLighting result="spotlight3" specularConstant="1.5" specularExponent="5" lighting-color="yellow">
         <feSpotLight x="200" y="200" z="0" pointsAtX="100" pointsAtY="20" limitingConeAngle="8.5">
@@ -23,7 +23,7 @@
             values="50;150;50" repeatCount="indefinite"></animate>
           <animate attributeName="pointsAtY" keySplines="0.5 0 0.5 1;0.5 0 0.5 1" calcMode="spline" dur="1.25s"
             values="150;50;150" repeatCount="indefinite"></animate>
-          </fepotLight>
+          </feSpotLight>
       </feSpecularLighting>
       <feMerge>
         <feMergeNode in="SourceGraphic">
