@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <title>紙吹雪</title>
+  <desc>紙吹雪です。JavaScriptを含んでいるので一部の環境では上手く動かないときもあります。</desc>
   <defs>
     <rect y="-10" id="confetti" fill="pink" width="5" height="5">
       <animate attributeName="y" dur="15s" repeatCount="indefinite" values="-10;200"></animate>

@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <title>紙吹雪2</title>
+  <desc>紙吹雪のリメイクです。結構進化しました</desc>
   <defs>
     <rect y="210" id="confetti" fill="pink" width="5" height="5">
       <animate attributeName="x" keySplines="0 0 0.75 1;0.5 0.5 0.5 0.5" keyTimes="0;0.2;1" calcMode="spline" dur="15s" repeatCount="indefinite" ></animate>

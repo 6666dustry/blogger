@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <title>流れ星</title>
+  <desc>流れ星です。流れ星以外の物は一切描いていません。"しんぷるいずべすと"なのです。</desc>
   <defs>
     <g id="point">
       <circle r="2"></circle>

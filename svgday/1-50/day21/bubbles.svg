@@ -1,4 +1,6 @@
 <svg viewBox="0 0 100 100">
+  <title>泡</title>
+  <desc>泡というより雨の波紋のような気もしますが、それでも泡です。...泡です。</desc>
   <defs>
     <radialGradient id="lingGrad">
       <stop offset="45%" stop-color="black" />

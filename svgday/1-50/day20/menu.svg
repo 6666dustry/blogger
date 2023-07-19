@@ -1,5 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 200">
 <g id="button" transform="scale(0.1)">
+  <title>メニュー</title>
+  <desc>クリックすると横から出てくるメニュー画面です。</desc>
   <g cursor="pointer" id="lines" stroke="black" stroke-width="20" stroke-linecap="round">
     <line x1="50" x2="150" y1="50" y2="50">
       <animate attributeName="y2" to="150" fill="freeze" begin="lines.click" dur="0.2s">

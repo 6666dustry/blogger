@@ -1,5 +1,6 @@
-<!-- 黒の四角形の四隅に四角形が見えるはず -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <title>錯視</title>
+  <desc>黒の四角形の四隅に薄い丸が見えるはずです。</desc>
 <defs>
   <pattern patternUnits="userSpaceOnUse" width="10" height="10" id="illusion">
     <rect x="0.5" y="0.5" fill="black" width="8" height="8" />
