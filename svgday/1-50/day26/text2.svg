@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <title>いろんなテキスト2</title>
+  <desc>SVGでテキストを使うのはほどほどにしましょう。あくまで画像ですから。</desc>
+  <defs>
+    <pattern width="2" height="2" patternUnits="userSpaceOnUse" id="pattern">
+      <animateTransform attributeName="patternTransform" type="translate"
+        values="-0.5 -0.5;0.5 -0.5; 0.5 0.5; -0.5 0.5;-0.5 -0.5" dur="2s" repeatCount="indefinite">
+      </animateTransform>
+      <rect x="-1" y="-1" width="4" height="4" fill="magenta" />
+      <circle cx="1" cy="1" r="0.75" fill="white" />
+    </pattern>
+    <filter id="filter">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blur">
+        <animate attributeName="stdDeviation" dur="1s" repeatCount="indefinite" values="0.3;1;0.3" ></animate>
+      </feGaussianBlur>
+    </filter>
+    <linearGradient id="gradient" spreadMethod="repeat">
+      <animate attributeName="x1" dur="1s" repeatCount="indefinite" values="0;-1;"></animate>
+      <animate attributeName="x2" dur="1s" repeatCount="indefinite" values="1;0;"></animate>
+      <stop offset="14%" stop-color="#ff0000" />
+      <stop offset="28%" stop-color="#ff7f00" />
+      <stop offset="42%" stop-color="#ffff00" />
+      <stop offset="51%" stop-color="#00ff00" />
+      <stop offset="71%" stop-color="#0000ff" />
+      <stop offset="81%" stop-color="#4b0082" />
+      <stop offset="100%" stop-color="#8b00ff" />
+    </linearGradient>
+    <clipPath clipPathUnits="objectBoundingBox" id="clipPath" >
+      <circle cx="0.5" cy="0.5" r="0.3" ><animate attributeName="cx" dur="3s" keySplines="0.6 0 0.4 1;0.6 0 0.4 1;" calcMode="spline" values="0;1;0" repeatCount="indefinite" ></animate></circle>
+    </clipPath>
+    <linearGradient id="gradMask">
+      <stop offset="0%" stop-color="white" />
+      <stop offset="100%" stop-color="black" >
+        <animate attributeName="offset" dur="3s" repeatCount="indefinite" values="0.1;1;0.1" ></animate>
+        </stop>
+    </linearGradient>
+    <mask  id="mask" 
+    maskContentUnits="objectBoundingBox">
+      <rect fill="url(#gradMask)" width="2" height="1" />
+    </mask>
+  </defs>
+  <g>
+    <text x="100" y="10">
+      normal anchor
+    </text>
+    <text text-anchor="middle" x="100" y="20">
+      middle anchor
+    </text>
+    <text text-anchor="end" x="100" y="30">
+      end anchor
+    </text>
+    <text y="40">
+      <animate attributeName="rotate" dur="3s" repeatCount="indefinite" to="360"></animate>
+      rotate text
+    </text>
+    <text font-size="20" font-weight="900" y="70" fill="none">
+      <tspan fill="darkblue">
+          Fill
+    </tspan>
+      <tspan stroke="skyblue">
+          Stroke
+    </tspan>
+      <tspan fill="darkblue" stroke="skyblue">
+          Text
+    </tspan>
+    </text>
+    <text y="100" textLength="200">
+      200
+    </text>
+    <text y="110" textLength="100">
+      100
+    </text>
+    <text y="120" textLength="200" lengthAdjust="spacing">
+      Spacing
+    </text>
+    <text y="133" textLength="200" lengthAdjust="spacingAndGlyphs">
+      SpacingAndGlyphs
+    </text>
+    <text font-weight="800" y="145" fill="url(#pattern)">
+      Pattern
+    </text>
+    <text y="155" filter="url(#filter)">
+      Filter
+    </text>
+    <text y="165" fill="url(#gradient)">
+      Gradient
+    </text>
+    <text y="175" clip-path="url(#clipPath)">
+      ClipPath
+    </text>
+    <text y="185" mask="url(#mask)">
+      Mask
+    </text>
+  </g>
+
+</svg>
