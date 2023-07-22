@@ -1,0 +1,157 @@
+<p>千里の道も一歩から。</p>
+<p>このシリーズは一日一枚svgのデザインをつくるというシンプルな企画です。</p>
+<p>コメントでのリクエストも受け付けています。</p>
+<p>今日は20日目。</p>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 200">
+<g id="button" transform="scale(0.1)">
+  <title>メニュー</title>
+  <desc>クリックすると横から出てくるメニュー画面です。</desc>
+  <g cursor="pointer" id="lines" stroke="black" stroke-width="20" stroke-linecap="round">
+    <line x1="50" x2="150" y1="50" y2="50">
+      <animate attributeName="y2" to="150" fill="freeze" begin="lines.click" dur="0.2s">
+      </animate>
+      <animate attributeName="y2" to="50" fill="freeze" begin="close.click" dur="0.2s">
+      </animate>
+    </line>
+    <line stroke-opacity="1" x1="50" x2="150" y1="100" y2="100">
+      <animate attributeName="stroke-opacity" begin="lines.click" to="0" dur="0.25s" fill="freeze">
+      </animate>
+      <animate attributeName="stroke-opacity" to="1" fill="freeze" begin="close.click" dur="0.25s">
+      </animate>
+    </line>
+    <line x1="50" x2="150" y1="150" y2="150">
+      <animate attributeName="y2" to="50" fill="freeze" begin="lines.click" dur="0.2s">
+      </animate>
+      <animate attributeName="y2" to="150" fill="freeze" begin="close.click" dur="0.2s">
+      </animate>
+    </line>
+    <animate begin="click" attributeName="stroke" dur="0.2s" to="crimson" fill="freeze">
+    </animate>
+    <animate begin="close.click" attributeName="stroke" dur="0.2s" to="black" fill="freeze">
+    </animate>
+    <rect width="200" height="200" fill-opacity="0" fill="black" stroke="none">
+  </g>
+  <rect cursor="pointer" id="close" width="0" height="200" fill-opacity="0.1" fill="black">
+    <animate begin="lines.click" attributeName="width" to="200" dur="0.1s" fill="freeze">
+    </animate>
+    <animate begin="click" attributeName="width" to="0" dur="0.1s" fill="freeze">
+    </animate>
+    </g>
+    <g id="texts">
+      <rect x="-50" height="190" width="70"  fill="none" stroke="gray" >
+        <animate attributeName="width" dur="0.25s" to="60" begin="lines.click" fill="freeze"></animate>
+         <animate attributeName="width" dur="0.25s" to="70" begin="close.click" fill="freeze"></animate>
+        </rect>
+      <animateTransform attributeName="transform" type="translate" begin="lines.click" dur="0.25s" values="0;55;50" fill="freeze" >
+      </animateTransform>
+       <animateTransform attributeName="transform" type="translate" begin="close.click" dur="0.25s" values="50;55;0" fill="freeze" >
+      </animateTransform>
+      <text x="0" y="33.3"  text-anchor="end">
+        Menu1
+      </text>
+      <text x="0" y="66.6"  text-anchor="end">
+        Menu2
+      </text>
+      <text x="0" y="100"  text-anchor="end">
+        Menu3
+      </text>
+       <text x="0" y="133.3"  text-anchor="end">
+        Menu4
+      </text>
+       <text x="0" y="166.6"  text-anchor="end">
+        Menu5
+      </text>
+    </g>
+</svg>
+<p>svgの中身</p>
+<pre class="prettyprint linenums">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 200&quot;&gt;
+&lt;g id=&quot;button&quot; transform=&quot;scale(0.1)&quot;&gt;
+  &lt;title&gt;メニュー&lt;/title&gt;
+  &lt;desc&gt;クリックすると横から出てくるメニュー画面です。&lt;/desc&gt;
+  &lt;g cursor=&quot;pointer&quot; id=&quot;lines&quot; stroke=&quot;black&quot; stroke-width=&quot;20&quot; stroke-linecap=&quot;round&quot;&gt;
+    &lt;line x1=&quot;50&quot; x2=&quot;150&quot; y1=&quot;50&quot; y2=&quot;50&quot;&gt;
+      &lt;animate attributeName=&quot;y2&quot; to=&quot;150&quot; fill=&quot;freeze&quot; begin=&quot;lines.click&quot; dur=&quot;0.2s&quot;&gt;
+      &lt;/animate&gt;
+      &lt;animate attributeName=&quot;y2&quot; to=&quot;50&quot; fill=&quot;freeze&quot; begin=&quot;close.click&quot; dur=&quot;0.2s&quot;&gt;
+      &lt;/animate&gt;
+    &lt;/line&gt;
+    &lt;line stroke-opacity=&quot;1&quot; x1=&quot;50&quot; x2=&quot;150&quot; y1=&quot;100&quot; y2=&quot;100&quot;&gt;
+      &lt;animate attributeName=&quot;stroke-opacity&quot; begin=&quot;lines.click&quot; to=&quot;0&quot; dur=&quot;0.25s&quot; fill=&quot;freeze&quot;&gt;
+      &lt;/animate&gt;
+      &lt;animate attributeName=&quot;stroke-opacity&quot; to=&quot;1&quot; fill=&quot;freeze&quot; begin=&quot;close.click&quot; dur=&quot;0.25s&quot;&gt;
+      &lt;/animate&gt;
+    &lt;/line&gt;
+    &lt;line x1=&quot;50&quot; x2=&quot;150&quot; y1=&quot;150&quot; y2=&quot;150&quot;&gt;
+      &lt;animate attributeName=&quot;y2&quot; to=&quot;50&quot; fill=&quot;freeze&quot; begin=&quot;lines.click&quot; dur=&quot;0.2s&quot;&gt;
+      &lt;/animate&gt;
+      &lt;animate attributeName=&quot;y2&quot; to=&quot;150&quot; fill=&quot;freeze&quot; begin=&quot;close.click&quot; dur=&quot;0.2s&quot;&gt;
+      &lt;/animate&gt;
+    &lt;/line&gt;
+    &lt;animate begin=&quot;click&quot; attributeName=&quot;stroke&quot; dur=&quot;0.2s&quot; to=&quot;crimson&quot; fill=&quot;freeze&quot;&gt;
+    &lt;/animate&gt;
+    &lt;animate begin=&quot;close.click&quot; attributeName=&quot;stroke&quot; dur=&quot;0.2s&quot; to=&quot;black&quot; fill=&quot;freeze&quot;&gt;
+    &lt;/animate&gt;
+    &lt;rect width=&quot;200&quot; height=&quot;200&quot; fill-opacity=&quot;0&quot; fill=&quot;black&quot; stroke=&quot;none&quot;&gt;
+  &lt;/g&gt;
+  &lt;rect cursor=&quot;pointer&quot; id=&quot;close&quot; width=&quot;0&quot; height=&quot;200&quot; fill-opacity=&quot;0.1&quot; fill=&quot;black&quot;&gt;
+    &lt;animate begin=&quot;lines.click&quot; attributeName=&quot;width&quot; to=&quot;200&quot; dur=&quot;0.1s&quot; fill=&quot;freeze&quot;&gt;
+    &lt;/animate&gt;
+    &lt;animate begin=&quot;click&quot; attributeName=&quot;width&quot; to=&quot;0&quot; dur=&quot;0.1s&quot; fill=&quot;freeze&quot;&gt;
+    &lt;/animate&gt;
+    &lt;/g&gt;
+    &lt;g id=&quot;texts&quot;&gt;
+      &lt;rect x=&quot;-50&quot; height=&quot;190&quot; width=&quot;70&quot;  fill=&quot;none&quot; stroke=&quot;gray&quot; &gt;
+        &lt;animate attributeName=&quot;width&quot; dur=&quot;0.25s&quot; to=&quot;60&quot; begin=&quot;lines.click&quot; fill=&quot;freeze&quot;&gt;&lt;/animate&gt;
+         &lt;animate attributeName=&quot;width&quot; dur=&quot;0.25s&quot; to=&quot;70&quot; begin=&quot;close.click&quot; fill=&quot;freeze&quot;&gt;&lt;/animate&gt;
+        &lt;/rect&gt;
+      &lt;animateTransform attributeName=&quot;transform&quot; type=&quot;translate&quot; begin=&quot;lines.click&quot; dur=&quot;0.25s&quot; values=&quot;0;55;50&quot; fill=&quot;freeze&quot; &gt;
+      &lt;/animateTransform&gt;
+       &lt;animateTransform attributeName=&quot;transform&quot; type=&quot;translate&quot; begin=&quot;close.click&quot; dur=&quot;0.25s&quot; values=&quot;50;55;0&quot; fill=&quot;freeze&quot; &gt;
+      &lt;/animateTransform&gt;
+      &lt;text x=&quot;0&quot; y=&quot;33.3&quot;  text-anchor=&quot;end&quot;&gt;
+        Menu1
+      &lt;/text&gt;
+      &lt;text x=&quot;0&quot; y=&quot;66.6&quot;  text-anchor=&quot;end&quot;&gt;
+        Menu2
+      &lt;/text&gt;
+      &lt;text x=&quot;0&quot; y=&quot;100&quot;  text-anchor=&quot;end&quot;&gt;
+        Menu3
+      &lt;/text&gt;
+       &lt;text x=&quot;0&quot; y=&quot;133.3&quot;  text-anchor=&quot;end&quot;&gt;
+        Menu4
+      &lt;/text&gt;
+       &lt;text x=&quot;0&quot; y=&quot;166.6&quot;  text-anchor=&quot;end&quot;&gt;
+        Menu5
+      &lt;/text&gt;
+    &lt;/g&gt;
+&lt;/svg&gt;</pre>
+<h2>10日間のまとめ</h2>
+<ul>
+  <li>
+    <a href="https://kindnessforme.blogspot.com/2023/07/1day1svg-day11.html">11日目</a>
+  </li>
+  <li>
+    <a href="https://kindnessforme.blogspot.com/2023/07/1day1svg-day12.html">12日目</a>
+  </li>
+  <li>
+    <a href="https://kindnessforme.blogspot.com/2023/07/1day1svg-day13.html">13日目</a>
+  </li>
+  <li>
+    <a href="https://kindnessforme.blogspot.com/2023/07/1day1svg-day14.html">14日目</a>
+  </li>
+  <li>
+    <a href="https://kindnessforme.blogspot.com/2023/07/1day1svg-day15.html">15日目</a>
+  </li>
+  <li>
+    <a href="https://kindnessforme.blogspot.com/2023/07/1day1svg-day16.html">16日目</a>
+  </li>
+  <li>
+    <a href="https://kindnessforme.blogspot.com/2023/07/1day1svg-day17.html">17日目</a>
+  </li>
+  <li>
+    <a href="https://kindnessforme.blogspot.com/2023/07/1day1svg-day18.html">18日目</a>
+  </li>
+  <li>
+    <a href="https://kindnessforme.blogspot.com/2023/07/1day1svg-day19.html">19日目</a>
+  </li>
+</ul>

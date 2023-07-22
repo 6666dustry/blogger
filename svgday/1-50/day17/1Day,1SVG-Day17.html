@@ -1,0 +1,137 @@
+<p>千里の道も一歩から。</p>
+<p>このシリーズは一日一枚svgのデザインをつくるというシンプルな企画です。</p>
+<p>コメントでのリクエストも受け付けています。</p>
+<p>今日は17日目。</p>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <rect id="domino" width="10" height="50" rx="1" fill="darkblue"> 
+       <animateTransform id="fallDown" attributeName="transform" 
+       repeatCount="indefinite"
+    type="rotate" calcMode="spline"   keySplines="0 0 1 1;0 0.1 0.5 0.5;0 0 1 1" dur="8s" >
+    </animateTransform>
+    </rect>
+     <defs>
+    <!-- Filter declaration -->
+    <filter id="shadowFilter" filterUnits="userSpaceOnUse"
+            x="0" y="0"
+            width="200" height="120">
+
+      <!-- offsetBlur -->
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"/>
+      <feOffset in="blur" dx="4" dy="4" result="offsetBlur"/>
+
+      <!-- litPaint -->
+      <feSpecularLighting in="blur" surfaceScale="5" specularConstant=".75"
+                          specularExponent="20" lighting-color="#bbbbbb"
+                          result="specOut">
+        <fePointLight x="-5000" y="-10000" z="20000"/>
+      </feSpecularLighting>
+      <feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOut"/>
+      <feComposite in="SourceGraphic" in2="specOut" operator="arithmetic"
+                   k1="0" k2="1" k3="1" k4="0" result="litPaint"/>
+
+      <!-- merge offsetBlur + litPaint -->
+      <feMerge>
+        <feMergeNode in="offsetBlur"/>
+        <feMergeNode in="litPaint"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+    
+  </defs>
+  <text filter="url(#shadowFilter)" x="100" y="50" text-anchor="middle" font-size="45">
+    DOMINO
+  </text>
+  <g id="dominos">
+    
+
+  </g>
+  <script>
+    //<![CDATA[
+   const dominos=  document.getElementById("dominos")
+   const dominoFrom= document.getElementById("domino")
+    for(let i=0; i<10;i++){
+      const domino=dominoFrom.cloneNode(true)
+      domino.setAttributeNS(null,"href","#domino")
+      domino.setAttributeNS(null,"x",
+       String((i*20)))
+      domino.setAttributeNS(null,"y","150")
+      const appendAnim=domino.querySelector("animateTransform")
+   
+      appendAnim.setAttributeNS(null, "begin",i*0.3+"s")
+      appendAnim.setAttributeNS(null,"values",`0 ${i*20+10} 200;0 ${i*20+10} 200; 90 ${i*20+10} 200; 90 ${i*20+10} 200`)
+
+
+      dominos.appendChild(domino)
+    }
+  //]]>
+  </script>
+</svg>
+<p>svgの中身</p>
+<pre class="prettyprint linenums">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 200 200&quot;&gt;
+  &lt;defs&gt;
+    &lt;rect id=&quot;domino&quot; width=&quot;10&quot; height=&quot;50&quot; rx=&quot;1&quot; fill=&quot;darkblue&quot;&gt; 
+       &lt;animateTransform id=&quot;fallDown&quot; attributeName=&quot;transform&quot; 
+       repeatCount=&quot;indefinite&quot;
+    type=&quot;rotate&quot; calcMode=&quot;spline&quot;   keySplines=&quot;0 0 1 1;0 0.1 0.5 0.5;0 0 1 1&quot; dur=&quot;8s&quot; &gt;
+    &lt;/animateTransform&gt;
+    &lt;/rect&gt;
+     &lt;defs&gt;
+    &lt;!-- Filter declaration --&gt;
+    &lt;filter id=&quot;shadowFilter&quot; filterUnits=&quot;userSpaceOnUse&quot;
+            x=&quot;0&quot; y=&quot;0&quot;
+            width=&quot;200&quot; height=&quot;120&quot;&gt;
+
+      &lt;!-- offsetBlur --&gt;
+      &lt;feGaussianBlur in=&quot;SourceAlpha&quot; stdDeviation=&quot;4&quot; result=&quot;blur&quot;/&gt;
+      &lt;feOffset in=&quot;blur&quot; dx=&quot;4&quot; dy=&quot;4&quot; result=&quot;offsetBlur&quot;/&gt;
+
+      &lt;!-- litPaint --&gt;
+      &lt;feSpecularLighting in=&quot;blur&quot; surfaceScale=&quot;5&quot; specularConstant=&quot;.75&quot;
+                          specularExponent=&quot;20&quot; lighting-color=&quot;#bbbbbb&quot;
+                          result=&quot;specOut&quot;&gt;
+        &lt;fePointLight x=&quot;-5000&quot; y=&quot;-10000&quot; z=&quot;20000&quot;/&gt;
+      &lt;/feSpecularLighting&gt;
+      &lt;feComposite in=&quot;specOut&quot; in2=&quot;SourceAlpha&quot; operator=&quot;in&quot; result=&quot;specOut&quot;/&gt;
+      &lt;feComposite in=&quot;SourceGraphic&quot; in2=&quot;specOut&quot; operator=&quot;arithmetic&quot;
+                   k1=&quot;0&quot; k2=&quot;1&quot; k3=&quot;1&quot; k4=&quot;0&quot; result=&quot;litPaint&quot;/&gt;
+
+      &lt;!-- merge offsetBlur + litPaint --&gt;
+      &lt;feMerge&gt;
+        &lt;feMergeNode in=&quot;offsetBlur&quot;/&gt;
+        &lt;feMergeNode in=&quot;litPaint&quot;/&gt;
+      &lt;/feMerge&gt;
+    &lt;/filter&gt;
+  &lt;/defs&gt;
+
+    
+  &lt;/defs&gt;
+  &lt;text filter=&quot;url(#shadowFilter)&quot; x=&quot;100&quot; y=&quot;50&quot; text-anchor=&quot;middle&quot; font-size=&quot;45&quot;&gt;
+    DOMINO
+  &lt;/text&gt;
+  &lt;g id=&quot;dominos&quot;&gt;
+    
+
+  &lt;/g&gt;
+  &lt;script&gt;
+    //&lt;![CDATA[
+   const dominos=  document.getElementById(&quot;dominos&quot;)
+   const dominoFrom= document.getElementById(&quot;domino&quot;)
+    for(let i=0; i&lt;10;i++){
+      const domino=dominoFrom.cloneNode(true)
+      domino.setAttributeNS(null,&quot;href&quot;,&quot;#domino&quot;)
+      domino.setAttributeNS(null,&quot;x&quot;,
+       String((i*20)))
+      domino.setAttributeNS(null,&quot;y&quot;,&quot;150&quot;)
+      const appendAnim=domino.querySelector(&quot;animateTransform&quot;)
+   
+      appendAnim.setAttributeNS(null, &quot;begin&quot;,i*0.3+&quot;s&quot;)
+      appendAnim.setAttributeNS(null,&quot;values&quot;,`0 ${i*20+10} 200;0 ${i*20+10} 200; 90 ${i*20+10} 200; 90 ${i*20+10} 200`)
+
+
+      dominos.appendChild(domino)
+    }
+  //]]&gt;
+  &lt;/script&gt;
+&lt;/svg&gt;</pre>

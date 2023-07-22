@@ -1,0 +1,95 @@
+<p>千里の道も一歩から。</p>
+<p>このシリーズは一日一枚svgのデザインをつくるというシンプルな企画です。</p>
+<p>コメントでのリクエストも受け付けています。</p>
+<p>今日は16日目。</p>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+   <defs>
+      <path id="spiral" fill="none" stroke="black" style="fill-rule:evenodd" transform="rotate(180,106,103)"
+         d="m 106,103 c -3,-3.9 4,-6.2 6,-5.2 8,2.2 8,12.2 4,18.2 -6,10 -20.7,10 -29.4,3 C 73.8,108 74.6,88.8 85.1,77.2 99.1,61.6 124,62.9 138,76.9 157,94.5 155,124 137,142 116,163 81.1,160 60.8,140 36.8,115 39.8,74.5 64.2,51.3 92.5,24.5 138,28.1 164,56 194,87.8 190,139 158,168 123,200 66.7,195 34.9,160 -0.336,122 4.87,60.1 43.4,25.5 54.4,15.6 67.6,8.18 81.8,3.92 M 106,103 c 3,4 -4,6 -6,5 -8,-2 -8,-12 -4,-18 6,-10 21,-10 29,-3 13,11 12,30 2,42 -14,15 -39,14 -53,0 -19,-17 -17,-47 1,-65 21,-21 56,-18 76,2 24,25 21,66 -3,89 C 120,182 74,178 48,150 18,118 22,67 54,38 89,6 145,11 177,46 c 35,38 30,100 -8,135 -11,9 -25,17 -39,21" />
+      <path id="random" style="fill:none;fill-rule:evenodd;stroke-width:1.00157;stroke:#000000;stroke-opacity:1"
+         d="m 36.3,146 c -7.6,30 4.2,39 27.3,41 23,2 57.4,-5 62.4,-29 6,-25 -16,-67.8 -38.3,-85.8 -22,-18 -43.8,-11 -53,-16.8 -9.2,-5.9 -5.9,-24.6 12.6,-29.5 18.4,-5 51.9,4 73.7,16.9 22,12.8 33,29.9 29,42.7 C 146,98.3 127,108 104,110 81.6,112 55.4,108 64.5,92.6 73.6,77.5 119,51.7 143,55.7 c 25,4.1 30,37.4 12,57.3 -18,21 -60.3,29 -61.4,40 -1,11 38.4,25 61.4,5 C 177,138 182,84 170,54.5 158,25 129,20.3 100,42.9 71.8,65.5 44,116 36.3,146 Z"
+         id="path395" inkscape:path-effect="#path-effect397"
+         inkscape:original-d="m 16.3,166 c 12.2,10 24.4,19 36.6,29 C 86.7,189 121,182 154,176 132,133 110,90.1 87.5,47.1 65.7,54.2 43.9,61.2 22.1,68.3 25.5,49.5 28.8,30.8 32.2,12 65.7,21 99.2,30 133,38.9 143,55.8 154,72.6 164,89.4 146,98.6 127,108 108,117 81.7,112 55.3,108 28.8,103 73.7,77.7 119,52.1 163,26.4 168,59.8 173,93.1 178,126 137,134 94.7,142 52.9,150 92.6,164 132,178 172,192 177,138 182,84 187,29.8 158,25 129,20.2 99.5,15.4 71.8,65.5 44.1,116 16.3,166 Z" />
+      <filter id="light" filterUnits="userSpaceOnUse" width="400" height="400" x="-200" y="-200">
+         <feSpecularLighting in="SourceGraphic" result="specOut" surfaceScale="5" specularConstant="1"
+            specularExponent="75" lighting-color="lightyellow">
+
+            <fePointLight x="0" y="0" z="20">
+
+            </fePointLight>
+         </feSpecularLighting>
+         <feComposite in="SourceGraphic" in2="specOut" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" />
+      </filter>
+   </defs>
+   <g>
+      <g filter="url(#light)"  >
+      <rect x="-200" y="-200" width="600" height="600" />
+      <animateMotion dur="30s" repeatCount="indefinite">
+         <mpath href="#spiral" />
+      </animateMotion>
+   </g>
+   
+   <g filter="url(#light)"  >
+      <rect x="-200" y="-200" width="600" height="600" />
+      <animateMotion dur="50s" repeatCount="indefinite">
+         <mpath href="#random" />
+      </animateMotion>
+   </g>
+   <g filter="url(#light)" >
+      <rect x="-200" y="-200" width="600" height="600" />
+      <animateTransform attributeName="transform" dur="38.49s" calcMode="spline" keySplines="0.4 0.6 0.4 0.6;0.4 0.6 0.4 0.6" repeatCount="indefinite"  values="0;200;0"  additive="sum"></animateTransform>
+      <animateTransform attributeName="transform" dur="12.43s" keySplines="0.4 0.6 0.4 0.6;0.4 0.6 0.4 0.6" calcMode="spline" repeatCount="indefinite" values="0;0 200;0" additive="sum"></animateTransform>
+   </g>
+ <style>
+   g{
+      mix-blend-mode:plus-lighter;
+   }
+ </style>
+ 
+</svg>
+<p>svgの中身</p>
+<pre class="prettyprint linenums">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 200 200&quot;&gt;
+   &lt;defs&gt;
+      &lt;path id=&quot;spiral&quot; fill=&quot;none&quot; stroke=&quot;black&quot; style=&quot;fill-rule:evenodd&quot; transform=&quot;rotate(180,106,103)&quot;
+         d=&quot;m 106,103 c -3,-3.9 4,-6.2 6,-5.2 8,2.2 8,12.2 4,18.2 -6,10 -20.7,10 -29.4,3 C 73.8,108 74.6,88.8 85.1,77.2 99.1,61.6 124,62.9 138,76.9 157,94.5 155,124 137,142 116,163 81.1,160 60.8,140 36.8,115 39.8,74.5 64.2,51.3 92.5,24.5 138,28.1 164,56 194,87.8 190,139 158,168 123,200 66.7,195 34.9,160 -0.336,122 4.87,60.1 43.4,25.5 54.4,15.6 67.6,8.18 81.8,3.92 M 106,103 c 3,4 -4,6 -6,5 -8,-2 -8,-12 -4,-18 6,-10 21,-10 29,-3 13,11 12,30 2,42 -14,15 -39,14 -53,0 -19,-17 -17,-47 1,-65 21,-21 56,-18 76,2 24,25 21,66 -3,89 C 120,182 74,178 48,150 18,118 22,67 54,38 89,6 145,11 177,46 c 35,38 30,100 -8,135 -11,9 -25,17 -39,21&quot; /&gt;
+      &lt;path id=&quot;random&quot; style=&quot;fill:none;fill-rule:evenodd;stroke-width:1.00157;stroke:#000000;stroke-opacity:1&quot;
+         d=&quot;m 36.3,146 c -7.6,30 4.2,39 27.3,41 23,2 57.4,-5 62.4,-29 6,-25 -16,-67.8 -38.3,-85.8 -22,-18 -43.8,-11 -53,-16.8 -9.2,-5.9 -5.9,-24.6 12.6,-29.5 18.4,-5 51.9,4 73.7,16.9 22,12.8 33,29.9 29,42.7 C 146,98.3 127,108 104,110 81.6,112 55.4,108 64.5,92.6 73.6,77.5 119,51.7 143,55.7 c 25,4.1 30,37.4 12,57.3 -18,21 -60.3,29 -61.4,40 -1,11 38.4,25 61.4,5 C 177,138 182,84 170,54.5 158,25 129,20.3 100,42.9 71.8,65.5 44,116 36.3,146 Z&quot;
+         id=&quot;path395&quot; inkscape:path-effect=&quot;#path-effect397&quot;
+         inkscape:original-d=&quot;m 16.3,166 c 12.2,10 24.4,19 36.6,29 C 86.7,189 121,182 154,176 132,133 110,90.1 87.5,47.1 65.7,54.2 43.9,61.2 22.1,68.3 25.5,49.5 28.8,30.8 32.2,12 65.7,21 99.2,30 133,38.9 143,55.8 154,72.6 164,89.4 146,98.6 127,108 108,117 81.7,112 55.3,108 28.8,103 73.7,77.7 119,52.1 163,26.4 168,59.8 173,93.1 178,126 137,134 94.7,142 52.9,150 92.6,164 132,178 172,192 177,138 182,84 187,29.8 158,25 129,20.2 99.5,15.4 71.8,65.5 44.1,116 16.3,166 Z&quot; /&gt;
+      &lt;filter id=&quot;light&quot; filterUnits=&quot;userSpaceOnUse&quot; width=&quot;400&quot; height=&quot;400&quot; x=&quot;-200&quot; y=&quot;-200&quot;&gt;
+         &lt;feSpecularLighting in=&quot;SourceGraphic&quot; result=&quot;specOut&quot; surfaceScale=&quot;5&quot; specularConstant=&quot;1&quot;
+            specularExponent=&quot;75&quot; lighting-color=&quot;lightyellow&quot;&gt;
+
+            &lt;fePointLight x=&quot;0&quot; y=&quot;0&quot; z=&quot;20&quot;&gt;
+
+            &lt;/fePointLight&gt;
+         &lt;/feSpecularLighting&gt;
+         &lt;feComposite in=&quot;SourceGraphic&quot; in2=&quot;specOut&quot; operator=&quot;arithmetic&quot; k1=&quot;0&quot; k2=&quot;1&quot; k3=&quot;1&quot; k4=&quot;0&quot; /&gt;
+      &lt;/filter&gt;
+   &lt;/defs&gt;
+   &lt;g&gt;
+      &lt;g filter=&quot;url(#light)&quot;  &gt;
+      &lt;rect x=&quot;-200&quot; y=&quot;-200&quot; width=&quot;600&quot; height=&quot;600&quot; /&gt;
+      &lt;animateMotion dur=&quot;30s&quot; repeatCount=&quot;indefinite&quot;&gt;
+         &lt;mpath href=&quot;#spiral&quot; /&gt;
+      &lt;/animateMotion&gt;
+   &lt;/g&gt;
+   
+   &lt;g filter=&quot;url(#light)&quot;  &gt;
+      &lt;rect x=&quot;-200&quot; y=&quot;-200&quot; width=&quot;600&quot; height=&quot;600&quot; /&gt;
+      &lt;animateMotion dur=&quot;50s&quot; repeatCount=&quot;indefinite&quot;&gt;
+         &lt;mpath href=&quot;#random&quot; /&gt;
+      &lt;/animateMotion&gt;
+   &lt;/g&gt;
+   &lt;g filter=&quot;url(#light)&quot; &gt;
+      &lt;rect x=&quot;-200&quot; y=&quot;-200&quot; width=&quot;600&quot; height=&quot;600&quot; /&gt;
+      &lt;animateTransform attributeName=&quot;transform&quot; dur=&quot;38.49s&quot; calcMode=&quot;spline&quot; keySplines=&quot;0.4 0.6 0.4 0.6;0.4 0.6 0.4 0.6&quot; repeatCount=&quot;indefinite&quot;  values=&quot;0;200;0&quot;  additive=&quot;sum&quot;&gt;&lt;/animateTransform&gt;
+      &lt;animateTransform attributeName=&quot;transform&quot; dur=&quot;12.43s&quot; keySplines=&quot;0.4 0.6 0.4 0.6;0.4 0.6 0.4 0.6&quot; calcMode=&quot;spline&quot; repeatCount=&quot;indefinite&quot; values=&quot;0;0 200;0&quot; additive=&quot;sum&quot;&gt;&lt;/animateTransform&gt;
+   &lt;/g&gt;
+ &lt;style&gt;
+   g{
+      mix-blend-mode:plus-lighter;
+   }
+ &lt;/style&gt;
+ 
+&lt;/svg&gt;</pre>
