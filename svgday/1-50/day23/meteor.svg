@@ -19,7 +19,6 @@
 
     </g>
     <g id="meteor">
-      </animateTransform>
       <use href="#boom"></use>
       <use href="#point"></use>
     </g>
