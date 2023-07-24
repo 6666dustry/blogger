@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <title>四角形と長方形と正方形</title>
+  <desc>ちなみに、矩形(くけい)という言葉は、長方形という意味ですよ。(謎の雑学)</desc>
+  <!-- rectangleをGoogle翻訳に通すと何故か、長方形より先に矩形が訳として出てくるそうです。不思議ですね。 -->
+  <defs>
+    <!-- 今回は https://lopan.jp/about-svg/filter から借りてきました -->
+    <filter id="filter">
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0" />
+      <feOffset dx="-1" dy="-1" result="g" />
+      <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0" />
+      <feOffset dx="1" dy="0" result="b" />
+      <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0" />
+      <feOffset dx="0" dy="1" />
+      <feComposite in="g" operator="lighter" />
+      <feComposite in="b" operator="lighter" />
+    </filter>
+    <pattern patternUnits="userSpaceOnUse" id="rect" width="5" height="5" >
+      <rect transform="rotate(45 2.5 2.5)" width="5" height="5" />
+    </pattern>
+    <linearGradient spreadMethod="reflect"  id="stroke">
+      <animateTransform attributeName="gradientTransform" type="rotate" repeatCount="indefinite" values="0;360" dur="3s">
+      </animateTransform>
+      <stop offset="0%" stop-color="red" />
+      <stop offset="100%" stop-color="blue" />
+    </linearGradient>
+  </defs>
+  <rect y="5" width="10" height="10" />
+  <rect x="15" y="5" fill="red" width="10" height="10" />
+  <rect x="30" y="5" stroke="blue" fill="none" width="10" height="10" />
+  <rect transform="translate(45)" x="0" y="5" width="10" height="10" />
+  <rect transform="rotate(45 65 10)" x="60" y="5" width="10" height="10" />
+  <rect transform="skewX(20)" x="75" y="5" width="10" height="10" />
+  <rect transform-origin="95 10" transform="skewY(20)" x="90" y="5" width="10" height="10" />
+  <rect x="105" y="5" width="10" height="10">
+    <animate values="105;110;110;105;105" calcMode="spline" keySplines="0 0 0.75 0;0 0 0.75 0;0 0 0.75 0;0 0 0.75 0;"
+      attributeName="x" repeatCount="indefinite" dur="3s"></animate>
+    <animate values="5;5;10;10;5" calcMode="spline" keySplines="0 0 0.75 0;0 0 0.75 0;0 0 0.75 0;0 0 0.75 0;"
+      attributeName="y" repeatCount="indefinite" dur="3s"></animate>
+  </rect>
+  <rect filter="url(#filter)" x="125" y="5" width="10" height="10" fill="white" />
+  <rect rx="2.5" x="140" y="5" width="10" height="10" />
+  <rect rx="5" ry="1" x="155" y="5" width="10" height="10" />
+  <rect x="170" y="5" width="10" height="10" stroke="skyblue" stroke-dasharray="2 1" fill="none" />
+  <rect x="185" y="5" width="10" height="10" stroke-dasharray="2 1" cursor="pointer" >
+    <animate begin="mouseenter" attributeName="opacity" dur="0.5s" fill="freeze" to="0"></animate>
+    <animate begin="mouseout" attributeName="opacity" dur="0.5s" fill="freeze" to="1"></animate>
+  </rect>
+
+  <rect x="12.5" rx="10" y="60" width="175" height="30" fill="silver" />
+  <text x="100" text-anchor="middle" font-size="20" y="80">
+    rectangle
+  </text>
+  <line x1="0" x2="200" y1="150" y2="150" stroke="black"></line>
+  <rect fill="url(#rect)" stroke="url(#stroke)" stroke-opacity="0.5"  y="125" width="25" height="25">
+    <animateTransform attributeName="transform" type="rotate"
+      values="0 25 150;0 25 150;90 25 150;180 50 137.5;270 100 50;270 100 50" dur="5s" repeatCount="indefinite">
+    </animateTransform>
+  </rect>
+</svg>
