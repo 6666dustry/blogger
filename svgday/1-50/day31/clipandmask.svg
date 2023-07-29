@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <title>クリップとマスク</title>
+  <desc>クリップとマスクは理解も簡単で便利な要素です。</desc>
+  <defs>
+    <clipPath id="clip1">
+      <rect x="5" y="5" width="10" height="10" />
+    </clipPath>
+    <clipPath id="clip2" clipPathUnits="objectBoundingBox">
+      <rect x="0.5" width="0.5" height="0.5" />
+      <rect y="0.5" x="0" width="1" height="0.5" />
+    </clipPath>
+    <linearGradient id="grad">
+      <stop offset="0%" stop-color="white" />
+      <stop offset="10%" stop-color="black" />
+      <stop offset="20%" stop-color="white" />
+      <stop offset="30%" stop-color="black" />
+      <stop offset="40%" stop-color="white" />
+      <stop offset="50%" stop-color="black" />
+      <stop offset="60%" stop-color="white" />
+      <stop offset="70%" stop-color="black" />
+      <stop offset="80%" stop-color="white" />
+      <stop offset="90%" stop-color="black" />
+      <stop offset="100%" stop-color="white" />
+    </linearGradient>
+    <mask maskUnits="userSpaceOnUse" maskContentUnits="objectBoundingBox" x="0.5"  id="mask1">
+      <rect width="1" height="200" fill="url(#grad)" />
+    </mask>
+    <mask x="0.5" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" id="mask2">
+      <rect width="100" height="200" fill="url(#grad)" />
+    </mask>
+    <mask x="0.5" maskUnits="objectBoundingBox" maskContentUnits="userSpaceOnUse" id="mask3">
+      <rect width="100" height="200" fill="url(#grad)" />
+    </mask>
+    <mask x="0.5" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox" id="mask4">
+      <rect width="1" height="1" fill="url(#grad)" />
+    </mask>
+    <mask maskContentUnits="objectBoundingBox"   id="mask5" >
+      <g >
+        <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" values="0 0.5 0.5;360 0.5 0.5" dur="3s">
+        </animateTransform>
+        <rect width="0.5" height="1" fill="url(#grad)" />
+        <rect x="0.5" width="0.5" height="1" fill="url(#grad)" />
+      </g>
+    </mask>
+    <clipPath id="clip3" clipPathUnits="userSpaceOnUse">
+      <circle cx="0" cy="150" r="10" fill="black" >
+        <animate attributeName="cx" dur="5s" values="0;200;0" repeatCount="indefinite"></animate>
+        <animate attributeName="cy" dur="1s" repeatCount="indefinite" values="130;170;130"></animate>
+        </circle>
+    </clipPath>
+  </defs>
+  <rect id="backGround" width="200" height="200" fill="black"></rect>
+  <g clip-path="url(#clip1)">
+    <rect fill="white" x="5" y="5" width="10" height="10">
+      <animateTransform attributeName="transform" type="rotate" dur="2s" repeatCount="indefinite"
+        values="0 10 10;360 10 10">
+      </animateTransform>
+    </rect>
+  </g>
+  <circle fill="#ff0" transform="rotate( -45 190 10)" cx="190" cy="10" r="5" clip-path="url(#clip2)" />
+  <g>
+    <rect mask="url(#mask1)" fill="white" x="90" y="25" width="20" height="10">
+      <animate attributeName="x" dur="6s" repeatCount="indefinite" values="0;180;0"></animate>
+    </rect>
+    <rect mask="url(#mask2)" fill="white" x="90" y="45" width="20" height="10">
+      <animate attributeName="x" dur="6s" repeatCount="indefinite" values="0;180;0"></animate>
+    </rect>
+    <rect mask="url(#mask3)" fill="white" x="90" y="65" width="20" height="10">
+      <animate attributeName="x" dur="6s" repeatCount="indefinite" values="0;180;0"></animate>
+    </rect>
+    <rect mask="url(#mask4)" fill="white" x="90" y="85" width="20" height="10" >
+      <animate attributeName="x" dur="6s" repeatCount="indefinite" values="0;180;0"></animate>
+    </rect>
+  </g>
+  <g mask="url(#mask5)" clip-path="url(#clip3)" >
+    <rect fill="white" y="100" width="200" height="100" />
+  </g>
+  <text font-size="20" mask="url(#mask1)" x="100" y="115" text-anchor="middle" stroke="white" fill="white">
+    <![CDATA[
+      CLIP&MASK
+    ]]>
+    </text>
+  <text font-size="20"  x="100" y="115" text-anchor="middle" stroke-opacity="0.35" stroke="white" >
+    <![CDATA[
+      CLIP&MASK
+    ]]>
+    </text>
+</svg>
