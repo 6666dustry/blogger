@@ -118,7 +118,7 @@
       <use href="#star" x="17" y="16" fill="#ffc" fill-opacity="0.75"></use>
       <use href="#star" x="15" y="11" fill="#dde"></use>
       <use href="#star" x="7" y="18" fill="#fdf" fill-opacity="0.35"></use>
-       <use href="#star" x="6" y="7" fill="#dff" fill-opacity="0.65"></use>
+       <use href="#star" x="6" y="7" fill="#dff" fill-opacity="0.5"></use>
     </pattern>
     <filter id="blur">
       <feGaussianBlur in="SourceGraphic" stdDeviation="0.25" result="blur" >
@@ -159,5 +159,4 @@
     }
   /*]]>*/
   </style>
-  <!-- 今回凄く時間がかかりました。 -->
 </svg>
