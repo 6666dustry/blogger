@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <title>パターン</title>
+  <desc>パターンは幾何学的な模様を作るときによく使われます。</desc>
+  <!-- 情報ソース？何それ？？ -->
+  <rect id="backGround" width="200" height="200" fill="white" ></rect>
+  <defs>
+    <pattern width="20%" height="20%" id="pattern1">
+      <rect width="10" height="10" fill="black" />
+      <rect fill="blanchedalmond" x="1" y="1" width="8" height="8" />
+    </pattern>
+    <pattern width="20%" height="20%" id="pattern2" viewBox="0 0 10 10" patternContentUnits="objectBoundingBox"  >
+      <rect width="10" height="10" fill="black" />
+      <rect fill="blanchedalmond" x="1" y="1" width="8" height="8" />
+    </pattern>
+    <pattern width="10" height="10" id="pattern3" patternUnits="userSpaceOnUse" >
+      <rect width="10" height="10" fill="black" />
+      <rect fill="blanchedalmond" x="1" y="1" width="8" height="8" />
+    </pattern>
+    <pattern width="100%" height="100%" id="pattern4" patternUnits="userSpaceOnUse" patternContentUnits="objectBoundingBox">
+      <rect width="10" height="10" fill="black" />
+      <rect fill="blanchedalmond" x="1" y="1" width="8" height="8" />
+    </pattern>
+    <pattern width="20%" height="20%" id="pattern5" patternContentUnits="objectBoundingBox" viewBox="0 0 2 10" >
+      <rect width="4" height="10" fill="aqua" />
+      <rect fill="red" x="1" y="1" width="2" height="8" />
+    </pattern>
+    <pattern width="20%" height="20%" id="pattern6" viewBox="0 0 4 10" preserveAspectRatio="xMaxYMin slice" >
+      <rect width="4" height="10" fill="aqua" />
+      <rect fill="red" x="1" y="1" width="2" height="8" />
+    </pattern>
+    <pattern viewBox="0 0 1 1" width="0.2" height="20%" id="pattern7">
+      <circle  fill="black" cx=".5" cy=".5" r=".25" />
+    </pattern>
+    <pattern href="#pattern7" id="pattern8" patternTransform="rotate(45) scale(1.5)" >
+    </pattern>
+    <pattern viewBox="0 0 1 1" width="50%" height="50%" id="pattern9">
+      <rect fill="pink" width="1" height="1" />
+      <rect fill="url(#pattern2)" width="0.6" height="0.6" />
+      <rect x="0.4" y=".4" fill="url(#pattern8)" width="0.6" height="0.6" />
+    </pattern>
+    <filter x="0" y="0" width="10%" height="10%" id="filter">
+      <feTile width="10%" height="10%" in="SourceGraphic"  >
+        
+      </feTile>
+    </filter>
+    <pattern viewBox="0 0 1 1" width="20%" height="20%" id="pattern10">
+      <g stroke="blue" stroke-width="0.2" fill="aqua">
+        <line  x1="0" x2="1" y1="0.5" y2="0.5" />
+        <line x1="0.5" x2="0.5" y1="0" y2="1" />
+        <circle cx="0.5" cy="0.5" r=".25" />
+      </g>
+    </pattern>
+    <pattern id="pattern11" viewBox="0 0 1 1" width="20%" height="20%" >
+      <rect x=".2" y=".2" clip-path="url(#clip1)" stroke-width="0.25" fill="none" width="0.6" height="0.6" >
+        <animate attributeName="stroke" dur="10s"  repeatCount="indefinite" values="violet;indigo;blue;green;yellow;orange;red;violet"></animate></rect>
+    </pattern>
+    <radialGradient id="grad">
+      <stop offset="0%" stop-color="white" />
+      <stop offset="100%" stop-color="black" />
+    </radialGradient>
+    <pattern  id="pattern12" viewBox="0 0 1 1" width="20%" height="20%" >
+      <circle cx=".5" cy=".5" r="0.75" fill="url(#grad)" />
+    </pattern>
+    <pattern id="pattern13" viewBox="0 0 1 1" href="#pattern12" width="20%" height="20%" patternTransform="rotate(45)" >
+    </pattern>
+    <pattern id="pattern14" viewBox="0 0 1 1" width="20%" height="20%" >
+      <rect width="1" height="1" fill="green" />
+      <polyline points="0.5, 0 0.33 ,0.42 0.66 ,0.7 0.5,1" stroke="black" fill="none" stroke-width="0.2" stroke-linecap="square" />
+    </pattern>
+    <filter id="shadow">
+      <feDropShadow stdDeviation="0.1" dx="0.05" dy="0.05">
+        
+      </feDropShadow>
+    </filter>
+    <pattern id="pattern15" viewBox="0 0 1 1" width="50%" height="50%" >
+      <rect x="0.1" y="0.1" width="0.8" height="0.8" fill="#c2ffff" />
+      <rect width="1" height="1"  stroke-width="0.2" stroke="#835353" fill="none" filter="url(#shadow)" />
+    </pattern>
+    <linearGradient id="tower">
+      <stop offset="0%" stop-color="white" />
+      <stop offset="100%" stop-color="black" />
+    </linearGradient>
+    <pattern  id="pattern16" viewBox="0 0 1 1" width="25%" height="25%" >
+      <rect id="side" width="0.5" height="1" fill="url(#tower)" />
+      <use href="#side" transform="rotate(90 0.5 0.5)" ></use>
+      <use href="#side" transform="rotate(180 0.5 0.5)" ></use>
+      <use href="#side" transform="rotate(270 0.5 0.5)" ></use>
+    </pattern>
+    <pattern id="pattern17" viewBox="0 0 1 1" width="20%" height="20%" >
+      <rect width="1" height="1" fill="pink" />
+      <rect x="0.5" width="0.5" height="0.5" fill="white" />
+      <rect y="0.5" width="0.5" height="0.5" fill="white" />
+    </pattern>
+    <pattern id="pattern18" viewBox="0 0 1 1" width="20%" height="20%" >
+      <circle cx=".5" cy=".5" r=".55" fill="limegreen" />
+    </pattern>
+    <linearGradient id="wave">
+      <stop offset="0%" stop-color="cyan" stop-opacity="0.5" />
+      <stop offset="50%" stop-color="cyan" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="cyan" stop-opacity="0.5" />
+    </linearGradient>
+    <pattern id="pattern19" viewBox="0 0 1 1" width="20%" height="20%" >
+      <rect width="1" height="1" fill="url(#wave)" />
+    </pattern>
+    <pattern patternUnits="userSpaceOnUse" id="patterntext" width="5" height="5" >
+      <rect width="2.5" height="2.5" />
+      <rect x="2.5" y="2.5" width="2.5" height="2.5" />
+    </pattern>
+    <circle id="star"  r="1" />
+    <pattern patternUnits="userSpaceOnUse" id="night" width="20" height="20" >
+      <animateTransform attributeName="patternTransform" type="rotate" values="0 100 0;360 100 0" repeatCount="indefinite"  dur="100s">
+      </animateTransform>
+      <rect width="20" height="20" fill="#112" />
+      <use href="#star" x="1" y="3" fill="#ffd"></use>
+      <use href="#star" x="6" y="11" fill="#fff"  fill-opacity="0.85"></use>
+      <use href="#star" x="15" y="4" fill="#ffe"></use>
+      <use href="#star" x="17" y="16" fill="#ffc" fill-opacity="0.75"></use>
+      <use href="#star" x="15" y="11" fill="#dde"></use>
+      <use href="#star" x="7" y="18" fill="#fdf" fill-opacity="0.35"></use>
+       <use href="#star" x="6" y="7" fill="#dff" fill-opacity="0.65"></use>
+    </pattern>
+    <filter id="blur">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="0.25" result="blur" >
+        
+      </feGaussianBlur>
+    </filter>
+  </defs>
+  <g stroke="gray" stroke-width="0.25">
+    <rect  fill="url(#pattern1)" width="20" height="20" />
+    <rect x="20" fill="url(#pattern2)" width="20" height="20" />
+    <rect x="40" fill="url(#pattern3)" width="20" height="20" />
+    <rect x="60" fill="url(#pattern4)" width="20" height="20" />
+    <rect fill="url(#pattern5)" x="80" width="20" height="20" />
+    <rect fill="url(#pattern6)" x="100" width="20" height="20" />
+    <rect fill="url(#pattern7)" x="120" width="20" height="20" />
+    <rect fill="url(#pattern8)" x="140" width="20" height="20" />
+    <rect fill="url(#pattern9)" x="160" width="20" height="20" />
+    <rect fill="orange" filter="url(#filter)" x="180" width="20" height="20" stroke-width="1" />
+  </g>
+  <rect x="2.5" y="22.5" width="15" height="15" stroke="url(#pattern10)" stroke-width="5" fill="none" />
+  <rect x="20" y="20" width="20" height="20" fill="url(#pattern11)" />
+  <rect x="40" y="20" width="20" height="20" fill="url(#pattern12)" />
+  <rect x="60" y="20" width="20" height="20" fill="url(#pattern13)" />
+  <rect  x="80" y="20" width="20" height="20" fill="url(#pattern14)" rx="10" />
+  <rect  x="100" y="20" width="20" height="20" fill="url(#pattern15)" />
+  <rect  x="120" y="20" width="20" height="20" fill="url(#pattern16)" />
+  <rect  x="140" y="20" width="20" height="20" fill="url(#pattern17)" />
+  <rect  x="160" y="20" width="20" height="20" fill="url(#pattern18)" />
+  <rect  x="180" y="20" width="20" height="20" fill="url(#pattern19)" />
+  <text x="100" y="75" text-anchor="middle" fill="url(#patterntext)" font-weight="900" stroke="gray" stroke-opacity="0.5" stroke-linecap="round" stroke-dasharray="1 2" font-size="25">
+    pattern
+  </text>
+  <rect y="90" width="200" height="110" fill="url(#night)" filter="url(#blur)" />
+  <style>
+  /*<![CDATA[*/
+    #pattern16 *{
+      mix-blend-mode:lighten;
+    }
+  /*]]>*/
+  </style>
+  <!-- 今回凄く時間がかかりました。 -->
+</svg>
