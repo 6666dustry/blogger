@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <title>フィルター</title>
+  <desc>フィルターを扱えるようになることで、今までにない表現が出来るようになります。</desc>
+  <defs>
+    <filter id="feBlend">
+      <!--していることはcssのmix-blend-mode同じです。-->
+      <feFlood result="floodFill1" x="0" y="0" width="10" height="10" flood-color="limegreen" flood-opacity="1" />
+      <feComposite in2="floodFill1" in="SourceGraphic" result="floodArea1" operator="in">
+
+      </feComposite>
+      <feBlend in="floodArea1" in2="floodFill1" mode="normal" result="blended1" />
+      <feFlood result="floodFill2" x="10" y="0" width="10" height="10" flood-color="limegreen" flood-opacity="1" />
+      <feComposite in2="floodFill2" in="SourceGraphic" result="floodArea2" operator="in">
+
+      </feComposite>
+      <feBlend in="floodArea2" in2="floodFill2" mode="multiply" result="blended2" />
+      <feFlood result="floodFill3" x="0" y="10" width="10" height="10" flood-color="limegreen" flood-opacity="1" />
+      <feComposite in2="floodFill3" in="SourceGraphic" result="floodArea3" operator="in">
+
+      </feComposite>
+      <feBlend in="floodArea3" in2="floodFill3" mode="screen" result="blended3" />
+      <feFlood result="floodFill4" x="10" y="10" width="10" height="10" flood-color="limegreen" flood-opacity="1" />
+      <feComposite in2="floodFill4" in="SourceGraphic" result="floodArea4" operator="in">
+
+      </feComposite>
+      <feBlend in="floodArea4" in2="floodFill4" mode="lighten" result="blended4" />
+      <feFlood x="5" y="5" width="10" height="10" flood-color="limegreen" result="def">
+
+      </feFlood>
+      <feMerge>
+        <feMergeNode in="blended1">
+
+        </feMergeNode>
+        <feMergeNode in="blended2">
+
+        </feMergeNode>
+        <feMergeNode in="blended3">
+
+        </feMergeNode>
+        <feMergeNode in="blended4">
+
+        </feMergeNode>
+        <feMergeNode in="def">
+
+        </feMergeNode>
+      </feMerge>
+    </filter>
+    <linearGradient id="rainbowGradient">
+      <stop offset="0%" stop-color="red" />
+      <stop offset="16.6%" stop-color="orange" />
+      <stop offset="33.3%" stop-color="yellow" />
+      <stop offset="50%" stop-color="green" />
+      <stop offset="66.6%" stop-color="blue" />
+      <stop offset="83.3%" stop-color="indigo" />
+      <stop offset="100%" stop-color="violet" />
+    </linearGradient>
+    <filter id="feColorMatrix1">
+      <feColorMatrix type="saturate">
+        <animate attributeName="values" dur="3s" repeatCount="indefinite" values="0;1;0"></animate>
+
+      </feColorMatrix>
+    </filter>
+    <filter id="feColorMatrix2">
+      <feColorMatrix type="hueRotate">
+        <animate attributeName="values" dur="10s" repeatCount="indefinite" values="0;360;0"></animate>
+
+      </feColorMatrix>
+    </filter>
+    <filter id="feColorMatrix3">
+      <feColorMatrix type="luminanceToAlpha">
+
+      </feColorMatrix>
+    </filter>
+    <!-- 赤色が消える -->
+    <filter id="feColorMatrix4">
+      <feColorMatrix type="matrix" values="1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0 , 0 0 0 1 0">
+        <animate attributeName="values" dur="3s" values="0 0 0 0 0;-1 0 0 0 0;0 0 0 0 0" repeatCount="indefinite"
+          additive="sum"></animate>
+      </feColorMatrix>
+    </filter>
+    <radialGradient id="rainbowRad"  >
+      <stop offset="0%" stop-color="red" />
+      <stop offset="16.6%" stop-color="orange" />
+      <stop offset="33.3%" stop-color="yellow" />
+      <stop offset="50%" stop-color="green" />
+      <stop offset="66.6%" stop-color="blue" />
+      <stop offset="83.3%" stop-color="indigo" />
+      <stop offset="100%" stop-color="violet" />
+    </radialGradient>
+  </defs>
+  <rect id="backGround" width="200" height="200" fill="white"></rect>
+  <rect filter="url(#feBlend)" fill="gray" width="20" height="20" />
+  <rect x="35" fill="url(#rainbowGradient)" width="20" height="20" />
+  <rect x="70" fill="url(#rainbowGradient)" filter="url(#feColorMatrix1)" width="20" height="20" />
+  <rect x="105" fill="url(#rainbowGradient)" filter="url(#feColorMatrix2)" width="20" height="20" />
+  <rect x="140" fill="url(#rainbowGradient)" filter="url(#feColorMatrix3)" width="20" height="20" />
+  <rect x="175" fill="url(#rainbowGradient)" filter="url(#feColorMatrix4)" width="20" height="20" />
+  <text x="100" y="50" text-anchor="middle" fill="url(#rainbowGradient)" filter="url(#feColorMatrix2)">
+    <![CDATA[
+    feBlend & feColorMatrix
+    ]]>
+  </text>
+  <circle cx="100" cy="125" r="60" fill="url(#rainbowRad)" filter="url(#feColorMatrix2)" />
+</svg>
