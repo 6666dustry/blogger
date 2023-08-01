@@ -1,0 +1,184 @@
+<p>千里の道も一歩から。</p>
+<p>このシリーズは一日一枚svgのデザインをつくるというシンプルな企画です。</p>
+<p>コメントでのリクエストも受け付けています。</p>
+<p>今日は31日目。</p>
+<p>今日のSVGはクリップとマスク!</p>
+<p>クリップとマスクは理解も簡単で便利な要素です。</p>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <title>クリップとマスク</title>
+  <desc>クリップとマスクは理解も簡単で便利な要素です。</desc>
+  <defs>
+    <clipPath id="clip1">
+      <rect x="5" y="5" width="10" height="10" />
+    </clipPath>
+    <clipPath id="clip2" clipPathUnits="objectBoundingBox">
+      <rect x="0.5" width="0.5" height="0.5" />
+      <rect y="0.5" x="0" width="1" height="0.5" />
+    </clipPath>
+    <linearGradient id="grad">
+      <stop offset="0%" stop-color="white" />
+      <stop offset="10%" stop-color="black" />
+      <stop offset="20%" stop-color="white" />
+      <stop offset="30%" stop-color="black" />
+      <stop offset="40%" stop-color="white" />
+      <stop offset="50%" stop-color="black" />
+      <stop offset="60%" stop-color="white" />
+      <stop offset="70%" stop-color="black" />
+      <stop offset="80%" stop-color="white" />
+      <stop offset="90%" stop-color="black" />
+      <stop offset="100%" stop-color="white" />
+    </linearGradient>
+    <mask maskUnits="userSpaceOnUse" maskContentUnits="objectBoundingBox" x="0.5"  id="mask1">
+      <rect width="1" height="200" fill="url(#grad)" />
+    </mask>
+    <mask x="0.5" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" id="mask2">
+      <rect width="100" height="200" fill="url(#grad)" />
+    </mask>
+    <mask x="0.5" maskUnits="objectBoundingBox" maskContentUnits="userSpaceOnUse" id="mask3">
+      <rect width="100" height="200" fill="url(#grad)" />
+    </mask>
+    <mask x="0.5" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox" id="mask4">
+      <rect width="1" height="1" fill="url(#grad)" />
+    </mask>
+    <mask maskContentUnits="objectBoundingBox"   id="mask5" >
+      <g >
+        <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" values="0 0.5 0.5;360 0.5 0.5" dur="3s">
+        </animateTransform>
+        <rect width="0.5" height="1" fill="url(#grad)" />
+        <rect x="0.5" width="0.5" height="1" fill="url(#grad)" />
+      </g>
+    </mask>
+    <clipPath id="clip3" clipPathUnits="userSpaceOnUse">
+      <circle cx="0" cy="150" r="10" fill="black" >
+        <animate attributeName="cx" dur="5s" values="0;200;0" repeatCount="indefinite"></animate>
+        <animate attributeName="cy" dur="1s" repeatCount="indefinite" values="130;170;130"></animate>
+        </circle>
+    </clipPath>
+  </defs>
+  <rect id="backGround" width="200" height="200" fill="black"></rect>
+  <g clip-path="url(#clip1)">
+    <rect fill="white" x="5" y="5" width="10" height="10">
+      <animateTransform attributeName="transform" type="rotate" dur="2s" repeatCount="indefinite"
+        values="0 10 10;360 10 10">
+      </animateTransform>
+    </rect>
+  </g>
+  <circle fill="#ff0" transform="rotate( -45 190 10)" cx="190" cy="10" r="5" clip-path="url(#clip2)" />
+  <g>
+    <rect mask="url(#mask1)" fill="white" x="90" y="25" width="20" height="10">
+      <animate attributeName="x" dur="6s" repeatCount="indefinite" values="0;180;0"></animate>
+    </rect>
+    <rect mask="url(#mask2)" fill="white" x="90" y="45" width="20" height="10">
+      <animate attributeName="x" dur="6s" repeatCount="indefinite" values="0;180;0"></animate>
+    </rect>
+    <rect mask="url(#mask3)" fill="white" x="90" y="65" width="20" height="10">
+      <animate attributeName="x" dur="6s" repeatCount="indefinite" values="0;180;0"></animate>
+    </rect>
+    <rect mask="url(#mask4)" fill="white" x="90" y="85" width="20" height="10" >
+      <animate attributeName="x" dur="6s" repeatCount="indefinite" values="0;180;0"></animate>
+    </rect>
+  </g>
+  <g mask="url(#mask5)" clip-path="url(#clip3)" >
+    <rect fill="white" y="100" width="200" height="100" />
+  </g>
+  <text font-size="20" mask="url(#mask1)" x="100" y="115" text-anchor="middle" stroke="white" fill="white">
+    <![CDATA[
+      CLIP&MASK
+    ]]>
+    </text>
+  <text font-size="20"  x="100" y="115" text-anchor="middle" stroke-opacity="0.35" stroke="white" >
+    <![CDATA[
+      CLIP&MASK
+    ]]>
+    </text>
+</svg>
+<p>svgの中身</p>
+<pre class="prettyprint linenums">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 200 200&quot;&gt;
+  &lt;title&gt;クリップとマスク&lt;/title&gt;
+  &lt;desc&gt;クリップとマスクは理解も簡単で便利な要素です。&lt;/desc&gt;
+  &lt;defs&gt;
+    &lt;clipPath id=&quot;clip1&quot;&gt;
+      &lt;rect x=&quot;5&quot; y=&quot;5&quot; width=&quot;10&quot; height=&quot;10&quot; /&gt;
+    &lt;/clipPath&gt;
+    &lt;clipPath id=&quot;clip2&quot; clipPathUnits=&quot;objectBoundingBox&quot;&gt;
+      &lt;rect x=&quot;0.5&quot; width=&quot;0.5&quot; height=&quot;0.5&quot; /&gt;
+      &lt;rect y=&quot;0.5&quot; x=&quot;0&quot; width=&quot;1&quot; height=&quot;0.5&quot; /&gt;
+    &lt;/clipPath&gt;
+    &lt;linearGradient id=&quot;grad&quot;&gt;
+      &lt;stop offset=&quot;0%&quot; stop-color=&quot;white&quot; /&gt;
+      &lt;stop offset=&quot;10%&quot; stop-color=&quot;black&quot; /&gt;
+      &lt;stop offset=&quot;20%&quot; stop-color=&quot;white&quot; /&gt;
+      &lt;stop offset=&quot;30%&quot; stop-color=&quot;black&quot; /&gt;
+      &lt;stop offset=&quot;40%&quot; stop-color=&quot;white&quot; /&gt;
+      &lt;stop offset=&quot;50%&quot; stop-color=&quot;black&quot; /&gt;
+      &lt;stop offset=&quot;60%&quot; stop-color=&quot;white&quot; /&gt;
+      &lt;stop offset=&quot;70%&quot; stop-color=&quot;black&quot; /&gt;
+      &lt;stop offset=&quot;80%&quot; stop-color=&quot;white&quot; /&gt;
+      &lt;stop offset=&quot;90%&quot; stop-color=&quot;black&quot; /&gt;
+      &lt;stop offset=&quot;100%&quot; stop-color=&quot;white&quot; /&gt;
+    &lt;/linearGradient&gt;
+    &lt;mask maskUnits=&quot;userSpaceOnUse&quot; maskContentUnits=&quot;objectBoundingBox&quot; x=&quot;0.5&quot;  id=&quot;mask1&quot;&gt;
+      &lt;rect width=&quot;1&quot; height=&quot;200&quot; fill=&quot;url(#grad)&quot; /&gt;
+    &lt;/mask&gt;
+    &lt;mask x=&quot;0.5&quot; maskUnits=&quot;userSpaceOnUse&quot; maskContentUnits=&quot;userSpaceOnUse&quot; id=&quot;mask2&quot;&gt;
+      &lt;rect width=&quot;100&quot; height=&quot;200&quot; fill=&quot;url(#grad)&quot; /&gt;
+    &lt;/mask&gt;
+    &lt;mask x=&quot;0.5&quot; maskUnits=&quot;objectBoundingBox&quot; maskContentUnits=&quot;userSpaceOnUse&quot; id=&quot;mask3&quot;&gt;
+      &lt;rect width=&quot;100&quot; height=&quot;200&quot; fill=&quot;url(#grad)&quot; /&gt;
+    &lt;/mask&gt;
+    &lt;mask x=&quot;0.5&quot; maskUnits=&quot;objectBoundingBox&quot; maskContentUnits=&quot;objectBoundingBox&quot; id=&quot;mask4&quot;&gt;
+      &lt;rect width=&quot;1&quot; height=&quot;1&quot; fill=&quot;url(#grad)&quot; /&gt;
+    &lt;/mask&gt;
+    &lt;mask maskContentUnits=&quot;objectBoundingBox&quot;   id=&quot;mask5&quot; &gt;
+      &lt;g &gt;
+        &lt;animateTransform attributeName=&quot;transform&quot; type=&quot;rotate&quot; repeatCount=&quot;indefinite&quot; values=&quot;0 0.5 0.5;360 0.5 0.5&quot; dur=&quot;3s&quot;&gt;
+        &lt;/animateTransform&gt;
+        &lt;rect width=&quot;0.5&quot; height=&quot;1&quot; fill=&quot;url(#grad)&quot; /&gt;
+        &lt;rect x=&quot;0.5&quot; width=&quot;0.5&quot; height=&quot;1&quot; fill=&quot;url(#grad)&quot; /&gt;
+      &lt;/g&gt;
+    &lt;/mask&gt;
+    &lt;clipPath id=&quot;clip3&quot; clipPathUnits=&quot;userSpaceOnUse&quot;&gt;
+      &lt;circle cx=&quot;0&quot; cy=&quot;150&quot; r=&quot;10&quot; fill=&quot;black&quot; &gt;
+        &lt;animate attributeName=&quot;cx&quot; dur=&quot;5s&quot; values=&quot;0;200;0&quot; repeatCount=&quot;indefinite&quot;&gt;&lt;/animate&gt;
+        &lt;animate attributeName=&quot;cy&quot; dur=&quot;1s&quot; repeatCount=&quot;indefinite&quot; values=&quot;130;170;130&quot;&gt;&lt;/animate&gt;
+        &lt;/circle&gt;
+    &lt;/clipPath&gt;
+  &lt;/defs&gt;
+  &lt;rect id=&quot;backGround&quot; width=&quot;200&quot; height=&quot;200&quot; fill=&quot;black&quot;&gt;&lt;/rect&gt;
+  &lt;g clip-path=&quot;url(#clip1)&quot;&gt;
+    &lt;rect fill=&quot;white&quot; x=&quot;5&quot; y=&quot;5&quot; width=&quot;10&quot; height=&quot;10&quot;&gt;
+      &lt;animateTransform attributeName=&quot;transform&quot; type=&quot;rotate&quot; dur=&quot;2s&quot; repeatCount=&quot;indefinite&quot;
+        values=&quot;0 10 10;360 10 10&quot;&gt;
+      &lt;/animateTransform&gt;
+    &lt;/rect&gt;
+  &lt;/g&gt;
+  &lt;circle fill=&quot;#ff0&quot; transform=&quot;rotate( -45 190 10)&quot; cx=&quot;190&quot; cy=&quot;10&quot; r=&quot;5&quot; clip-path=&quot;url(#clip2)&quot; /&gt;
+  &lt;g&gt;
+    &lt;rect mask=&quot;url(#mask1)&quot; fill=&quot;white&quot; x=&quot;90&quot; y=&quot;25&quot; width=&quot;20&quot; height=&quot;10&quot;&gt;
+      &lt;animate attributeName=&quot;x&quot; dur=&quot;6s&quot; repeatCount=&quot;indefinite&quot; values=&quot;0;180;0&quot;&gt;&lt;/animate&gt;
+    &lt;/rect&gt;
+    &lt;rect mask=&quot;url(#mask2)&quot; fill=&quot;white&quot; x=&quot;90&quot; y=&quot;45&quot; width=&quot;20&quot; height=&quot;10&quot;&gt;
+      &lt;animate attributeName=&quot;x&quot; dur=&quot;6s&quot; repeatCount=&quot;indefinite&quot; values=&quot;0;180;0&quot;&gt;&lt;/animate&gt;
+    &lt;/rect&gt;
+    &lt;rect mask=&quot;url(#mask3)&quot; fill=&quot;white&quot; x=&quot;90&quot; y=&quot;65&quot; width=&quot;20&quot; height=&quot;10&quot;&gt;
+      &lt;animate attributeName=&quot;x&quot; dur=&quot;6s&quot; repeatCount=&quot;indefinite&quot; values=&quot;0;180;0&quot;&gt;&lt;/animate&gt;
+    &lt;/rect&gt;
+    &lt;rect mask=&quot;url(#mask4)&quot; fill=&quot;white&quot; x=&quot;90&quot; y=&quot;85&quot; width=&quot;20&quot; height=&quot;10&quot; &gt;
+      &lt;animate attributeName=&quot;x&quot; dur=&quot;6s&quot; repeatCount=&quot;indefinite&quot; values=&quot;0;180;0&quot;&gt;&lt;/animate&gt;
+    &lt;/rect&gt;
+  &lt;/g&gt;
+  &lt;g mask=&quot;url(#mask5)&quot; clip-path=&quot;url(#clip3)&quot; &gt;
+    &lt;rect fill=&quot;white&quot; y=&quot;100&quot; width=&quot;200&quot; height=&quot;100&quot; /&gt;
+  &lt;/g&gt;
+  &lt;text font-size=&quot;20&quot; mask=&quot;url(#mask1)&quot; x=&quot;100&quot; y=&quot;115&quot; text-anchor=&quot;middle&quot; stroke=&quot;white&quot; fill=&quot;white&quot;&gt;
+    &lt;![CDATA[
+      CLIP&amp;MASK
+    ]]&gt;
+    &lt;/text&gt;
+  &lt;text font-size=&quot;20&quot;  x=&quot;100&quot; y=&quot;115&quot; text-anchor=&quot;middle&quot; stroke-opacity=&quot;0.35&quot; stroke=&quot;white&quot; &gt;
+    &lt;![CDATA[
+      CLIP&amp;MASK
+    ]]&gt;
+    &lt;/text&gt;
+&lt;/svg&gt;</pre>

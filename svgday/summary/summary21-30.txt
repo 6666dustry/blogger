@@ -1,0 +1,30 @@
+<h2>10日間のまとめ</h2>
+<ul>
+  <li>
+    <a href="https://kindnessforme.blogspot.com/2023/07/1day1svg-day21.html">21日目</a>
+  </li>
+  <li>
+    <a href="https://kindnessforme.blogspot.com/2023/07/1day1svg-day22.html">22日目</a>
+  </li>
+  <li>
+    <a href="https://kindnessforme.blogspot.com/2023/07/1day1svg-day23.html">23日目</a>
+  </li>
+  <li>
+    <a href="https://kindnessforme.blogspot.com/2023/07/1day1svg-day24.html">24日目</a>
+  </li>
+  <li>
+    <a href="https://kindnessforme.blogspot.com/2023/07/1day1svg-day25.html">25日目</a>
+  </li>
+  <li>
+    <a href="https://kindnessforme.blogspot.com/2023/07/1day1svg-day26.html">26日目</a>
+  </li>
+  <li>
+    <a href="https://kindnessforme.blogspot.com/2023/07/1day1svg-day27.html">27日目</a>
+  </li>
+  <li>
+    <a href="https://kindnessforme.blogspot.com/2023/07/1day1svg-day28.html">28日目</a>
+  </li>
+  <li>
+    <a href="https://kindnessforme.blogspot.com/2023/07/1day1svg-day29.html">29日目</a>
+  </li>
+</ul>

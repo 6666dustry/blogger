@@ -1,0 +1,123 @@
+<p>千里の道も一歩から。</p>
+<p>このシリーズは一日一枚svgのデザインをつくるというシンプルな企画です。</p>
+<p>コメントでのリクエストも受け付けています。</p>
+<p>今日は22日目。</p>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <title>紙吹雪2</title>
+  <desc>紙吹雪のリメイクです。結構進化しました</desc>
+  <defs>
+    <rect y="210" id="confetti" fill="pink" width="5" height="5">
+      <animate attributeName="x" keySplines="0 0 0.75 1;0.5 0.5 0.5 0.5" keyTimes="0;0.2;1" calcMode="spline" dur="15s" repeatCount="indefinite" ></animate>
+      <animate attributeName="y"  values="200;10;200" keyTimes="0;0.15;1" keySplines="0 0 0.5 1;0.5 0 1 1" calcMode="spline" dur="15s" repeatCount="indefinite" ></animate>
+    </rect>
+  </defs>
+  <rect width="200" height="200" fill="lightgray" />
+  <g id="confetties">
+  </g>
+  <style>
+
+    /*<![CDATA[*/
+    @keyframes wave {
+      0% {
+        translate: -10px;
+      }
+
+      50% {
+        translate: 10px;
+      }
+
+      100% {
+        translate: -10px;
+      }
+    }
+
+    #confetties * {
+      --cycle-time:5s;
+      --cycle-begin:0s;
+      animation: wave var(--cycle-time,5s) ease-in-out var(--cycle-begin,0s) infinite;
+    }
+
+    /*]]>*/
+  </style>
+  <script>
+  //<![CDATA[
+  const container=document.getElementById("confetties")
+  const confetti=document.getElementById("confetti")
+  for(let i=0; i<200;i++){
+    const clone=confetti.cloneNode(true)
+    clone.setAttributeNS(null,"x",String(Math.random()*200))
+    clone.setAttributeNS(null,"fill",["pink","lightgreen","skyblue","orange","yellow"][Math.floor(Math.random()*5)])
+    const beginValue=String(Math.random()*15)
+    const xAnim= clone.querySelector("animate[attributeName=\"x\"]");
+    xAnim.setAttributeNS(null,"begin",beginValue)
+    const xPos=Math.random()*200
+    xAnim.setAttributeNS(null,"values",`${Math.random()>0.5?0:200};${xPos};${xPos}`)
+    const yAnim= clone.querySelector("animate[attributeName=\"y\"]");
+    yAnim.setAttributeNS(null,"begin",beginValue)
+    clone.style.setProperty("--cycle-time",String(Math.random()*2+4)+"s")
+    clone.style.setProperty("--cycle-begin",String(String(Math.random()*3)+"s"))
+    container.appendChild(clone)
+  }
+  //]]>
+  </script>
+</svg>
+<p>svgの中身</p>
+<pre class="prettyprint linenums">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 200 200&quot;&gt;
+  &lt;title&gt;紙吹雪2&lt;/title&gt;
+  &lt;desc&gt;紙吹雪のリメイクです。結構進化しました&lt;/desc&gt;
+  &lt;defs&gt;
+    &lt;rect y=&quot;210&quot; id=&quot;confetti&quot; fill=&quot;pink&quot; width=&quot;5&quot; height=&quot;5&quot;&gt;
+      &lt;animate attributeName=&quot;x&quot; keySplines=&quot;0 0 0.75 1;0.5 0.5 0.5 0.5&quot; keyTimes=&quot;0;0.2;1&quot; calcMode=&quot;spline&quot; dur=&quot;15s&quot; repeatCount=&quot;indefinite&quot; &gt;&lt;/animate&gt;
+      &lt;animate attributeName=&quot;y&quot;  values=&quot;200;10;200&quot; keyTimes=&quot;0;0.15;1&quot; keySplines=&quot;0 0 0.5 1;0.5 0 1 1&quot; calcMode=&quot;spline&quot; dur=&quot;15s&quot; repeatCount=&quot;indefinite&quot; &gt;&lt;/animate&gt;
+    &lt;/rect&gt;
+  &lt;/defs&gt;
+  &lt;rect width=&quot;200&quot; height=&quot;200&quot; fill=&quot;lightgray&quot; /&gt;
+  &lt;g id=&quot;confetties&quot;&gt;
+  &lt;/g&gt;
+  &lt;style&gt;
+
+    /*&lt;![CDATA[*/
+    @keyframes wave {
+      0% {
+        translate: -10px;
+      }
+
+      50% {
+        translate: 10px;
+      }
+
+      100% {
+        translate: -10px;
+      }
+    }
+
+    #confetties * {
+      --cycle-time:5s;
+      --cycle-begin:0s;
+      animation: wave var(--cycle-time,5s) ease-in-out var(--cycle-begin,0s) infinite;
+    }
+
+    /*]]&gt;*/
+  &lt;/style&gt;
+  &lt;script&gt;
+  //&lt;![CDATA[
+  const container=document.getElementById(&quot;confetties&quot;)
+  const confetti=document.getElementById(&quot;confetti&quot;)
+  for(let i=0; i&lt;200;i++){
+    const clone=confetti.cloneNode(true)
+    clone.setAttributeNS(null,&quot;x&quot;,String(Math.random()*200))
+    clone.setAttributeNS(null,&quot;fill&quot;,[&quot;pink&quot;,&quot;lightgreen&quot;,&quot;skyblue&quot;,&quot;orange&quot;,&quot;yellow&quot;][Math.floor(Math.random()*5)])
+    const beginValue=String(Math.random()*15)
+    const xAnim= clone.querySelector(&quot;animate[attributeName=\&quot;x\&quot;]&quot;);
+    xAnim.setAttributeNS(null,&quot;begin&quot;,beginValue)
+    const xPos=Math.random()*200
+    xAnim.setAttributeNS(null,&quot;values&quot;,`${Math.random()&gt;0.5?0:200};${xPos};${xPos}`)
+    const yAnim= clone.querySelector(&quot;animate[attributeName=\&quot;y\&quot;]&quot;);
+    yAnim.setAttributeNS(null,&quot;begin&quot;,beginValue)
+    clone.style.setProperty(&quot;--cycle-time&quot;,String(Math.random()*2+4)+&quot;s&quot;)
+    clone.style.setProperty(&quot;--cycle-begin&quot;,String(String(Math.random()*3)+&quot;s&quot;))
+    container.appendChild(clone)
+  }
+  //]]&gt;
+  &lt;/script&gt;
+&lt;/svg&gt;</pre>

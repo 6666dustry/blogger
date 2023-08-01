@@ -1,0 +1,223 @@
+<p>千里の道も一歩から。</p>
+<p>このシリーズは一日一枚svgのデザインをつくるというシンプルな企画です。</p>
+<p>コメントでのリクエストも受け付けています。</p>
+<p>今日は21日目。</p>
+<svg viewBox="0 0 100 100">
+  <title>泡</title>
+  <desc>泡というより雨の波紋のような気もしますが、それでも泡です。...泡です。</desc>
+  <defs>
+    <radialGradient id="lingGrad">
+      <stop offset="45%" stop-color="black" />
+      <stop offset="50%" stop-color="white"  />
+      <stop offset="55%" stop-color="black" />
+    </radialGradient>
+    <mask id="lingMask" maskContentUnits="objectBoundingBox">
+      <circle cx="0.5" cy="0.5" r="1" fill="url(#lingGrad)" />
+    </mask>
+    
+  </defs>
+  <rect fill="black" width="100" height="100" />
+  <circle class="flash" cx="50" cy="50" stroke="white" mask="url(#lingMask)" >
+    <animate
+      dur="1s"
+      attributeName="r"
+      values="0;10"
+      repeatCount="indefinite"
+    ></animate>
+    <animate
+      dur="1s"
+      attributeName="opacity"
+      values="1;0"
+      repeatCount="indefinite"
+    ></animate>
+  </circle>
+  <circle class="flash" cx="50" cy="50" stroke="white"  mask="url(#lingMask)" >
+    <animate
+      dur="1s"
+      attributeName="r"
+      values="0;10"
+      repeatCount="indefinite"
+    ></animate>
+    <animate
+      dur="1s"
+      attributeName="opacity"
+      values="1;0"
+      repeatCount="indefinite"
+    ></animate>
+  </circle>
+  <circle class="flash" cx="50" cy="50" stroke="white"  mask="url(#lingMask)" >
+    <animate
+      dur="1s"
+      attributeName="r"
+      values="0;10"
+      repeatCount="indefinite"
+    ></animate>
+    <animate
+      dur="1s"
+      attributeName="opacity"
+      values="1;0"
+      repeatCount="indefinite"
+    ></animate>
+  </circle>
+  <circle class="flash" cx="50" cy="50" stroke="cyan"  mask="url(#lingMask)" >
+    <animate
+      dur="1s"
+      attributeName="r"
+      values="0;10"
+      repeatCount="indefinite"
+    ></animate>
+    <animate
+      dur="1s"
+      attributeName="opacity"
+      values="1;0"
+      repeatCount="indefinite"
+    ></animate>
+  </circle>
+  <circle class="flash" cx="50" cy="50" stroke="lightgreen"  mask="url(#lingMask)" >
+    <animate
+      dur="1s"
+      attributeName="r"
+      values="0;10"
+      repeatCount="indefinite"
+    ></animate>
+    <animate
+      dur="1s"
+      attributeName="opacity"
+      values="1;0"
+      repeatCount="indefinite"
+    ></animate>
+  </circle>
+  <circle class="flash" cx="50" cy="50" stroke="yellow"  mask="url(#lingMask)" >
+    <animate
+      dur="1s"
+      attributeName="r"
+      values="0;10"
+      repeatCount="indefinite"
+    ></animate>
+    <animate
+      dur="1s"
+      attributeName="opacity"
+      values="1;0"
+      repeatCount="indefinite"
+    ></animate>
+  </circle>
+  <script>
+    const flash=document.getElementsByClassName("flash");
+    setInterval(()=>{ 
+      for( let f of flash) { 
+        f.setAttributeNS(null,"cx",String(Math.random()*100))
+        f.setAttributeNS(null,"cy",String(Math.random()*100)) } },
+    1000)
+  </script>
+</svg>
+
+<p>svgの中身</p>
+<pre class="prettyprint linenums">&lt;svg viewBox=&quot;0 0 100 100&quot;&gt;
+  &lt;title&gt;泡&lt;/title&gt;
+  &lt;desc&gt;泡というより雨の波紋のような気もしますが、それでも泡です。...泡です。&lt;/desc&gt;
+  &lt;defs&gt;
+    &lt;radialGradient id=&quot;lingGrad&quot;&gt;
+      &lt;stop offset=&quot;45%&quot; stop-color=&quot;black&quot; /&gt;
+      &lt;stop offset=&quot;50%&quot; stop-color=&quot;white&quot;  /&gt;
+      &lt;stop offset=&quot;55%&quot; stop-color=&quot;black&quot; /&gt;
+    &lt;/radialGradient&gt;
+    &lt;mask id=&quot;lingMask&quot; maskContentUnits=&quot;objectBoundingBox&quot;&gt;
+      &lt;circle cx=&quot;0.5&quot; cy=&quot;0.5&quot; r=&quot;1&quot; fill=&quot;url(#lingGrad)&quot; /&gt;
+    &lt;/mask&gt;
+    
+  &lt;/defs&gt;
+  &lt;rect fill=&quot;black&quot; width=&quot;100&quot; height=&quot;100&quot; /&gt;
+  &lt;circle class=&quot;flash&quot; cx=&quot;50&quot; cy=&quot;50&quot; stroke=&quot;white&quot; mask=&quot;url(#lingMask)&quot; &gt;
+    &lt;animate
+      dur=&quot;1s&quot;
+      attributeName=&quot;r&quot;
+      values=&quot;0;10&quot;
+      repeatCount=&quot;indefinite&quot;
+    &gt;&lt;/animate&gt;
+    &lt;animate
+      dur=&quot;1s&quot;
+      attributeName=&quot;opacity&quot;
+      values=&quot;1;0&quot;
+      repeatCount=&quot;indefinite&quot;
+    &gt;&lt;/animate&gt;
+  &lt;/circle&gt;
+  &lt;circle class=&quot;flash&quot; cx=&quot;50&quot; cy=&quot;50&quot; stroke=&quot;white&quot;  mask=&quot;url(#lingMask)&quot; &gt;
+    &lt;animate
+      dur=&quot;1s&quot;
+      attributeName=&quot;r&quot;
+      values=&quot;0;10&quot;
+      repeatCount=&quot;indefinite&quot;
+    &gt;&lt;/animate&gt;
+    &lt;animate
+      dur=&quot;1s&quot;
+      attributeName=&quot;opacity&quot;
+      values=&quot;1;0&quot;
+      repeatCount=&quot;indefinite&quot;
+    &gt;&lt;/animate&gt;
+  &lt;/circle&gt;
+  &lt;circle class=&quot;flash&quot; cx=&quot;50&quot; cy=&quot;50&quot; stroke=&quot;white&quot;  mask=&quot;url(#lingMask)&quot; &gt;
+    &lt;animate
+      dur=&quot;1s&quot;
+      attributeName=&quot;r&quot;
+      values=&quot;0;10&quot;
+      repeatCount=&quot;indefinite&quot;
+    &gt;&lt;/animate&gt;
+    &lt;animate
+      dur=&quot;1s&quot;
+      attributeName=&quot;opacity&quot;
+      values=&quot;1;0&quot;
+      repeatCount=&quot;indefinite&quot;
+    &gt;&lt;/animate&gt;
+  &lt;/circle&gt;
+  &lt;circle class=&quot;flash&quot; cx=&quot;50&quot; cy=&quot;50&quot; stroke=&quot;cyan&quot;  mask=&quot;url(#lingMask)&quot; &gt;
+    &lt;animate
+      dur=&quot;1s&quot;
+      attributeName=&quot;r&quot;
+      values=&quot;0;10&quot;
+      repeatCount=&quot;indefinite&quot;
+    &gt;&lt;/animate&gt;
+    &lt;animate
+      dur=&quot;1s&quot;
+      attributeName=&quot;opacity&quot;
+      values=&quot;1;0&quot;
+      repeatCount=&quot;indefinite&quot;
+    &gt;&lt;/animate&gt;
+  &lt;/circle&gt;
+  &lt;circle class=&quot;flash&quot; cx=&quot;50&quot; cy=&quot;50&quot; stroke=&quot;lightgreen&quot;  mask=&quot;url(#lingMask)&quot; &gt;
+    &lt;animate
+      dur=&quot;1s&quot;
+      attributeName=&quot;r&quot;
+      values=&quot;0;10&quot;
+      repeatCount=&quot;indefinite&quot;
+    &gt;&lt;/animate&gt;
+    &lt;animate
+      dur=&quot;1s&quot;
+      attributeName=&quot;opacity&quot;
+      values=&quot;1;0&quot;
+      repeatCount=&quot;indefinite&quot;
+    &gt;&lt;/animate&gt;
+  &lt;/circle&gt;
+  &lt;circle class=&quot;flash&quot; cx=&quot;50&quot; cy=&quot;50&quot; stroke=&quot;yellow&quot;  mask=&quot;url(#lingMask)&quot; &gt;
+    &lt;animate
+      dur=&quot;1s&quot;
+      attributeName=&quot;r&quot;
+      values=&quot;0;10&quot;
+      repeatCount=&quot;indefinite&quot;
+    &gt;&lt;/animate&gt;
+    &lt;animate
+      dur=&quot;1s&quot;
+      attributeName=&quot;opacity&quot;
+      values=&quot;1;0&quot;
+      repeatCount=&quot;indefinite&quot;
+    &gt;&lt;/animate&gt;
+  &lt;/circle&gt;
+  &lt;script&gt;
+    const flash=document.getElementsByClassName(&quot;flash&quot;);
+    setInterval(()=&gt;{ 
+      for( let f of flash) { 
+        f.setAttributeNS(null,&quot;cx&quot;,String(Math.random()*100))
+        f.setAttributeNS(null,&quot;cy&quot;,String(Math.random()*100)) } },
+    1000)
+  &lt;/script&gt;
+&lt;/svg&gt;
+</pre>

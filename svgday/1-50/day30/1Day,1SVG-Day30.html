@@ -1,0 +1,195 @@
+<p>千里の道も一歩から。</p>
+<p>このシリーズは一日一枚svgのデザインをつくるというシンプルな企画です。</p>
+<p>コメントでのリクエストも受け付けています。</p>
+<p>今日は30日目。</p>
+<p>今日のSVGはSVGアニメーション!</p>
+<p>アニメーションはSVG最大の利点であり、難しい物でもあります。</p>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <title>SVGアニメーション</title>
+  <desc>アニメーションはSVG最大の利点であり、難しい物でもあります。</desc>
+  <!-- それでも<filter>に比べれば簡単です。 -->
+  <rect width="10" height="10">
+    <animate attributeName="y" from="0" to="10" repeatCount="indefinite" dur="1s"></animate>
+  </rect>
+  <rect x="20" width="10" height="10">
+    <animate attributeName="y" from="0" to="10" repeatCount="indefinite" dur="2s"></animate>
+  </rect>
+  <rect x="40" width="10" height="10">
+    <animate attributeName="y" values="10;0;5" repeatCount="indefinite" dur="1s"></animate>
+  </rect>
+  <rect x="60" width="10" height="10">
+    <animate attributeName="y" from="0" to="10" repeatCount="indefinite" dur="1s" begin="500ms"></animate>
+  </rect>
+  <rect cursor="pointer" x="80" width="10" height="10">
+    <animate attributeName="y" from="0" to="10" begin="click" dur="1s"></animate>
+  </rect>
+  <rect x="100" width="10" height="10">
+    <animate attributeName="y" from="0" to="10" repeatCount="indefinite" begin="0s;mouseout" end="mouseover" dur="1s">
+    </animate>
+  </rect>
+  <rect cursor="pointer" x="120" width="10" height="10">
+    <animate attributeName="y" from="0" to="10" begin="0s;click" fill="freeze" dur="5s" restart="whenNotActive">
+    </animate>
+  </rect>
+  <rect cursor="pointer" x="140" width="10" height="10">
+    <animate attributeName="y" from="0" to="10" repeatCount="5" begin="0s;click" restart="whenNotActive" dur="0.5s">
+    </animate>
+  </rect>
+  <rect x="160" width="10" height="10">
+    <animate attributeName="y" from="0" values="10;0;10" keyTimes="0;0.25;1" repeatCount="indefinite" dur="3s">
+    </animate>
+  </rect>
+  <rect x="180" width="10" height="10">
+    <animate attributeName="y" values="0;10" dur="1.5s" calcMode="spline" repeatCount="indefinite"
+      keySplines="0.75 0 0.25 1"></animate>
+  </rect>
+  <rect x="0" y="25" width="10" height="10">
+    <animate attributeName="x" values="0;50" calcMode="spline" keySplines="0 0 0 1" dur="3s" repeatCount="indefinite"
+      additive="sum"></animate>
+    <animate attributeName="x" values="0;2.5" dur="0.1111s" repeatCount="indefinite" additive="sum"></animate>
+    <animate attributeName="x" values="0;100" dur="6s" calcMode="spline" keySplines="1 0 0 0" repeatCount="indefinite"
+      additive="sum"></animate>
+  </rect>
+  <text transform-origin="100 75" transform="scale(1.75)" x="70" y="75 75 75 75 75 75 75 75 75" text-anchor="middle">
+    <animate attributeName="y" additive="sum" values="-1;1;-1" dur="1s" calcMode="spline"
+      keySplines="0.5 0.1 0.5 0.9;0.5 0.1 0.5 0.9" repeatCount="indefinite"></animate>
+    <animate attributeName="y" additive="sum" values="0 -2;0 2;0 -2" begin="-0.1s" dur="1s" calcMode="spline"
+      keySplines="0.5 0.1 0.5 0.9;0.5 0.1 0.5 0.9" repeatCount="indefinite"></animate>
+    <animate attributeName="y" additive="sum" values="0 0 -3;0 0 3;0 0 -3" begin="-0.2s" dur="1s" calcMode="spline"
+      keySplines="0.5 0.1 0.5 0.9;0.5 0.1 0.5 0.9" repeatCount="indefinite"></animate>
+    <animate attributeName="y" additive="sum" values="0 0 0 -4;0 0 0 4;0 0 0 -4" begin="-0.3s" dur="1s"
+      calcMode="spline" keySplines="0.5 0.1 0.5 0.9;0.5 0.1 0.5 0.9" repeatCount="indefinite"></animate>
+    <animate attributeName="y" additive="sum" values="0 0 0 0 -5;0 0 0 0 5;0 0 0 0 -5" begin="-0.4s" dur="1s"
+      calcMode="spline" keySplines="0.5 0.1 0.5 0.9;0.5 0.1 0.5 0.9" repeatCount="indefinite"></animate>
+    <animate attributeName="y" additive="sum" values="0 0 0 0 0 -6;0 0 0 0 0 6;0 0 0 0 0 -6" begin="-0.5s" dur="1s"
+      calcMode="spline" keySplines="0.5 0.1 0.5 0.9;0.5 0.1 0.5 0.9" repeatCount="indefinite"></animate>
+    <animate attributeName="y" additive="sum" values="0 0 0 0 0 0 -7;0 0 0 0 0 0 7;0 0 0 0 0 0 -7" begin="-0.6s"
+      dur="1s" calcMode="spline" keySplines="0.5 0.1 0.5 0.9;0.5 0.1 0.5 0.9" repeatCount="indefinite"></animate>
+    <animate attributeName="y" additive="sum" values="0 0 0 0 0 0 0 -8;0 0 0 0 0 0 0 8;0 0 0 0 0 0 0 -8" begin="-0.7s"
+      dur="1s" calcMode="spline" keySplines="0.5 0.1 0.5 0.9;0.5 0.1 0.5 0.9" repeatCount="indefinite"></animate>
+    <animate attributeName="y" additive="sum" values="0 0 0 0 0 0 0 0 -9;0 0 0 0 0 0 0 0 9;0 0 0 0 0 0 0 0 -9"
+      begin="-0.8s" dur="1s" calcMode="spline" keySplines="0.5 0.1 0.5 0.9;0.5 0.1 0.5 0.9" repeatCount="indefinite">
+    </animate>
+    Animation
+  </text>
+  <path fill="black" stroke="black" id="textPath"
+    d="M 0 125 h 15 c 0 0 10 0 10 10  v 30 c 0 0 0 10 10 10 h 30 c 0 0 10 0 10 -10 v-30 c 0 0 0 -10 10 -10 h 30 c 0 0 0 10 10 10 v 30 a 25 25 0 0 0 50 0 v -35 H 200 V 200 H 0 Z">
+  </path>
+  <text>
+    <textPath href="#textPath">
+      <animate attributeName="startOffset" dur="7.5s" repeatCount="indefinite" values="-50%;70%"></animate>
+      Animation
+    </textPath>
+  </text>
+
+</svg>
+<p>svgの中身</p>
+<pre class="prettyprint linenums">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 200 200&quot;&gt;
+  &lt;title&gt;SVGアニメーション&lt;/title&gt;
+  &lt;desc&gt;アニメーションはSVG最大の利点であり、難しい物でもあります。&lt;/desc&gt;
+  &lt;!-- それでも&lt;filter&gt;に比べれば簡単です。 --&gt;
+  &lt;rect width=&quot;10&quot; height=&quot;10&quot;&gt;
+    &lt;animate attributeName=&quot;y&quot; from=&quot;0&quot; to=&quot;10&quot; repeatCount=&quot;indefinite&quot; dur=&quot;1s&quot;&gt;&lt;/animate&gt;
+  &lt;/rect&gt;
+  &lt;rect x=&quot;20&quot; width=&quot;10&quot; height=&quot;10&quot;&gt;
+    &lt;animate attributeName=&quot;y&quot; from=&quot;0&quot; to=&quot;10&quot; repeatCount=&quot;indefinite&quot; dur=&quot;2s&quot;&gt;&lt;/animate&gt;
+  &lt;/rect&gt;
+  &lt;rect x=&quot;40&quot; width=&quot;10&quot; height=&quot;10&quot;&gt;
+    &lt;animate attributeName=&quot;y&quot; values=&quot;10;0;5&quot; repeatCount=&quot;indefinite&quot; dur=&quot;1s&quot;&gt;&lt;/animate&gt;
+  &lt;/rect&gt;
+  &lt;rect x=&quot;60&quot; width=&quot;10&quot; height=&quot;10&quot;&gt;
+    &lt;animate attributeName=&quot;y&quot; from=&quot;0&quot; to=&quot;10&quot; repeatCount=&quot;indefinite&quot; dur=&quot;1s&quot; begin=&quot;500ms&quot;&gt;&lt;/animate&gt;
+  &lt;/rect&gt;
+  &lt;rect cursor=&quot;pointer&quot; x=&quot;80&quot; width=&quot;10&quot; height=&quot;10&quot;&gt;
+    &lt;animate attributeName=&quot;y&quot; from=&quot;0&quot; to=&quot;10&quot; begin=&quot;click&quot; dur=&quot;1s&quot;&gt;&lt;/animate&gt;
+  &lt;/rect&gt;
+  &lt;rect x=&quot;100&quot; width=&quot;10&quot; height=&quot;10&quot;&gt;
+    &lt;animate attributeName=&quot;y&quot; from=&quot;0&quot; to=&quot;10&quot; repeatCount=&quot;indefinite&quot; begin=&quot;0s;mouseout&quot; end=&quot;mouseover&quot; dur=&quot;1s&quot;&gt;
+    &lt;/animate&gt;
+  &lt;/rect&gt;
+  &lt;rect cursor=&quot;pointer&quot; x=&quot;120&quot; width=&quot;10&quot; height=&quot;10&quot;&gt;
+    &lt;animate attributeName=&quot;y&quot; from=&quot;0&quot; to=&quot;10&quot; begin=&quot;0s;click&quot; fill=&quot;freeze&quot; dur=&quot;5s&quot; restart=&quot;whenNotActive&quot;&gt;
+    &lt;/animate&gt;
+  &lt;/rect&gt;
+  &lt;rect cursor=&quot;pointer&quot; x=&quot;140&quot; width=&quot;10&quot; height=&quot;10&quot;&gt;
+    &lt;animate attributeName=&quot;y&quot; from=&quot;0&quot; to=&quot;10&quot; repeatCount=&quot;5&quot; begin=&quot;0s;click&quot; restart=&quot;whenNotActive&quot; dur=&quot;0.5s&quot;&gt;
+    &lt;/animate&gt;
+  &lt;/rect&gt;
+  &lt;rect x=&quot;160&quot; width=&quot;10&quot; height=&quot;10&quot;&gt;
+    &lt;animate attributeName=&quot;y&quot; from=&quot;0&quot; values=&quot;10;0;10&quot; keyTimes=&quot;0;0.25;1&quot; repeatCount=&quot;indefinite&quot; dur=&quot;3s&quot;&gt;
+    &lt;/animate&gt;
+  &lt;/rect&gt;
+  &lt;rect x=&quot;180&quot; width=&quot;10&quot; height=&quot;10&quot;&gt;
+    &lt;animate attributeName=&quot;y&quot; values=&quot;0;10&quot; dur=&quot;1.5s&quot; calcMode=&quot;spline&quot; repeatCount=&quot;indefinite&quot;
+      keySplines=&quot;0.75 0 0.25 1&quot;&gt;&lt;/animate&gt;
+  &lt;/rect&gt;
+  &lt;rect x=&quot;0&quot; y=&quot;25&quot; width=&quot;10&quot; height=&quot;10&quot;&gt;
+    &lt;animate attributeName=&quot;x&quot; values=&quot;0;50&quot; calcMode=&quot;spline&quot; keySplines=&quot;0 0 0 1&quot; dur=&quot;3s&quot; repeatCount=&quot;indefinite&quot;
+      additive=&quot;sum&quot;&gt;&lt;/animate&gt;
+    &lt;animate attributeName=&quot;x&quot; values=&quot;0;2.5&quot; dur=&quot;0.1111s&quot; repeatCount=&quot;indefinite&quot; additive=&quot;sum&quot;&gt;&lt;/animate&gt;
+    &lt;animate attributeName=&quot;x&quot; values=&quot;0;100&quot; dur=&quot;6s&quot; calcMode=&quot;spline&quot; keySplines=&quot;1 0 0 0&quot; repeatCount=&quot;indefinite&quot;
+      additive=&quot;sum&quot;&gt;&lt;/animate&gt;
+  &lt;/rect&gt;
+  &lt;text transform-origin=&quot;100 75&quot; transform=&quot;scale(1.75)&quot; x=&quot;70&quot; y=&quot;75 75 75 75 75 75 75 75 75&quot; text-anchor=&quot;middle&quot;&gt;
+    &lt;animate attributeName=&quot;y&quot; additive=&quot;sum&quot; values=&quot;-1;1;-1&quot; dur=&quot;1s&quot; calcMode=&quot;spline&quot;
+      keySplines=&quot;0.5 0.1 0.5 0.9;0.5 0.1 0.5 0.9&quot; repeatCount=&quot;indefinite&quot;&gt;&lt;/animate&gt;
+    &lt;animate attributeName=&quot;y&quot; additive=&quot;sum&quot; values=&quot;0 -2;0 2;0 -2&quot; begin=&quot;-0.1s&quot; dur=&quot;1s&quot; calcMode=&quot;spline&quot;
+      keySplines=&quot;0.5 0.1 0.5 0.9;0.5 0.1 0.5 0.9&quot; repeatCount=&quot;indefinite&quot;&gt;&lt;/animate&gt;
+    &lt;animate attributeName=&quot;y&quot; additive=&quot;sum&quot; values=&quot;0 0 -3;0 0 3;0 0 -3&quot; begin=&quot;-0.2s&quot; dur=&quot;1s&quot; calcMode=&quot;spline&quot;
+      keySplines=&quot;0.5 0.1 0.5 0.9;0.5 0.1 0.5 0.9&quot; repeatCount=&quot;indefinite&quot;&gt;&lt;/animate&gt;
+    &lt;animate attributeName=&quot;y&quot; additive=&quot;sum&quot; values=&quot;0 0 0 -4;0 0 0 4;0 0 0 -4&quot; begin=&quot;-0.3s&quot; dur=&quot;1s&quot;
+      calcMode=&quot;spline&quot; keySplines=&quot;0.5 0.1 0.5 0.9;0.5 0.1 0.5 0.9&quot; repeatCount=&quot;indefinite&quot;&gt;&lt;/animate&gt;
+    &lt;animate attributeName=&quot;y&quot; additive=&quot;sum&quot; values=&quot;0 0 0 0 -5;0 0 0 0 5;0 0 0 0 -5&quot; begin=&quot;-0.4s&quot; dur=&quot;1s&quot;
+      calcMode=&quot;spline&quot; keySplines=&quot;0.5 0.1 0.5 0.9;0.5 0.1 0.5 0.9&quot; repeatCount=&quot;indefinite&quot;&gt;&lt;/animate&gt;
+    &lt;animate attributeName=&quot;y&quot; additive=&quot;sum&quot; values=&quot;0 0 0 0 0 -6;0 0 0 0 0 6;0 0 0 0 0 -6&quot; begin=&quot;-0.5s&quot; dur=&quot;1s&quot;
+      calcMode=&quot;spline&quot; keySplines=&quot;0.5 0.1 0.5 0.9;0.5 0.1 0.5 0.9&quot; repeatCount=&quot;indefinite&quot;&gt;&lt;/animate&gt;
+    &lt;animate attributeName=&quot;y&quot; additive=&quot;sum&quot; values=&quot;0 0 0 0 0 0 -7;0 0 0 0 0 0 7;0 0 0 0 0 0 -7&quot; begin=&quot;-0.6s&quot;
+      dur=&quot;1s&quot; calcMode=&quot;spline&quot; keySplines=&quot;0.5 0.1 0.5 0.9;0.5 0.1 0.5 0.9&quot; repeatCount=&quot;indefinite&quot;&gt;&lt;/animate&gt;
+    &lt;animate attributeName=&quot;y&quot; additive=&quot;sum&quot; values=&quot;0 0 0 0 0 0 0 -8;0 0 0 0 0 0 0 8;0 0 0 0 0 0 0 -8&quot; begin=&quot;-0.7s&quot;
+      dur=&quot;1s&quot; calcMode=&quot;spline&quot; keySplines=&quot;0.5 0.1 0.5 0.9;0.5 0.1 0.5 0.9&quot; repeatCount=&quot;indefinite&quot;&gt;&lt;/animate&gt;
+    &lt;animate attributeName=&quot;y&quot; additive=&quot;sum&quot; values=&quot;0 0 0 0 0 0 0 0 -9;0 0 0 0 0 0 0 0 9;0 0 0 0 0 0 0 0 -9&quot;
+      begin=&quot;-0.8s&quot; dur=&quot;1s&quot; calcMode=&quot;spline&quot; keySplines=&quot;0.5 0.1 0.5 0.9;0.5 0.1 0.5 0.9&quot; repeatCount=&quot;indefinite&quot;&gt;
+    &lt;/animate&gt;
+    Animation
+  &lt;/text&gt;
+  &lt;path fill=&quot;black&quot; stroke=&quot;black&quot; id=&quot;textPath&quot;
+    d=&quot;M 0 125 h 15 c 0 0 10 0 10 10  v 30 c 0 0 0 10 10 10 h 30 c 0 0 10 0 10 -10 v-30 c 0 0 0 -10 10 -10 h 30 c 0 0 0 10 10 10 v 30 a 25 25 0 0 0 50 0 v -35 H 200 V 200 H 0 Z&quot;&gt;
+  &lt;/path&gt;
+  &lt;text&gt;
+    &lt;textPath href=&quot;#textPath&quot;&gt;
+      &lt;animate attributeName=&quot;startOffset&quot; dur=&quot;7.5s&quot; repeatCount=&quot;indefinite&quot; values=&quot;-50%;70%&quot;&gt;&lt;/animate&gt;
+      Animation
+    &lt;/textPath&gt;
+  &lt;/text&gt;
+
+&lt;/svg&gt;</pre>
+<h2>10日間のまとめ</h2>
+<ul>
+  <li>
+    <a href="https://kindnessforme.blogspot.com/2023/07/1day1svg-day21.html">21日目</a>
+  </li>
+  <li>
+    <a href="https://kindnessforme.blogspot.com/2023/07/1day1svg-day22.html">22日目</a>
+  </li>
+  <li>
+    <a href="https://kindnessforme.blogspot.com/2023/07/1day1svg-day23.html">23日目</a>
+  </li>
+  <li>
+    <a href="https://kindnessforme.blogspot.com/2023/07/1day1svg-day24.html">24日目</a>
+  </li>
+  <li>
+    <a href="https://kindnessforme.blogspot.com/2023/07/1day1svg-day25.html">25日目</a>
+  </li>
+  <li>
+    <a href="https://kindnessforme.blogspot.com/2023/07/1day1svg-day26.html">26日目</a>
+  </li>
+  <li>
+    <a href="https://kindnessforme.blogspot.com/2023/07/1day1svg-day27.html">27日目</a>
+  </li>
+  <li>
+    <a href="https://kindnessforme.blogspot.com/2023/07/1day1svg-day28.html">28日目</a>
+  </li>
+  <li>
+    <a href="https://kindnessforme.blogspot.com/2023/07/1day1svg-day29.html">29日目</a>
+  </li>
+</ul>

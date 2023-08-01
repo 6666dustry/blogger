@@ -1,0 +1,25 @@
+<p>千里の道も一歩から。</p>
+<p>このシリーズは一日一枚svgのデザインをつくるというシンプルな企画です。</p>
+<p>コメントでのリクエストも受け付けています。</p>
+<p>今日は24日目。</p>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <title>錯視</title>
+  <desc>黒の四角形の四隅に薄い丸が見えるはずです。</desc>
+<defs>
+  <pattern patternUnits="userSpaceOnUse" width="10" height="10" id="illusion">
+    <rect x="0.5" y="0.5" fill="black" width="8" height="8" />
+  </pattern>
+</defs>
+  <rect fill="url(#illusion)" width="100" height="100" />
+</svg>
+<p>svgの中身</p>
+<pre class="prettyprint linenums">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;&gt;
+  &lt;title&gt;錯視&lt;/title&gt;
+  &lt;desc&gt;黒の四角形の四隅に薄い丸が見えるはずです。&lt;/desc&gt;
+&lt;defs&gt;
+  &lt;pattern patternUnits=&quot;userSpaceOnUse&quot; width=&quot;10&quot; height=&quot;10&quot; id=&quot;illusion&quot;&gt;
+    &lt;rect x=&quot;0.5&quot; y=&quot;0.5&quot; fill=&quot;black&quot; width=&quot;8&quot; height=&quot;8&quot; /&gt;
+  &lt;/pattern&gt;
+&lt;/defs&gt;
+  &lt;rect fill=&quot;url(#illusion)&quot; width=&quot;100&quot; height=&quot;100&quot; /&gt;
+&lt;/svg&gt;</pre>

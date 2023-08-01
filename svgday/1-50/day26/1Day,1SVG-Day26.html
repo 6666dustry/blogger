@@ -1,0 +1,197 @@
+<p>千里の道も一歩から。</p>
+<p>このシリーズは一日一枚svgのデザインをつくるというシンプルな企画です。</p>
+<p>コメントでのリクエストも受け付けています。</p>
+<p>今日は26日目。</p>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <title>いろんなテキスト2</title>
+  <desc>SVGでテキストを使うのはほどほどにしましょう。あくまで画像ですから。</desc>
+  <defs>
+    <pattern width="2" height="2" patternUnits="userSpaceOnUse" id="pattern">
+      <animateTransform attributeName="patternTransform" type="translate"
+        values="-0.5 -0.5;0.5 -0.5; 0.5 0.5; -0.5 0.5;-0.5 -0.5" dur="2s" repeatCount="indefinite">
+      </animateTransform>
+      <rect x="-1" y="-1" width="4" height="4" fill="magenta" />
+      <circle cx="1" cy="1" r="0.75" fill="white" />
+    </pattern>
+    <filter id="filter">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blur">
+        <animate attributeName="stdDeviation" dur="1s" repeatCount="indefinite" values="0.3;1;0.3" ></animate>
+      </feGaussianBlur>
+    </filter>
+    <linearGradient id="gradient" spreadMethod="repeat">
+      <animate attributeName="x1" dur="1s" repeatCount="indefinite" values="0;-1;"></animate>
+      <animate attributeName="x2" dur="1s" repeatCount="indefinite" values="1;0;"></animate>
+      <stop offset="14%" stop-color="#ff0000" />
+      <stop offset="28%" stop-color="#ff7f00" />
+      <stop offset="42%" stop-color="#ffff00" />
+      <stop offset="51%" stop-color="#00ff00" />
+      <stop offset="71%" stop-color="#0000ff" />
+      <stop offset="81%" stop-color="#4b0082" />
+      <stop offset="100%" stop-color="#8b00ff" />
+    </linearGradient>
+    <clipPath clipPathUnits="objectBoundingBox" id="clipPath" >
+      <circle cx="0.5" cy="0.5" r="0.3" ><animate attributeName="cx" dur="3s" keySplines="0.6 0 0.4 1;0.6 0 0.4 1;" calcMode="spline" values="0;1;0" repeatCount="indefinite" ></animate></circle>
+    </clipPath>
+    <linearGradient id="gradMask">
+      <stop offset="0%" stop-color="white" />
+      <stop offset="100%" stop-color="black" >
+        <animate attributeName="offset" dur="3s" repeatCount="indefinite" values="0.1;1;0.1" ></animate>
+        </stop>
+    </linearGradient>
+    <mask  id="mask" 
+    maskContentUnits="objectBoundingBox">
+      <rect fill="url(#gradMask)" width="2" height="1" />
+    </mask>
+  </defs>
+  <g>
+    <text x="100" y="10">
+      normal anchor
+    </text>
+    <text text-anchor="middle" x="100" y="20">
+      middle anchor
+    </text>
+    <text text-anchor="end" x="100" y="30">
+      end anchor
+    </text>
+    <text y="40">
+      <animate attributeName="rotate" dur="3s" repeatCount="indefinite" to="360"></animate>
+      rotate text
+    </text>
+    <text font-size="20" font-weight="900" y="70" fill="none">
+      <tspan fill="darkblue">
+          Fill
+    </tspan>
+      <tspan stroke="skyblue">
+          Stroke
+    </tspan>
+      <tspan fill="darkblue" stroke="skyblue">
+          Text
+    </tspan>
+    </text>
+    <text y="100" textLength="200">
+      200
+    </text>
+    <text y="110" textLength="100">
+      100
+    </text>
+    <text y="120" textLength="200" lengthAdjust="spacing">
+      Spacing
+    </text>
+    <text y="133" textLength="200" lengthAdjust="spacingAndGlyphs">
+      SpacingAndGlyphs
+    </text>
+    <text font-weight="800" y="145" fill="url(#pattern)">
+      Pattern
+    </text>
+    <text y="155" filter="url(#filter)">
+      Filter
+    </text>
+    <text y="165" fill="url(#gradient)">
+      Gradient
+    </text>
+    <text y="175" clip-path="url(#clipPath)">
+      ClipPath
+    </text>
+    <text y="185" mask="url(#mask)">
+      Mask
+    </text>
+  </g>
+
+</svg>
+<p>svgの中身</p>
+<pre class="prettyprint linenums">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 200 200&quot;&gt;
+  &lt;title&gt;いろんなテキスト2&lt;/title&gt;
+  &lt;desc&gt;SVGでテキストを使うのはほどほどにしましょう。あくまで画像ですから。&lt;/desc&gt;
+  &lt;defs&gt;
+    &lt;pattern width=&quot;2&quot; height=&quot;2&quot; patternUnits=&quot;userSpaceOnUse&quot; id=&quot;pattern&quot;&gt;
+      &lt;animateTransform attributeName=&quot;patternTransform&quot; type=&quot;translate&quot;
+        values=&quot;-0.5 -0.5;0.5 -0.5; 0.5 0.5; -0.5 0.5;-0.5 -0.5&quot; dur=&quot;2s&quot; repeatCount=&quot;indefinite&quot;&gt;
+      &lt;/animateTransform&gt;
+      &lt;rect x=&quot;-1&quot; y=&quot;-1&quot; width=&quot;4&quot; height=&quot;4&quot; fill=&quot;magenta&quot; /&gt;
+      &lt;circle cx=&quot;1&quot; cy=&quot;1&quot; r=&quot;0.75&quot; fill=&quot;white&quot; /&gt;
+    &lt;/pattern&gt;
+    &lt;filter id=&quot;filter&quot;&gt;
+      &lt;feGaussianBlur in=&quot;SourceGraphic&quot; stdDeviation=&quot;1&quot; result=&quot;blur&quot;&gt;
+        &lt;animate attributeName=&quot;stdDeviation&quot; dur=&quot;1s&quot; repeatCount=&quot;indefinite&quot; values=&quot;0.3;1;0.3&quot; &gt;&lt;/animate&gt;
+      &lt;/feGaussianBlur&gt;
+    &lt;/filter&gt;
+    &lt;linearGradient id=&quot;gradient&quot; spreadMethod=&quot;repeat&quot;&gt;
+      &lt;animate attributeName=&quot;x1&quot; dur=&quot;1s&quot; repeatCount=&quot;indefinite&quot; values=&quot;0;-1;&quot;&gt;&lt;/animate&gt;
+      &lt;animate attributeName=&quot;x2&quot; dur=&quot;1s&quot; repeatCount=&quot;indefinite&quot; values=&quot;1;0;&quot;&gt;&lt;/animate&gt;
+      &lt;stop offset=&quot;14%&quot; stop-color=&quot;#ff0000&quot; /&gt;
+      &lt;stop offset=&quot;28%&quot; stop-color=&quot;#ff7f00&quot; /&gt;
+      &lt;stop offset=&quot;42%&quot; stop-color=&quot;#ffff00&quot; /&gt;
+      &lt;stop offset=&quot;51%&quot; stop-color=&quot;#00ff00&quot; /&gt;
+      &lt;stop offset=&quot;71%&quot; stop-color=&quot;#0000ff&quot; /&gt;
+      &lt;stop offset=&quot;81%&quot; stop-color=&quot;#4b0082&quot; /&gt;
+      &lt;stop offset=&quot;100%&quot; stop-color=&quot;#8b00ff&quot; /&gt;
+    &lt;/linearGradient&gt;
+    &lt;clipPath clipPathUnits=&quot;objectBoundingBox&quot; id=&quot;clipPath&quot; &gt;
+      &lt;circle cx=&quot;0.5&quot; cy=&quot;0.5&quot; r=&quot;0.3&quot; &gt;&lt;animate attributeName=&quot;cx&quot; dur=&quot;3s&quot; keySplines=&quot;0.6 0 0.4 1;0.6 0 0.4 1;&quot; calcMode=&quot;spline&quot; values=&quot;0;1;0&quot; repeatCount=&quot;indefinite&quot; &gt;&lt;/animate&gt;&lt;/circle&gt;
+    &lt;/clipPath&gt;
+    &lt;linearGradient id=&quot;gradMask&quot;&gt;
+      &lt;stop offset=&quot;0%&quot; stop-color=&quot;white&quot; /&gt;
+      &lt;stop offset=&quot;100%&quot; stop-color=&quot;black&quot; &gt;
+        &lt;animate attributeName=&quot;offset&quot; dur=&quot;3s&quot; repeatCount=&quot;indefinite&quot; values=&quot;0.1;1;0.1&quot; &gt;&lt;/animate&gt;
+        &lt;/stop&gt;
+    &lt;/linearGradient&gt;
+    &lt;mask  id=&quot;mask&quot; 
+    maskContentUnits=&quot;objectBoundingBox&quot;&gt;
+      &lt;rect fill=&quot;url(#gradMask)&quot; width=&quot;2&quot; height=&quot;1&quot; /&gt;
+    &lt;/mask&gt;
+  &lt;/defs&gt;
+  &lt;g&gt;
+    &lt;text x=&quot;100&quot; y=&quot;10&quot;&gt;
+      normal anchor
+    &lt;/text&gt;
+    &lt;text text-anchor=&quot;middle&quot; x=&quot;100&quot; y=&quot;20&quot;&gt;
+      middle anchor
+    &lt;/text&gt;
+    &lt;text text-anchor=&quot;end&quot; x=&quot;100&quot; y=&quot;30&quot;&gt;
+      end anchor
+    &lt;/text&gt;
+    &lt;text y=&quot;40&quot;&gt;
+      &lt;animate attributeName=&quot;rotate&quot; dur=&quot;3s&quot; repeatCount=&quot;indefinite&quot; to=&quot;360&quot;&gt;&lt;/animate&gt;
+      rotate text
+    &lt;/text&gt;
+    &lt;text font-size=&quot;20&quot; font-weight=&quot;900&quot; y=&quot;70&quot; fill=&quot;none&quot;&gt;
+      &lt;tspan fill=&quot;darkblue&quot;&gt;
+          Fill
+    &lt;/tspan&gt;
+      &lt;tspan stroke=&quot;skyblue&quot;&gt;
+          Stroke
+    &lt;/tspan&gt;
+      &lt;tspan fill=&quot;darkblue&quot; stroke=&quot;skyblue&quot;&gt;
+          Text
+    &lt;/tspan&gt;
+    &lt;/text&gt;
+    &lt;text y=&quot;100&quot; textLength=&quot;200&quot;&gt;
+      200
+    &lt;/text&gt;
+    &lt;text y=&quot;110&quot; textLength=&quot;100&quot;&gt;
+      100
+    &lt;/text&gt;
+    &lt;text y=&quot;120&quot; textLength=&quot;200&quot; lengthAdjust=&quot;spacing&quot;&gt;
+      Spacing
+    &lt;/text&gt;
+    &lt;text y=&quot;133&quot; textLength=&quot;200&quot; lengthAdjust=&quot;spacingAndGlyphs&quot;&gt;
+      SpacingAndGlyphs
+    &lt;/text&gt;
+    &lt;text font-weight=&quot;800&quot; y=&quot;145&quot; fill=&quot;url(#pattern)&quot;&gt;
+      Pattern
+    &lt;/text&gt;
+    &lt;text y=&quot;155&quot; filter=&quot;url(#filter)&quot;&gt;
+      Filter
+    &lt;/text&gt;
+    &lt;text y=&quot;165&quot; fill=&quot;url(#gradient)&quot;&gt;
+      Gradient
+    &lt;/text&gt;
+    &lt;text y=&quot;175&quot; clip-path=&quot;url(#clipPath)&quot;&gt;
+      ClipPath
+    &lt;/text&gt;
+    &lt;text y=&quot;185&quot; mask=&quot;url(#mask)&quot;&gt;
+      Mask
+    &lt;/text&gt;
+  &lt;/g&gt;
+
+&lt;/svg&gt;</pre>

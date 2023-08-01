@@ -1,0 +1,125 @@
+<p>千里の道も一歩から。</p>
+<p>このシリーズは一日一枚svgのデザインをつくるというシンプルな企画です。</p>
+<p>コメントでのリクエストも受け付けています。</p>
+<p>今日は27日目。</p>
+<p>今日のSVGは四角形と長方形と正方形!</p>
+<p>ちなみに、矩形(くけい)という言葉は、長方形という意味ですよ。(謎の雑学)</p>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <title>四角形と長方形と正方形</title>
+  <desc>ちなみに、矩形(くけい)という言葉は、長方形という意味ですよ。(謎の雑学)</desc>
+  <!-- rectangleをGoogle翻訳に通すと何故か、長方形より先に矩形が訳として出てくるそうです。不思議ですね。 -->
+  <defs>
+    <!-- 今回は https://lopan.jp/about-svg/filter から借りてきました -->
+    <filter id="filter">
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0" />
+      <feOffset dx="-1" dy="-1" result="g" />
+      <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0" />
+      <feOffset dx="1" dy="0" result="b" />
+      <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0" />
+      <feOffset dx="0" dy="1" />
+      <feComposite in="g" operator="lighter" />
+      <feComposite in="b" operator="lighter" />
+    </filter>
+    <pattern patternUnits="userSpaceOnUse" id="rect" width="5" height="5" >
+      <rect transform="rotate(45 2.5 2.5)" width="5" height="5" />
+    </pattern>
+    <linearGradient spreadMethod="reflect"  id="stroke">
+      <animateTransform attributeName="gradientTransform" type="rotate" repeatCount="indefinite" values="0;360" dur="3s">
+      </animateTransform>
+      <stop offset="0%" stop-color="red" />
+      <stop offset="100%" stop-color="blue" />
+    </linearGradient>
+  </defs>
+  <rect y="5" width="10" height="10" />
+  <rect x="15" y="5" fill="red" width="10" height="10" />
+  <rect x="30" y="5" stroke="blue" fill="none" width="10" height="10" />
+  <rect transform="translate(45)" x="0" y="5" width="10" height="10" />
+  <rect transform="rotate(45 65 10)" x="60" y="5" width="10" height="10" />
+  <rect transform="skewX(20)" x="75" y="5" width="10" height="10" />
+  <rect transform-origin="95 10" transform="skewY(20)" x="90" y="5" width="10" height="10" />
+  <rect x="105" y="5" width="10" height="10">
+    <animate values="105;110;110;105;105" calcMode="spline" keySplines="0 0 0.75 0;0 0 0.75 0;0 0 0.75 0;0 0 0.75 0;"
+      attributeName="x" repeatCount="indefinite" dur="3s"></animate>
+    <animate values="5;5;10;10;5" calcMode="spline" keySplines="0 0 0.75 0;0 0 0.75 0;0 0 0.75 0;0 0 0.75 0;"
+      attributeName="y" repeatCount="indefinite" dur="3s"></animate>
+  </rect>
+  <rect filter="url(#filter)" x="125" y="5" width="10" height="10" fill="white" />
+  <rect rx="2.5" x="140" y="5" width="10" height="10" />
+  <rect rx="5" ry="1" x="155" y="5" width="10" height="10" />
+  <rect x="170" y="5" width="10" height="10" stroke="skyblue" stroke-dasharray="2 1" fill="none" />
+  <rect x="185" y="5" width="10" height="10" stroke-dasharray="2 1" cursor="pointer" >
+    <animate begin="mouseenter" attributeName="opacity" dur="0.5s" fill="freeze" to="0"></animate>
+    <animate begin="mouseout" attributeName="opacity" dur="0.5s" fill="freeze" to="1"></animate>
+  </rect>
+
+  <rect x="12.5" rx="10" y="60" width="175" height="30" fill="silver" />
+  <text x="100" text-anchor="middle" font-size="20" y="80">
+    rectangle
+  </text>
+  <line x1="0" x2="200" y1="150" y2="150" stroke="black"></line>
+  <rect fill="url(#rect)" stroke="url(#stroke)" stroke-opacity="0.5"  y="125" width="25" height="25">
+    <animateTransform attributeName="transform" type="rotate"
+      values="0 25 150;0 25 150;90 25 150;180 50 137.5;270 100 50;270 100 50" dur="5s" repeatCount="indefinite">
+    </animateTransform>
+  </rect>
+</svg>
+<p>svgの中身</p>
+<pre class="prettyprint linenums">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 200 200&quot;&gt;
+  &lt;title&gt;四角形と長方形と正方形&lt;/title&gt;
+  &lt;desc&gt;ちなみに、矩形(くけい)という言葉は、長方形という意味ですよ。(謎の雑学)&lt;/desc&gt;
+  &lt;!-- rectangleをGoogle翻訳に通すと何故か、長方形より先に矩形が訳として出てくるそうです。不思議ですね。 --&gt;
+  &lt;defs&gt;
+    &lt;!-- 今回は https://lopan.jp/about-svg/filter から借りてきました --&gt;
+    &lt;filter id=&quot;filter&quot;&gt;
+      &lt;feColorMatrix type=&quot;matrix&quot; values=&quot;0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0&quot; /&gt;
+      &lt;feOffset dx=&quot;-1&quot; dy=&quot;-1&quot; result=&quot;g&quot; /&gt;
+      &lt;feColorMatrix in=&quot;SourceGraphic&quot; type=&quot;matrix&quot; values=&quot;0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0&quot; /&gt;
+      &lt;feOffset dx=&quot;1&quot; dy=&quot;0&quot; result=&quot;b&quot; /&gt;
+      &lt;feColorMatrix in=&quot;SourceGraphic&quot; type=&quot;matrix&quot; values=&quot;1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0&quot; /&gt;
+      &lt;feOffset dx=&quot;0&quot; dy=&quot;1&quot; /&gt;
+      &lt;feComposite in=&quot;g&quot; operator=&quot;lighter&quot; /&gt;
+      &lt;feComposite in=&quot;b&quot; operator=&quot;lighter&quot; /&gt;
+    &lt;/filter&gt;
+    &lt;pattern patternUnits=&quot;userSpaceOnUse&quot; id=&quot;rect&quot; width=&quot;5&quot; height=&quot;5&quot; &gt;
+      &lt;rect transform=&quot;rotate(45 2.5 2.5)&quot; width=&quot;5&quot; height=&quot;5&quot; /&gt;
+    &lt;/pattern&gt;
+    &lt;linearGradient spreadMethod=&quot;reflect&quot;  id=&quot;stroke&quot;&gt;
+      &lt;animateTransform attributeName=&quot;gradientTransform&quot; type=&quot;rotate&quot; repeatCount=&quot;indefinite&quot; values=&quot;0;360&quot; dur=&quot;3s&quot;&gt;
+      &lt;/animateTransform&gt;
+      &lt;stop offset=&quot;0%&quot; stop-color=&quot;red&quot; /&gt;
+      &lt;stop offset=&quot;100%&quot; stop-color=&quot;blue&quot; /&gt;
+    &lt;/linearGradient&gt;
+  &lt;/defs&gt;
+  &lt;rect y=&quot;5&quot; width=&quot;10&quot; height=&quot;10&quot; /&gt;
+  &lt;rect x=&quot;15&quot; y=&quot;5&quot; fill=&quot;red&quot; width=&quot;10&quot; height=&quot;10&quot; /&gt;
+  &lt;rect x=&quot;30&quot; y=&quot;5&quot; stroke=&quot;blue&quot; fill=&quot;none&quot; width=&quot;10&quot; height=&quot;10&quot; /&gt;
+  &lt;rect transform=&quot;translate(45)&quot; x=&quot;0&quot; y=&quot;5&quot; width=&quot;10&quot; height=&quot;10&quot; /&gt;
+  &lt;rect transform=&quot;rotate(45 65 10)&quot; x=&quot;60&quot; y=&quot;5&quot; width=&quot;10&quot; height=&quot;10&quot; /&gt;
+  &lt;rect transform=&quot;skewX(20)&quot; x=&quot;75&quot; y=&quot;5&quot; width=&quot;10&quot; height=&quot;10&quot; /&gt;
+  &lt;rect transform-origin=&quot;95 10&quot; transform=&quot;skewY(20)&quot; x=&quot;90&quot; y=&quot;5&quot; width=&quot;10&quot; height=&quot;10&quot; /&gt;
+  &lt;rect x=&quot;105&quot; y=&quot;5&quot; width=&quot;10&quot; height=&quot;10&quot;&gt;
+    &lt;animate values=&quot;105;110;110;105;105&quot; calcMode=&quot;spline&quot; keySplines=&quot;0 0 0.75 0;0 0 0.75 0;0 0 0.75 0;0 0 0.75 0;&quot;
+      attributeName=&quot;x&quot; repeatCount=&quot;indefinite&quot; dur=&quot;3s&quot;&gt;&lt;/animate&gt;
+    &lt;animate values=&quot;5;5;10;10;5&quot; calcMode=&quot;spline&quot; keySplines=&quot;0 0 0.75 0;0 0 0.75 0;0 0 0.75 0;0 0 0.75 0;&quot;
+      attributeName=&quot;y&quot; repeatCount=&quot;indefinite&quot; dur=&quot;3s&quot;&gt;&lt;/animate&gt;
+  &lt;/rect&gt;
+  &lt;rect filter=&quot;url(#filter)&quot; x=&quot;125&quot; y=&quot;5&quot; width=&quot;10&quot; height=&quot;10&quot; fill=&quot;white&quot; /&gt;
+  &lt;rect rx=&quot;2.5&quot; x=&quot;140&quot; y=&quot;5&quot; width=&quot;10&quot; height=&quot;10&quot; /&gt;
+  &lt;rect rx=&quot;5&quot; ry=&quot;1&quot; x=&quot;155&quot; y=&quot;5&quot; width=&quot;10&quot; height=&quot;10&quot; /&gt;
+  &lt;rect x=&quot;170&quot; y=&quot;5&quot; width=&quot;10&quot; height=&quot;10&quot; stroke=&quot;skyblue&quot; stroke-dasharray=&quot;2 1&quot; fill=&quot;none&quot; /&gt;
+  &lt;rect x=&quot;185&quot; y=&quot;5&quot; width=&quot;10&quot; height=&quot;10&quot; stroke-dasharray=&quot;2 1&quot; cursor=&quot;pointer&quot; &gt;
+    &lt;animate begin=&quot;mouseenter&quot; attributeName=&quot;opacity&quot; dur=&quot;0.5s&quot; fill=&quot;freeze&quot; to=&quot;0&quot;&gt;&lt;/animate&gt;
+    &lt;animate begin=&quot;mouseout&quot; attributeName=&quot;opacity&quot; dur=&quot;0.5s&quot; fill=&quot;freeze&quot; to=&quot;1&quot;&gt;&lt;/animate&gt;
+  &lt;/rect&gt;
+
+  &lt;rect x=&quot;12.5&quot; rx=&quot;10&quot; y=&quot;60&quot; width=&quot;175&quot; height=&quot;30&quot; fill=&quot;silver&quot; /&gt;
+  &lt;text x=&quot;100&quot; text-anchor=&quot;middle&quot; font-size=&quot;20&quot; y=&quot;80&quot;&gt;
+    rectangle
+  &lt;/text&gt;
+  &lt;line x1=&quot;0&quot; x2=&quot;200&quot; y1=&quot;150&quot; y2=&quot;150&quot; stroke=&quot;black&quot;&gt;&lt;/line&gt;
+  &lt;rect fill=&quot;url(#rect)&quot; stroke=&quot;url(#stroke)&quot; stroke-opacity=&quot;0.5&quot;  y=&quot;125&quot; width=&quot;25&quot; height=&quot;25&quot;&gt;
+    &lt;animateTransform attributeName=&quot;transform&quot; type=&quot;rotate&quot;
+      values=&quot;0 25 150;0 25 150;90 25 150;180 50 137.5;270 100 50;270 100 50&quot; dur=&quot;5s&quot; repeatCount=&quot;indefinite&quot;&gt;
+    &lt;/animateTransform&gt;
+  &lt;/rect&gt;
+&lt;/svg&gt;</pre>

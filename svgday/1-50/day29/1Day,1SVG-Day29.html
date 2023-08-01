@@ -1,0 +1,257 @@
+<p>千里の道も一歩から。</p>
+<p>このシリーズは一日一枚svgのデザインをつくるというシンプルな企画です。</p>
+<p>コメントでのリクエストも受け付けています。</p>
+<p>今日は29日目。</p>
+<p>今日のSVGは線と多角形!</p>
+<p>全然別の物のように見えますが、SVGでは似たもの同士です。</p>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <title>線と多角形</title>
+  <desc>全然別の物のように見えますが、SVGでは似たもの同士です。</desc>
+  <defs>
+    <filter width="5" id="filter">
+      <feTurbulence numOctaves="1" baseFrequency="1" result="noise">
+
+      </feTurbulence>
+      <feComposite in="SourceGraphic" in2="noise" operator="arithmetic" k1="1">
+
+      </feComposite>
+    </filter>
+    <pattern id="pattern" viewBox="0,0,10,10" width="20%" height="20%">
+      <rect fill="orange" width="10" height="10" />
+      <circle fill="white" r="4" cx="5" cy="0" />
+      <circle fill="white" r="4" cx="5" cy="10" />
+    </pattern>
+    <filter id="metal">
+      <feTurbulence baseFrequency="0.1" numOctaves="5" result="noise">
+
+      </feTurbulence>
+      <feColorMatrix type="saturate" in="noise" values="0.5" result="noise">
+
+      </feColorMatrix>
+      <feComposite in="SourceGraphic" in2="noise" operator="arithmetic" k1="1" k2="0.9">
+
+      </feComposite>
+    </filter>
+    <linearGradient x1="0" x2="0" y1="0" y2="1" id="metalLineGrad">
+      <stop offset="0%" stop-color="black" stop-opacity="0" />
+      <stop offset="50%" stop-color="black" />
+      <stop offset="100%" stop-color="black" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="metalShine">
+      <stop offset="0%" stop-color="black" stop-opacity="0.75" />
+      <stop offset="50%" stop-color="white" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="black" stop-opacity="0.75" />
+    </linearGradient>
+    <line id="metalLine" x1="0" x2="200" y1="0" y2="1" stroke="url(#metalLineGrad)" />
+    <radialGradient cx="50%" cy="50%" r="75%" id="lightLine">
+      <stop offset="0%" stop-color="aqua" />
+      <stop offset="100%" stop-color="aqua" stop-opacity="0" />
+    </radialGradient>
+    <filter id="lightFilter">
+      <feGaussianBlur result="emit" stdDeviation="1">
+
+      </feGaussianBlur>
+      <feGaussianBlur result="base" stdDeviation="0.5">
+
+      </feGaussianBlur>
+      <feComposite in="emit" in2="base">
+
+      </feComposite>
+    </filter>
+  </defs>
+  <g transform="scale(2)">
+    <line stroke="black" x1="10" x2="10" y1="4.5" y2="15.5" />
+    <polyline fill="none" stroke="black" points="25.5,5 20,5 20,10 25,10 25,15 19.5,15" />
+    <polygon points="29 15.5 42.5 15.5 35.7 4.5" />
+    <line stroke="black" x1="50" x2="50" y1="4.5" y2="15.5" pathLength="5" stroke-dasharray="1 1" />
+    <polyline transform="translate(40)" fill="none" points="25.5,5 20,5 20,10 25,10 25,15 19.5,15" stroke="black"
+      stroke-dasharray="1" pathLength="2">
+      <animate attributeName="stroke-dashoffset" values="0;2;" repeatCount="indefinite" dur="2s"></animate>
+    </polyline>
+    <g filter="url(#filter)">
+      <rect x="72.5" y="2.5" opacity="0" width="5" height="15" />
+      <line stroke="black" x1="75" x2="75" y1="4.5" y2="15.5" />
+    </g>
+    <line line-caps="round" transform="rotate(45 90 4.5)" stroke-width="2" stroke="url(#pattern)" x1="90" x2="98"
+      y1="4.5" y2="13" />
+  </g>
+  <text x="100" font-size="25" text-anchor="middle" y="55">
+    LINE
+  </text>
+  <g>
+    <rect filter="url(#metal)" y="60" width="200" height="140" fill="#888888" />
+    <g>
+      <use y="123" opacity="0.44" stroke-width="1.32" href="#metalLine" />
+      <use y="175" opacity="0.38" stroke-width="1.07" href="#metalLine" />
+      <use y="193" opacity="0.32" stroke-width="1.42" href="#metalLine" />
+      <use y="144" opacity="0.21" stroke-width="0.75" href="#metalLine" />
+      <use y="166" opacity="0.57" stroke-width="0.98" href="#metalLine" />
+      <use y="112" opacity="0.46" stroke-width="1.12" href="#metalLine" />
+      <use y="164" opacity="0.18" stroke-width="0.88" href="#metalLine" />
+      <use y="185" opacity="0.12" stroke-width="0.61" href="#metalLine" />
+      <use y="196" opacity="0.32" stroke-width="1.04" href="#metalLine" />
+      <use y="176" opacity="0.21" stroke-width="0.43" href="#metalLine" />
+      <use y="171" opacity="0.29" stroke-width="0.56" href="#metalLine" />
+      <use y="111" opacity="0.48" stroke-width="0.87" href="#metalLine" />
+      <use y="187" opacity="0.55" stroke-width="1.32" href="#metalLine" />
+      <use y="99" opacity="0.18" stroke-width="0.52" href="#metalLine" />
+      <use y="151" opacity="0.53" stroke-width="1.14" href="#metalLine" />
+      <use y="123" opacity="0.25" stroke-width="1.22" href="#metalLine" />
+      <use y="162" opacity="0.34" stroke-width="1.35" href="#metalLine" />
+      <use y="97" opacity="0.14" stroke-width="1.32" href="#metalLine" />
+      <use y="199" opacity="0.39" stroke-width="0.88" href="#metalLine" />
+      <use y="163" opacity="0.20" stroke-width="1.43" href="#metalLine" />
+    </g>
+    <rect filter="url(#metal)" y="60" width="200" height="140" fill="url(#metalShine)" opacity="0.75" />
+
+    <g fill="none" stroke-width="2">
+      <g stroke="black" stroke-opacity="0.5">
+        <polyline points="0, 75 35,75 35,165 150,165 150 ,100 165,100 165, 200">
+        </polyline>
+        <polyline points="0 145 70 145 70 90 185 90 185 185 100 185 100 200" />
+        <polyline points="0 125 105 125 105 60" />
+        <polyline points="0 125 105 125 105 200" />
+      </g>
+      <g stroke="url(#lightLine)" filter="url(#lightFilter)">
+        <polyline points="0, 75 35,75 35,165 150,165 150 ,100 165,100 165, 200" pathLength="15" stroke-dasharray="1 14">
+          <animate attributeName="stroke-dashoffset" dur="2s" repeatCount="indefinite" values="15;0"></animate>
+        </polyline>
+        <polyline points="0 145 70 145 70 90 185 90 185 185 100 185 100 200" pathLength="15" stroke-dasharray="1 14">
+          <animate attributeName="stroke-dashoffset" dur="1.5s" repeatCount="indefinite" values="15;0"></animate>
+        </polyline>
+        <polyline points="0 125 105 125 105 60" pathLength="12" stroke-dasharray="1 11">
+          <animate attributeName="stroke-dashoffset" dur="1s" repeatCount="indefinite" values="0;12"></animate>
+        </polyline>
+        <polyline points="0 125 105 125 105 200" pathLength="12" stroke-dasharray="1 11">
+          <animate attributeName="stroke-dashoffset" dur="1.5s" repeatCount="indefinite" values="12;0"></animate>
+        </polyline>
+      </g>
+    </g>
+  </g>
+</svg>
+<p>svgの中身</p>
+<pre class="prettyprint linenums">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 200 200&quot;&gt;
+  &lt;title&gt;線と多角形&lt;/title&gt;
+  &lt;desc&gt;全然別の物のように見えますが、SVGでは似たもの同士です。&lt;/desc&gt;
+  &lt;defs&gt;
+    &lt;filter width=&quot;5&quot; id=&quot;filter&quot;&gt;
+      &lt;feTurbulence numOctaves=&quot;1&quot; baseFrequency=&quot;1&quot; result=&quot;noise&quot;&gt;
+
+      &lt;/feTurbulence&gt;
+      &lt;feComposite in=&quot;SourceGraphic&quot; in2=&quot;noise&quot; operator=&quot;arithmetic&quot; k1=&quot;1&quot;&gt;
+
+      &lt;/feComposite&gt;
+    &lt;/filter&gt;
+    &lt;pattern id=&quot;pattern&quot; viewBox=&quot;0,0,10,10&quot; width=&quot;20%&quot; height=&quot;20%&quot;&gt;
+      &lt;rect fill=&quot;orange&quot; width=&quot;10&quot; height=&quot;10&quot; /&gt;
+      &lt;circle fill=&quot;white&quot; r=&quot;4&quot; cx=&quot;5&quot; cy=&quot;0&quot; /&gt;
+      &lt;circle fill=&quot;white&quot; r=&quot;4&quot; cx=&quot;5&quot; cy=&quot;10&quot; /&gt;
+    &lt;/pattern&gt;
+    &lt;filter id=&quot;metal&quot;&gt;
+      &lt;feTurbulence baseFrequency=&quot;0.1&quot; numOctaves=&quot;5&quot; result=&quot;noise&quot;&gt;
+
+      &lt;/feTurbulence&gt;
+      &lt;feColorMatrix type=&quot;saturate&quot; in=&quot;noise&quot; values=&quot;0.5&quot; result=&quot;noise&quot;&gt;
+
+      &lt;/feColorMatrix&gt;
+      &lt;feComposite in=&quot;SourceGraphic&quot; in2=&quot;noise&quot; operator=&quot;arithmetic&quot; k1=&quot;1&quot; k2=&quot;0.9&quot;&gt;
+
+      &lt;/feComposite&gt;
+    &lt;/filter&gt;
+    &lt;linearGradient x1=&quot;0&quot; x2=&quot;0&quot; y1=&quot;0&quot; y2=&quot;1&quot; id=&quot;metalLineGrad&quot;&gt;
+      &lt;stop offset=&quot;0%&quot; stop-color=&quot;black&quot; stop-opacity=&quot;0&quot; /&gt;
+      &lt;stop offset=&quot;50%&quot; stop-color=&quot;black&quot; /&gt;
+      &lt;stop offset=&quot;100%&quot; stop-color=&quot;black&quot; stop-opacity=&quot;0&quot; /&gt;
+    &lt;/linearGradient&gt;
+    &lt;linearGradient id=&quot;metalShine&quot;&gt;
+      &lt;stop offset=&quot;0%&quot; stop-color=&quot;black&quot; stop-opacity=&quot;0.75&quot; /&gt;
+      &lt;stop offset=&quot;50%&quot; stop-color=&quot;white&quot; stop-opacity=&quot;0.9&quot; /&gt;
+      &lt;stop offset=&quot;100%&quot; stop-color=&quot;black&quot; stop-opacity=&quot;0.75&quot; /&gt;
+    &lt;/linearGradient&gt;
+    &lt;line id=&quot;metalLine&quot; x1=&quot;0&quot; x2=&quot;200&quot; y1=&quot;0&quot; y2=&quot;1&quot; stroke=&quot;url(#metalLineGrad)&quot; /&gt;
+    &lt;radialGradient cx=&quot;50%&quot; cy=&quot;50%&quot; r=&quot;75%&quot; id=&quot;lightLine&quot;&gt;
+      &lt;stop offset=&quot;0%&quot; stop-color=&quot;aqua&quot; /&gt;
+      &lt;stop offset=&quot;100%&quot; stop-color=&quot;aqua&quot; stop-opacity=&quot;0&quot; /&gt;
+    &lt;/radialGradient&gt;
+    &lt;filter id=&quot;lightFilter&quot;&gt;
+      &lt;feGaussianBlur result=&quot;emit&quot; stdDeviation=&quot;1&quot;&gt;
+
+      &lt;/feGaussianBlur&gt;
+      &lt;feGaussianBlur result=&quot;base&quot; stdDeviation=&quot;0.5&quot;&gt;
+
+      &lt;/feGaussianBlur&gt;
+      &lt;feComposite in=&quot;emit&quot; in2=&quot;base&quot;&gt;
+
+      &lt;/feComposite&gt;
+    &lt;/filter&gt;
+  &lt;/defs&gt;
+  &lt;g transform=&quot;scale(2)&quot;&gt;
+    &lt;line stroke=&quot;black&quot; x1=&quot;10&quot; x2=&quot;10&quot; y1=&quot;4.5&quot; y2=&quot;15.5&quot; /&gt;
+    &lt;polyline fill=&quot;none&quot; stroke=&quot;black&quot; points=&quot;25.5,5 20,5 20,10 25,10 25,15 19.5,15&quot; /&gt;
+    &lt;polygon points=&quot;29 15.5 42.5 15.5 35.7 4.5&quot; /&gt;
+    &lt;line stroke=&quot;black&quot; x1=&quot;50&quot; x2=&quot;50&quot; y1=&quot;4.5&quot; y2=&quot;15.5&quot; pathLength=&quot;5&quot; stroke-dasharray=&quot;1 1&quot; /&gt;
+    &lt;polyline transform=&quot;translate(40)&quot; fill=&quot;none&quot; points=&quot;25.5,5 20,5 20,10 25,10 25,15 19.5,15&quot; stroke=&quot;black&quot;
+      stroke-dasharray=&quot;1&quot; pathLength=&quot;2&quot;&gt;
+      &lt;animate attributeName=&quot;stroke-dashoffset&quot; values=&quot;0;2;&quot; repeatCount=&quot;indefinite&quot; dur=&quot;2s&quot;&gt;&lt;/animate&gt;
+    &lt;/polyline&gt;
+    &lt;g filter=&quot;url(#filter)&quot;&gt;
+      &lt;rect x=&quot;72.5&quot; y=&quot;2.5&quot; opacity=&quot;0&quot; width=&quot;5&quot; height=&quot;15&quot; /&gt;
+      &lt;line stroke=&quot;black&quot; x1=&quot;75&quot; x2=&quot;75&quot; y1=&quot;4.5&quot; y2=&quot;15.5&quot; /&gt;
+    &lt;/g&gt;
+    &lt;line line-caps=&quot;round&quot; transform=&quot;rotate(45 90 4.5)&quot; stroke-width=&quot;2&quot; stroke=&quot;url(#pattern)&quot; x1=&quot;90&quot; x2=&quot;98&quot;
+      y1=&quot;4.5&quot; y2=&quot;13&quot; /&gt;
+  &lt;/g&gt;
+  &lt;text x=&quot;100&quot; font-size=&quot;25&quot; text-anchor=&quot;middle&quot; y=&quot;55&quot;&gt;
+    LINE
+  &lt;/text&gt;
+  &lt;g&gt;
+    &lt;rect filter=&quot;url(#metal)&quot; y=&quot;60&quot; width=&quot;200&quot; height=&quot;140&quot; fill=&quot;#888888&quot; /&gt;
+    &lt;g&gt;
+      &lt;use y=&quot;123&quot; opacity=&quot;0.44&quot; stroke-width=&quot;1.32&quot; href=&quot;#metalLine&quot; /&gt;
+      &lt;use y=&quot;175&quot; opacity=&quot;0.38&quot; stroke-width=&quot;1.07&quot; href=&quot;#metalLine&quot; /&gt;
+      &lt;use y=&quot;193&quot; opacity=&quot;0.32&quot; stroke-width=&quot;1.42&quot; href=&quot;#metalLine&quot; /&gt;
+      &lt;use y=&quot;144&quot; opacity=&quot;0.21&quot; stroke-width=&quot;0.75&quot; href=&quot;#metalLine&quot; /&gt;
+      &lt;use y=&quot;166&quot; opacity=&quot;0.57&quot; stroke-width=&quot;0.98&quot; href=&quot;#metalLine&quot; /&gt;
+      &lt;use y=&quot;112&quot; opacity=&quot;0.46&quot; stroke-width=&quot;1.12&quot; href=&quot;#metalLine&quot; /&gt;
+      &lt;use y=&quot;164&quot; opacity=&quot;0.18&quot; stroke-width=&quot;0.88&quot; href=&quot;#metalLine&quot; /&gt;
+      &lt;use y=&quot;185&quot; opacity=&quot;0.12&quot; stroke-width=&quot;0.61&quot; href=&quot;#metalLine&quot; /&gt;
+      &lt;use y=&quot;196&quot; opacity=&quot;0.32&quot; stroke-width=&quot;1.04&quot; href=&quot;#metalLine&quot; /&gt;
+      &lt;use y=&quot;176&quot; opacity=&quot;0.21&quot; stroke-width=&quot;0.43&quot; href=&quot;#metalLine&quot; /&gt;
+      &lt;use y=&quot;171&quot; opacity=&quot;0.29&quot; stroke-width=&quot;0.56&quot; href=&quot;#metalLine&quot; /&gt;
+      &lt;use y=&quot;111&quot; opacity=&quot;0.48&quot; stroke-width=&quot;0.87&quot; href=&quot;#metalLine&quot; /&gt;
+      &lt;use y=&quot;187&quot; opacity=&quot;0.55&quot; stroke-width=&quot;1.32&quot; href=&quot;#metalLine&quot; /&gt;
+      &lt;use y=&quot;99&quot; opacity=&quot;0.18&quot; stroke-width=&quot;0.52&quot; href=&quot;#metalLine&quot; /&gt;
+      &lt;use y=&quot;151&quot; opacity=&quot;0.53&quot; stroke-width=&quot;1.14&quot; href=&quot;#metalLine&quot; /&gt;
+      &lt;use y=&quot;123&quot; opacity=&quot;0.25&quot; stroke-width=&quot;1.22&quot; href=&quot;#metalLine&quot; /&gt;
+      &lt;use y=&quot;162&quot; opacity=&quot;0.34&quot; stroke-width=&quot;1.35&quot; href=&quot;#metalLine&quot; /&gt;
+      &lt;use y=&quot;97&quot; opacity=&quot;0.14&quot; stroke-width=&quot;1.32&quot; href=&quot;#metalLine&quot; /&gt;
+      &lt;use y=&quot;199&quot; opacity=&quot;0.39&quot; stroke-width=&quot;0.88&quot; href=&quot;#metalLine&quot; /&gt;
+      &lt;use y=&quot;163&quot; opacity=&quot;0.20&quot; stroke-width=&quot;1.43&quot; href=&quot;#metalLine&quot; /&gt;
+    &lt;/g&gt;
+    &lt;rect filter=&quot;url(#metal)&quot; y=&quot;60&quot; width=&quot;200&quot; height=&quot;140&quot; fill=&quot;url(#metalShine)&quot; opacity=&quot;0.75&quot; /&gt;
+
+    &lt;g fill=&quot;none&quot; stroke-width=&quot;2&quot;&gt;
+      &lt;g stroke=&quot;black&quot; stroke-opacity=&quot;0.5&quot;&gt;
+        &lt;polyline points=&quot;0, 75 35,75 35,165 150,165 150 ,100 165,100 165, 200&quot;&gt;
+        &lt;/polyline&gt;
+        &lt;polyline points=&quot;0 145 70 145 70 90 185 90 185 185 100 185 100 200&quot; /&gt;
+        &lt;polyline points=&quot;0 125 105 125 105 60&quot; /&gt;
+        &lt;polyline points=&quot;0 125 105 125 105 200&quot; /&gt;
+      &lt;/g&gt;
+      &lt;g stroke=&quot;url(#lightLine)&quot; filter=&quot;url(#lightFilter)&quot;&gt;
+        &lt;polyline points=&quot;0, 75 35,75 35,165 150,165 150 ,100 165,100 165, 200&quot; pathLength=&quot;15&quot; stroke-dasharray=&quot;1 14&quot;&gt;
+          &lt;animate attributeName=&quot;stroke-dashoffset&quot; dur=&quot;2s&quot; repeatCount=&quot;indefinite&quot; values=&quot;15;0&quot;&gt;&lt;/animate&gt;
+        &lt;/polyline&gt;
+        &lt;polyline points=&quot;0 145 70 145 70 90 185 90 185 185 100 185 100 200&quot; pathLength=&quot;15&quot; stroke-dasharray=&quot;1 14&quot;&gt;
+          &lt;animate attributeName=&quot;stroke-dashoffset&quot; dur=&quot;1.5s&quot; repeatCount=&quot;indefinite&quot; values=&quot;15;0&quot;&gt;&lt;/animate&gt;
+        &lt;/polyline&gt;
+        &lt;polyline points=&quot;0 125 105 125 105 60&quot; pathLength=&quot;12&quot; stroke-dasharray=&quot;1 11&quot;&gt;
+          &lt;animate attributeName=&quot;stroke-dashoffset&quot; dur=&quot;1s&quot; repeatCount=&quot;indefinite&quot; values=&quot;0;12&quot;&gt;&lt;/animate&gt;
+        &lt;/polyline&gt;
+        &lt;polyline points=&quot;0 125 105 125 105 200&quot; pathLength=&quot;12&quot; stroke-dasharray=&quot;1 11&quot;&gt;
+          &lt;animate attributeName=&quot;stroke-dashoffset&quot; dur=&quot;1.5s&quot; repeatCount=&quot;indefinite&quot; values=&quot;12;0&quot;&gt;&lt;/animate&gt;
+        &lt;/polyline&gt;
+      &lt;/g&gt;
+    &lt;/g&gt;
+  &lt;/g&gt;
+&lt;/svg&gt;</pre>

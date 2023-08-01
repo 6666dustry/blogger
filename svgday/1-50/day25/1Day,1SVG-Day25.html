@@ -1,0 +1,93 @@
+<p>千里の道も一歩から。</p>
+<p>このシリーズは一日一枚svgのデザインをつくるというシンプルな企画です。</p>
+<p>コメントでのリクエストも受け付けています。</p>
+<p>今日は25日目。</p>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <title>いろんなテキスト</title>
+  <desc>SVGなら、あんなテキストやこんなテキストも簡単に表現できます。</desc>
+  <defs>
+    <path id="spiral" style="fill-rule:evenodd" transform="rotate(180,106,103)"
+      d="m 106,103 c -3,-3.9 4,-6.2 6,-5.2 8,2.2 8,12.2 4,18.2 -6,10 -20.7,10 -29.4,3 C 73.8,108 74.6,88.8 85.1,77.2 99.1,61.6 124,62.9 138,76.9 157,94.5 155,124 137,142 116,163 81.1,160 60.8,140 36.8,115 39.8,74.5 64.2,51.3 92.5,24.5 138,28.1 164,56 194,87.8 190,139 158,168 123,200 66.7,195 34.9,160 -0.336,122 4.87,60.1 43.4,25.5 54.4,15.6 67.6,8.18 81.8,3.92 M 106,103 c 3,4 -4,6 -6,5 -8,-2 -8,-12 -4,-18 6,-10 21,-10 29,-3 13,11 12,30 2,42 -14,15 -39,14 -53,0 -19,-17 -17,-47 1,-65 21,-21 56,-18 76,2 24,25 21,66 -3,89 C 120,182 74,178 48,150 18,118 22,67 54,38 89,6 145,11 177,46 c 35,38 30,100 -8,135 -11,9 -25,17 -39,21" />
+  </defs>
+  <g >
+    <text y="10">
+      normal text
+    </text>
+    <text y="40" font-size="30px">
+      big text
+    </text>
+    <text y="55" font-size="7.5px">
+      small text
+    </text>
+    <text y="80 85 90 75 82 81 76 91 88 60 72 74 76 78 80 82 84 86">
+      Text with position
+    </text>
+    <text transform="translate(-80 20) ">
+      <textPath href="#spiral">
+        Some text with path
+      </textPath>
+    </text>
+    <text x="100" y="90" writing-mode="tb">
+      Vertical text
+    </text>
+    <text x="120" y="90" writing-mode="tb-rl">
+      たてがき文章
+    </text>
+    <text x="160" writing-mode="tb-rl">
+      <animate attributeName="y" dur="5s" repeatCount="indefinite" values="-150;200" ></animate>
+      Text Animation
+    </text>
+     <text text-anchor="middle" x="180" y="100" textLength="0" writing-mode="tb-rl" transform-origin="180 100">
+      <animate attributeName="textLength" dur="5s" repeatCount="indefinite" values="0;200;0" ></animate>
+      <animateTransform attributeName="transform" type="scale" values="1 1;1 -1;1 1" dur="10s" begin="2.5s" repeatCount="indefinite" >
+      </animateTransform>
+      Text Animation
+    </text>
+  </g>
+
+</svg>
+<p>svgの中身</p>
+<pre class="prettyprint linenums">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 200 200&quot;&gt;
+  &lt;title&gt;いろんなテキスト&lt;/title&gt;
+  &lt;desc&gt;SVGなら、あんなテキストやこんなテキストも簡単に表現できます。&lt;/desc&gt;
+  &lt;defs&gt;
+    &lt;path id=&quot;spiral&quot; style=&quot;fill-rule:evenodd&quot; transform=&quot;rotate(180,106,103)&quot;
+      d=&quot;m 106,103 c -3,-3.9 4,-6.2 6,-5.2 8,2.2 8,12.2 4,18.2 -6,10 -20.7,10 -29.4,3 C 73.8,108 74.6,88.8 85.1,77.2 99.1,61.6 124,62.9 138,76.9 157,94.5 155,124 137,142 116,163 81.1,160 60.8,140 36.8,115 39.8,74.5 64.2,51.3 92.5,24.5 138,28.1 164,56 194,87.8 190,139 158,168 123,200 66.7,195 34.9,160 -0.336,122 4.87,60.1 43.4,25.5 54.4,15.6 67.6,8.18 81.8,3.92 M 106,103 c 3,4 -4,6 -6,5 -8,-2 -8,-12 -4,-18 6,-10 21,-10 29,-3 13,11 12,30 2,42 -14,15 -39,14 -53,0 -19,-17 -17,-47 1,-65 21,-21 56,-18 76,2 24,25 21,66 -3,89 C 120,182 74,178 48,150 18,118 22,67 54,38 89,6 145,11 177,46 c 35,38 30,100 -8,135 -11,9 -25,17 -39,21&quot; /&gt;
+  &lt;/defs&gt;
+  &lt;g &gt;
+    &lt;text y=&quot;10&quot;&gt;
+      normal text
+    &lt;/text&gt;
+    &lt;text y=&quot;40&quot; font-size=&quot;30px&quot;&gt;
+      big text
+    &lt;/text&gt;
+    &lt;text y=&quot;55&quot; font-size=&quot;7.5px&quot;&gt;
+      small text
+    &lt;/text&gt;
+    &lt;text y=&quot;80 85 90 75 82 81 76 91 88 60 72 74 76 78 80 82 84 86&quot;&gt;
+      Text with position
+    &lt;/text&gt;
+    &lt;text transform=&quot;translate(-80 20) &quot;&gt;
+      &lt;textPath href=&quot;#spiral&quot;&gt;
+        Some text with path
+      &lt;/textPath&gt;
+    &lt;/text&gt;
+    &lt;text x=&quot;100&quot; y=&quot;90&quot; writing-mode=&quot;tb&quot;&gt;
+      Vertical text
+    &lt;/text&gt;
+    &lt;text x=&quot;120&quot; y=&quot;90&quot; writing-mode=&quot;tb-rl&quot;&gt;
+      たてがき文章
+    &lt;/text&gt;
+    &lt;text x=&quot;160&quot; writing-mode=&quot;tb-rl&quot;&gt;
+      &lt;animate attributeName=&quot;y&quot; dur=&quot;5s&quot; repeatCount=&quot;indefinite&quot; values=&quot;-150;200&quot; &gt;&lt;/animate&gt;
+      Text Animation
+    &lt;/text&gt;
+     &lt;text text-anchor=&quot;middle&quot; x=&quot;180&quot; y=&quot;100&quot; textLength=&quot;0&quot; writing-mode=&quot;tb-rl&quot; transform-origin=&quot;180 100&quot;&gt;
+      &lt;animate attributeName=&quot;textLength&quot; dur=&quot;5s&quot; repeatCount=&quot;indefinite&quot; values=&quot;0;200;0&quot; &gt;&lt;/animate&gt;
+      &lt;animateTransform attributeName=&quot;transform&quot; type=&quot;scale&quot; values=&quot;1 1;1 -1;1 1&quot; dur=&quot;10s&quot; begin=&quot;2.5s&quot; repeatCount=&quot;indefinite&quot; &gt;
+      &lt;/animateTransform&gt;
+      Text Animation
+    &lt;/text&gt;
+  &lt;/g&gt;
+
+&lt;/svg&gt;</pre>
