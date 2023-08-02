@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <title>feComponentTransferとfeComposite</title>
+  <desc>昨日の続きです。まだまだフィルター要素関連の要素があるのでしばらくはフィルターばかりになります。</desc>
+  <rect id="backGround" width="200" height="200" fill="white" ></rect>
+   <defs>
+    <filter id="feComponentTransfer1">
+      <feComponentTransfer>
+        <feFuncR type="gamma" exponent="0.5"/>
+        <feFuncG type="gamma" exponent="2"/>
+        <feFuncB type="gamma">
+          <animate attributeName="exponent" dur="3s" repeatCount="indefinite" values="0;3;0" ></animate>
+          </feFuncB>
+      </feComponentTransfer>
+    </filter>
+    <filter id="feComponentTransfer2">
+      <feComponentTransfer>
+        <feFuncR type="linear" slope="0.1">
+          <animate attributeName="intercept" dur="4s" repeatCount="indefinite" values="0.5;-0.5;0.5" ></animate>
+          </feFuncR>
+        <feFuncG type="linear" slope="0.5" intercept="0.3"/>
+        <feFuncB type="linear" slope="0.75" intercept="0.1" >
+          <animate attributeName="slope" dur="1s" repeatCount="indefinite" values="-0.3;0.3;-0.3" ></animate>
+          </feFuncB>
+      </feComponentTransfer>
+    </filter>
+    <filter id="feComposite1">
+      <feTurbulence numOctaves="1" baseFrequency="1" result="noise">
+        
+      </feTurbulence>
+      <feComposite in2="SourceGraphic" in2="noise" operator="in">
+        
+      </feComposite>
+    </filter>
+    <filter id="feComposite2">
+      <feTurbulence numOctaves="1" baseFrequency="1" result="noise">
+        
+      </feTurbulence>
+      <feComposite in="SourceGraphic" in2="noise" operator="out">
+        
+      </feComposite>
+    </filter>
+    <filter id="feComposite3">
+      <feTurbulence numOctaves="1" baseFrequency="1" result="noise">
+        
+      </feTurbulence>
+      <feComposite in="SourceGraphic" in2="noise" operator="arithmetic" k1="2" k2="0.125" >
+        
+      </feComposite>
+    </filter>
+    <linearGradient id="rainbowGradient">
+      <stop offset="0%" stop-color="red" />
+      <stop offset="16.6%" stop-color="orange" />
+      <stop offset="33.3%" stop-color="yellow" />
+      <stop offset="50%" stop-color="green" />
+      <stop offset="66.6%" stop-color="blue" />
+      <stop offset="83.3%" stop-color="indigo" />
+      <stop offset="100%" stop-color="violet" />
+    </linearGradient>
+    <filter id="feComposite4">
+      <feSpecularLighting  lighting-color="pink" specularConstant="1.5" specularExponent="250" result="light" >
+        <fePointLight x="100" y="150" z="50" />
+      </feSpecularLighting>
+      <feComposite in="SourceGraphic" in2="light" operator="lighter" k2="1" k3="1" result="pinked" >
+        
+      </feComposite>
+      <feSpecularLighting  lighting-color="lightgreen" specularExponent="80" result="light2" >
+        <animate attributeName="specularConstant" dur="1s" repeatCount="indefinite" values="1;10;1" ></animate>
+        <fePointLight x="50" y="150" z="25" />
+      </feSpecularLighting>
+      <feComposite in="pinked" in2="light2" operator="lighter" result="greened" >
+        
+      </feComposite>
+      <feSpecularLighting  lighting-color="orange" specularConstant="0.5" specularExponent="20" result="light3" >
+        <animate attributeName="specularConstant" dur="5s" repeatCount="indefinite" values="1;10;1;1" ></animate>
+        <animate attributeName="specularExponent" dur="5s" repeatCount="indefinite" values="200;20;100" ></animate>
+        <fePointLight x="150" y="150" z="25" />
+      </feSpecularLighting>
+      <feComposite in="greened" in2="light3" operator="lighter" >
+        
+      </feComposite>
+    </filter>
+  </defs>
+  <rect x="0" fill="url(#rainbowGradient)" width="20" height="20" />
+  <rect x="35" fill="url(#rainbowGradient)" filter="url(#feComponentTransfer1)" width="20" height="20" />
+  <rect x="70" fill="url(#rainbowGradient)" filter="url(#feComponentTransfer2)" width="20" height="20" />
+  <circle cx="115" cy="10" r="10" filter="url(#feComposite1)" />
+  <circle cx="150" cy="10" r="10" filter="url(#feComposite2)" />
+  <circle cx="185" cy="10" r="10" filter="url(#feComposite3)" />
+  <text x="100" y="40" text-anchor="middle" filter="url(#feComposite3)" >
+    feComponentTransfer
+  </text>
+  <text x="100" y="65" text-anchor="middle" filter="url(#feComposite2)" font-size="25"  >
+    & 
+  </text>
+  <text x="100" y="80" text-anchor="middle"  filter="url(#feComposite1)" font-weight="900" >
+    feComposite
+  </text>
+  <rect y="90" width="200" height="110" filter="url(#feComposite4)" />
+</svg>
