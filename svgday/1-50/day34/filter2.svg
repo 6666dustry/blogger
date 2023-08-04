@@ -91,7 +91,7 @@
     feComponentTransfer
   </text>
   <text x="100" y="65" text-anchor="middle" filter="url(#feComposite2)" font-size="25"  >
-    & 
+    &amp; 
   </text>
   <text x="100" y="80" text-anchor="middle"  filter="url(#feComposite1)" font-weight="900" >
     feComposite
