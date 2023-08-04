@@ -68,7 +68,7 @@
     feConvolveMatrix
   </text>
   <text x="100" y="115" text-anchor="middle">
-    &
+    &amp;
   </text>
   <text x="100" y="125" text-anchor="middle"  filter="url(#sharpenFilter)" font >
     feDisplacementMap
