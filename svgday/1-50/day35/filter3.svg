@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <title>feConvolveMatrixとfeDisplacementMap</title>
+  <desc>終わらないフィルター。計算したところあと五日ほど続きます。</desc>
+  <defs>
+    <filter id="embossFilter">
+      <feConvolveMatrix>
+        <animate attributeName="kernelMatrix" dur="2s" repeatCount="indefinite"
+          values="-3 0 0,0 0 0,0 0 3;3 0 0,0 0 0,0 0 -3;-3 0 0,0 0 0,0 0 3"></animate>
+      </feConvolveMatrix>
+    </filter>
+    <filter  x="-50%" y="-50%" width="200%" height="200%" id="rippleFilter">
+      <feTurbulence type="turbulence" baseFrequency="0.2" numOctaves="5" result="turbulence" />
+      <feDisplacementMap in2="turbulence" in="SourceGraphic" scale="10" xChannelSelector="R" yChannelSelector="G" >
+        <animate attributeName="scale" dur="10s" repeatCount="indefinite" values="-25;25;-25" ></animate></feDisplacementMap>
+    </filter>
+    <filter id="edgeDetectionFilter">
+      <feConvolveMatrix order="3" kernelMatrix="-1 -1 -1 -1 8 -1 -1 -1 -1" divisor="1" bias="0" targetX="1" targetY="1" edgeMode="duplicate" />
+    </filter>
+    <filter id="sharpenFilter">
+      <feConvolveMatrix order="3" kernelMatrix="0 -1 0 -1 5 -1 0 -1 0" divisor="1" bias="0" targetX="1" targetY="1" edgeMode="duplicate" />
+    </filter>
+    <filter id="embossWithDisplace">
+      <feTurbulence type="fractalNoise" baseFrequency="0.2" numOctaves="5" result="turbulence" />
+      <feDisplacementMap in2="turbulence" in="SourceGraphic" scale="10" xChannelSelector="R" yChannelSelector="G" >
+        <animate attributeName="scale" dur="10s" repeatCount="indefinite" values="-100;100;-100" ></animate></feDisplacementMap>
+      <feConvolveMatrix>
+        <animate attributeName="kernelMatrix" dur="20s" repeatCount="indefinite"
+          values="-10 0 0,0 0 0,0 0 10;10 0 0,0 0 0,0 0 -10;-10 0 0,0 0 0,0 0 10"></animate>
+      </feConvolveMatrix>
+      
+    </filter>
+    <linearGradient id="rainbowGradient" >
+      <stop offset="0%" stop-color="red" />
+      <stop offset="16.6%" stop-color="orange" />
+      <stop offset="33.3%" stop-color="yellow" />
+      <stop offset="50%" stop-color="green" />
+      <stop offset="66.6%" stop-color="blue" />
+      <stop offset="83.3%" stop-color="indigo" />
+      <stop offset="100%" stop-color="violet" />
+    </linearGradient>
+  </defs>
+  <rect id="backGround" width="200" height="200" fill="white"></rect>
+  <text x="0" y="15" filter="url(#embossFilter)" font-weight="900" font-size="20">
+    emboss
+  </text>
+  <rect x="75" width="20" height="20" filter="url(#rippleFilter)" />
+  
+  <g filter="url(#edgeDetectionFilter)">
+    <rect id="rainbowRect" x="110" width="20" height="20" fill="url(#rainbowGradient)" />
+    <use x="5" y="1" href="#rainbowRect">
+      
+    </use>
+    <use x="-2" y="-4" href="#rainbowRect" transform="rotate(45 110 10)">
+      
+    </use>
+  </g>
+  <g transform="translate(50)" filter="url(#sharpenFilter)">
+    <rect id="rainbowRect" x="110" width="20" height="20" fill="url(#rainbowGradient)" opacity="0.6" />
+    <use x="5" y="1" href="#rainbowRect" opacity="0.6" >
+      
+    </use>
+    <use x="-2" y="-4" href="#rainbowRect" transform="rotate(45 110 10)" opacity="0.6">
+      
+    </use>
+  </g>
+  <text x="100" y="105" text-anchor="middle" filter="url(#edgeDetectionFilter)" font-weight="900">
+    feConvolveMatrix
+  </text>
+  <text x="100" y="115" text-anchor="middle">
+    &
+  </text>
+  <text x="100" y="125" text-anchor="middle"  filter="url(#sharpenFilter)" font >
+    feDisplacementMap
+  </text>
+  <circle cx="100" cy="110" r="75" filter="url(#embossWithDisplace)" />
+</svg>
