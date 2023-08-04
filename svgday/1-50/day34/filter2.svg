@@ -28,7 +28,7 @@
       <feTurbulence numOctaves="1" baseFrequency="1" result="noise">
         
       </feTurbulence>
-      <feComposite in2="SourceGraphic" in2="noise" operator="in">
+      <feComposite in="SourceGraphic" in2="noise" operator="in">
         
       </feComposite>
     </filter>
