@@ -32,5 +32,5 @@ with open(savePath, "w", encoding="utf-8") as f, open(
   for line in lines:
     if not line.startswith("<?xml"):
       f.write(line)
-  f.write("\n<p>svgの中身</p>\n")
+  f.write("\n<h2>svgの中身</h2>\n")
   f.write(f'<pre class="prettyprint linenums">{html.escape(content)}</pre>')
