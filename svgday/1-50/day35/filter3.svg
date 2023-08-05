@@ -70,7 +70,7 @@
   <text x="100" y="115" text-anchor="middle">
     &amp;
   </text>
-  <text x="100" y="125" text-anchor="middle"  filter="url(#sharpenFilter)" font >
+  <text x="100" y="125" text-anchor="middle"  filter="url(#sharpenFilter)" >
     feDisplacementMap
   </text>
   <circle cx="100" cy="110" r="75" filter="url(#embossWithDisplace)" />
