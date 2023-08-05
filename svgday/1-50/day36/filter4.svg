@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
   <title>feDiffuseLightingとfeSpecularLightingとfeDropShadow</title>
-  <desc>光と影です。
-  feDiffuseLightingは拡散反射をシミュレートするために使用されます。拡散反射は、光が物体の表面に当たって反射し、その表面から均等に広がる現象です。これにより、物体の明るさが変化し、立体感や陰影が付加されます。
-  一方、feSpecularLightingは鏡面反射をシミュレートするために使用されます。鏡面反射は、光が物体の表面に当たり、反射角が入射角と等しくなる現象です。これにより、光が物体の表面から跳ね返る効果が生じ、輝きや光沢が表現されます。(by ChatGPT)
-  つまり、feDiffuseLightingは普通の物体にあった時の光の反射、feSpecularLightingは鏡や金属にあたった時の光の反射ということですが、正直、特にこだわりがなければどちらを使ってもほぼ同じです。</desc>
+  <desc>今日は光と影です。</desc>
   <defs>
     <filter id="feDiffuse" primitiveUnits="objectBoundingBox">
       <feDiffuseLighting lighting-color="white" diffuseConstant="2"  result="light" >
@@ -117,3 +114,6 @@
     d="M 0 150 h 15 c 0 0 10 0 10 10  v 30 c 0 0 0 10 10 10 h 30 c 0 0 10 0 10 -10 v-30 c 0 0 0 -10 10 -10 h 30 c 0 0 10 0 10 10 v 30 a 25 25 0 0 0 50 0 v -35 H 200 V 200 H 0 Z">
   </path>
 </svg>
+<!--$details <p>feDiffuseLightingは拡散反射をシミュレートするために使用されます。拡散反射は、光が物体の表面に当たって反射し、その表面から均等に広がる現象です。これにより、物体の明るさが変化し、立体感や陰影が付加されます。
+  一方、feSpecularLightingは鏡面反射をシミュレートするために使用されます。鏡面反射は、光が物体の表面に当たり、反射角が入射角と等しくなる現象です。これにより、光が物体の表面から跳ね返る効果が生じ、輝きや光沢が表現されます。(by ChatGPT)
+  つまり、feDiffuseLightingは普通の物体にあった時の光の反射、feSpecularLightingは鏡や金属にあたった時の光の反射ということですが、正直、特にこだわりがなければどちらを使ってもほぼ同じです。<p> -->

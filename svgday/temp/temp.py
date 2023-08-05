@@ -1,6 +1,6 @@
 import sys
 import html
-from extracttext import extract_title_and_desc
+from extracttext import *
 
 if not (len(sys.argv) >= 2 and sys.argv[1].isdigit()):
   RuntimeError("You must input a day number")
@@ -23,14 +23,15 @@ with open(savePath, "w", encoding="utf-8") as f, open(
       ]
     )
   content=svg.read()
+  details=extract_details(content)
+  content =remove_details(content)
+  print(content)
   title, desc = extract_title_and_desc(content)
   f.writelines(
     [f"<p>今日のSVGは{title}!</p>\n", f"<p>{desc}</p>\n"]
     )
-  svg.seek(0)
-  lines = svg.readlines()
-  for line in lines:
-    if not line.startswith("<?xml"):
-      f.write(line)
+  f.write(remove_xml(content))
   f.write("\n<h2>svgの中身</h2>\n")
   f.write(f'<pre class="prettyprint linenums">{html.escape(content)}</pre>')
+  f.write("\n<h2>詳細な説明等</h2>\n")
+  f.write(details[0])

@@ -1,5 +1,5 @@
 import xml.etree.ElementTree as ET
-
+import re
 
 def extract_title_and_desc(svg_content: str):
   root = ET.fromstring(svg_content)
@@ -15,3 +15,20 @@ def extract_title_and_desc(svg_content: str):
     desc_text="none"
 
   return title_text, desc_text
+
+def extract_details(svg_content: str):
+  try:
+    return re.findall(r'<!--\$details(((\n)|.)*?)-->', svg_content, re.DOTALL)[0]
+  except Exception as e:
+    print(e)
+    return "<p>特にないよ！</p>"
+
+#including new lines.
+def remove_details(svg_content: str):
+  try:
+    return re.sub(r'<!--\$details(((\n)|.)*?)-->',"", svg_content)
+  except:
+    return svg_content
+  
+def remove_xml(svg_content: str):
+  return re.sub(r'<\?xml(.*?)\n',"", svg_content)
