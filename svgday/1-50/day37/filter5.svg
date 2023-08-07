@@ -77,14 +77,14 @@
   <rect y="100" width="200"  height="100" filter="url(#turbulenceFilter6)" />
   <rect y="100" width="200"  height="100" filter="url(#turbulenceFilter6)" />
 </svg>
-<!--$details<p>
-&ltfeTile&gt要素は、SVG（Scalable Vector Graphics）フィルターの一部として使用される、指定された領域内で画像やテクスチャを繰り返して敷き詰めるための要素です。これにより、背景のパターンやテクスチャを生成する効果を作成できます。</p>
+<!--$details<h3>
+&ltfeTile&gt要素は、SVG（Scalable Vector Graphics）フィルターの一部として使用される、指定された領域内で画像やテクスチャを繰り返して敷き詰めるための要素です。これにより、背景のパターンやテクスチャを生成する効果を作成できます。</h3>
 
-<p>&ltfeTile$gt要素は、次の主な属性を持ちます：</p>
+<p>&ltfeTile&gt要素は、次の主な属性を持ちます：</p>
 
 <p>in: 敷き詰める対象となる入力画像やテクスチャを指定します。
 result: 敷き詰めた結果を出力する際の名前を指定します。他のフィルター要素でこの名前を使用することで、フィルターチェーン内で利用できます。</p>
-<p><code>&lt;feTurbulence&gt;</code>要素は、SVG（Scalable Vector Graphics）フィルターの一部として、ランダムなノイズやテクスチャを生成するための要素です。</p>
+<h3><code>&lt;feTurbulence&gt;</code>要素は、SVG（Scalable Vector Graphics）フィルターの一部として、ランダムなノイズやテクスチャを生成するための要素です。</h2>
 <p>この要素は、主に以下のような属性を持ちます。</p>
 <ul>
 <li><code>baseFrequency</code>: ノイズやテクスチャの周波数を指定します。この値が大きいほど、より細かなノイズが生成されます。</li>
