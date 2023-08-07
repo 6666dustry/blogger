@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <title>feTile&amp;feTurbulence</title>
+  <desc>feTurbulenceは他の要素では出来ないことが出来るのでとても便利です。
+  でもfeTileは大体patternで代用できます。悲しいですね。(役に立たないわけではない)</desc>
+  <defs>
+    <filter id="tileFilter"  x="0" y="0" width="100%" height="100%"  primitiveUnits="objectBoundingBox">
+      <feTile in="SourceGraphic" result="tiledResult" width="50%" height="50%" />
+      <feTile>
+        
+      </feTile>
+    </filter>
+    <filter id="turbulenceFilter">
+      <feTurbulence baseFrequency="0.05" numOctaves="4" result="turbulence" >
+        <animate attributeName="baseFrequency" dur="10s" repeatCount="indefinite" values="0;0.5;0.5" keyTimes="0;0.75;1" keySplines="0 0 0.75 0;0 0 0 0" calcMode="spline" ></animate>
+        </feTurbulence>
+      <feColorMatrix type="saturate" values="2" in="turbulence" result="coloredTurbulence" />
+      <feComposite operator="in" in="coloredTurbulence" in2="SourceGraphic" result="texturedBackground" />
+    </filter>
+    <filter id="turbulenceFilter2">
+      <feTurbulence baseFrequency="0.05" numOctaves="4" type="fractalNoise"  result="turbulence" >
+        <animate attributeName="numOctaves" dur="5s" repeatCount="indefinite" values="0;5" ></animate>
+        </feTurbulence>
+      <feColorMatrix type="saturate" values="10" in="turbulence" result="coloredTurbulence" />
+      <feComposite operator="in" in="coloredTurbulence" in2="SourceGraphic" result="texturedBackground" />
+    </filter>
+    <filter id="turbulenceFilter3">
+      <!--seedの値は小数以下は切り捨てのようです。-->
+      <feTurbulence baseFrequency="0.05" numOctaves="4" result="turbulence" >
+        <animate attributeName="seed" dur="10s" values="0;10" repeatCount="indefinite" ></animate>
+        </feTurbulence>
+      <feColorMatrix type="saturate" values="2" in="turbulence" result="coloredTurbulence" />
+      <feComposite operator="in" in="coloredTurbulence" in2="SourceGraphic" result="texturedBackground" />
+    </filter>
+     <filter id="turbulenceFilter4" width="120%" height="120%" >
+      <!--stitchの値がstitchの時はつなぎ目が少し自然になります。よく見れば見えてしまいますが、そこには目をつぶりましょう。-->
+      <feTurbulence seed="3" baseFrequency="0.1" stitchTiles="noStitch" result="turbulence" >
+        <set id="switch" attributeName="stitchTiles" to="stitch" begin="1s;switch.end+1s"  dur="1s" >   
+        </set>
+        </feTurbulence>
+      <feColorMatrix type="saturate" values="2" in="turbulence" result="coloredTurbulence" />
+      <feComposite operator="in" in="coloredTurbulence" in2="SourceGraphic" result="texturedBackground" />
+    </filter>
+    <filter id="turbulenceFilter5">
+      <feTurbulence baseFrequency="0.2" numOctaves="2" type="turbulence" result="turbulence" >
+       <set id="typeSwitch" attributeName="type" to="fractalNoise" begin="1s;typeSwitch.end+1s"  dur="1s" >   
+        </set>
+        </feTurbulence>
+      <feColorMatrix type="saturate" values="2" in="turbulence" result="coloredTurbulence" />
+      <feComposite operator="in" in="coloredTurbulence" in2="SourceGraphic" result="texturedBackground" />
+    </filter>
+    <filter id="turbulenceFilter6">
+      <feTurbulence baseFrequency="0.2" numOctaves="2" type="turbulence" result="turbulence" >
+        </feTurbulence>
+      <feColorMatrix type="saturate" values="0" in="turbulence" result="coloredTurbulence" />
+      <feComposite operator="in" in="coloredTurbulence" in2="SourceGraphic" result="texturedBackground" />
+    </filter>
+  </defs>
+  <rect id="backGround" width="200" height="200" fill="white" ></rect>
+  
+  <g filter="url(#tileFilter)">
+    <rect x="0" y="0" width="20" height="20" stroke-width="0" />
+    <rect x="5" y="5" width="10" height="10" fill="gray" />
+  </g>
+  <rect x="30" width="20" height="20" filter="url(#turbulenceFilter)" />
+  <rect x="60" width="20" height="20" filter="url(#turbulenceFilter2)" />
+  <rect x="90" width="20" height="20" filter="url(#turbulenceFilter3)" />
+  <rect x="120" width="20" height="20" filter="url(#turbulenceFilter4)" />
+  <rect x="120" transform="translate(0 20)" width="20" height="20" filter="url(#turbulenceFilter4)" />
+  <rect x="120" transform="translate(20 20)" width="20" height="20" filter="url(#turbulenceFilter4)" />
+  <rect x="120" transform="translate(20)" width="20" height="20" filter="url(#turbulenceFilter4)" />
+  <rect x="170" width="20" height="20" filter="url(#turbulenceFilter5)" />
+  <text x="100" y="70" text-anchor="middle" filter="url(#turbulenceFilter6)" font-weight="900" >
+    feTile&amp;feTurbulence
+  </text>
+  <rect y="100" width="200" fill="cyan"  height="100"/>
+  <rect y="100" width="200"  height="100" filter="url(#turbulenceFilter6)" />
+  <rect y="100" width="200"  height="100" filter="url(#turbulenceFilter6)" />
+</svg>
+<!--$details<p>
+&ltfeTile&gt要素は、SVG（Scalable Vector Graphics）フィルターの一部として使用される、指定された領域内で画像やテクスチャを繰り返して敷き詰めるための要素です。これにより、背景のパターンやテクスチャを生成する効果を作成できます。</p>
+
+<p>&ltfeTile$gt要素は、次の主な属性を持ちます：</p>
+
+<p>in: 敷き詰める対象となる入力画像やテクスチャを指定します。
+result: 敷き詰めた結果を出力する際の名前を指定します。他のフィルター要素でこの名前を使用することで、フィルターチェーン内で利用できます。</p>
+<p><code>&lt;feTurbulence&gt;</code>要素は、SVG（Scalable Vector Graphics）フィルターの一部として、ランダムなノイズやテクスチャを生成するための要素です。</p>
+<p>この要素は、主に以下のような属性を持ちます。</p>
+<ul>
+<li><code>baseFrequency</code>: ノイズやテクスチャの周波数を指定します。この値が大きいほど、より細かなノイズが生成されます。</li>
+<li><code>numOctaves</code>: オクターブ（周波数帯域）の数を指定します。値が大きいほど、より複雑なテクスチャが生成されます。</li>
+<li><code>seed</code>: 乱数の種を指定します。同じ種を使用すると、同じテクスチャが生成されます。</li>
+<li><code>stitchTiles</code>: テクスチャを繰り返す際の仕様方法を指定します。<code>noStitch</code>は繰り返しの境界が滑らかでない場合に使用されます。</li>
+</ul>
+<p><code>&lt;feTurbulence&gt;</code>要素を使用することで、背景やオブジェクトにテクスチャやランダムな模様を追加できます。この要素を用いて生成されるテクスチャは、ノイズやウェーブ、雲、大理石模様など、様々な視覚的効果を作り出すのに使われます。</p>
+-->
