@@ -25,7 +25,6 @@ with open(savePath, "w", encoding="utf-8") as f, open(
   content=svg.read()
   details=extract_details(content)
   content =remove_details(content)
-  print(content)
   title, desc = extract_title_and_desc(content)
   f.writelines(
     [f"<p>今日のSVGは{title}!</p>\n", f"<p>{desc}</p>\n"]
