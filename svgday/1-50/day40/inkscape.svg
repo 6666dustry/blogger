@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   viewBox="0 0 200 200"
+   version="1.1"
+   id="svg330"
+   sodipodi:docname="inkscape.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview332"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="1.47078"
+     inkscape:cx="101.307"
+     inkscape:cy="138.702"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     inkscape:lockguides="true"
+     showguides="true" />
+   <title>InkScape</title>
+   <desc>今回はインクスケープという描画ソフトを使って作りました。</desc>
+  <defs
+     id="defs327">
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="20.3335"
+       height="20"
+       patternTransform="translate(0,0)"
+       id="pattern17270">
+      <rect
+         style="fill:#ffcc00;fill-rule:evenodd;stroke:none;stroke-width:3;stroke-dasharray:none;stroke-opacity:1"
+         id="rect17164"
+         width="20"
+         height="20"
+         x="0"
+         y="0" />
+      <path
+         sodipodi:type="star"
+         style="fill:none;fill-rule:evenodd;stroke:#00ffff;stroke-width:3;stroke-dasharray:none;stroke-opacity:1"
+         id="path17162"
+         inkscape:flatsided="false"
+         sodipodi:sides="5"
+         sodipodi:cx="-142.788"
+         sodipodi:cy="-95.1923"
+         sodipodi:r1="10.0388"
+         sodipodi:r2="5.01938"
+         sodipodi:arg1="-2.85014"
+         sodipodi:arg2="-2.22182"
+         inkscape:rounded="0"
+         inkscape:randomized="0"
+         d="m -152.403,-98.0769 6.573,-1.1081 2.814,-6.044 3.085,5.91 6.618,0.8086 -4.667,4.7604 1.276,6.5432 -5.97,-2.9674 -5.829,3.2353 0.978,-6.5943 z"
+         inkscape:transform-center-x="0.0560136"
+         inkscape:transform-center-y="-0.720881"
+         transform="matrix(0.796289,0,0,0.808816,123.942,87.8512)" />
+    </pattern>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Blur"
+       id="filter19380"
+       x="-0.066"
+       y="-0.066"
+       width="1.132"
+       height="1.132">
+      <feFlood
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood19370" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite19372" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="3"
+         result="blur"
+         id="feGaussianBlur19374" />
+      <feOffset
+         dx="0"
+         dy="0"
+         result="offset"
+         id="feOffset19376" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="fbSourceGraphic"
+         id="feComposite19378" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix23134" />
+      <feGaussianBlur
+         id="feGaussianBlur23136"
+         stdDeviation="0.5 0.5"
+         result="blur"
+         in="fbSourceGraphic" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Drop Shadow"
+       id="filter19392"
+       x="-0.174"
+       y="-0.029"
+       width="1.348"
+       height="1.058">
+      <feFlood
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood19382" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite19384" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="3"
+         result="blur"
+         id="feGaussianBlur19386" />
+      <feOffset
+         dx="0"
+         dy="0"
+         result="offset"
+         id="feOffset19388" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite19390" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Drop Shadow"
+       id="filter20868"
+       x="-0.0747182"
+       y="-0.321025"
+       width="1.14944"
+       height="1.64205">
+      <feFlood
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood20858" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="out"
+         result="composite1"
+         id="feComposite20860" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="3"
+         result="blur"
+         id="feGaussianBlur20862" />
+      <feOffset
+         dx="0"
+         dy="0"
+         result="offset"
+         id="feOffset20864" />
+      <feComposite
+         in="offset"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite2"
+         id="feComposite20866" />
+    </filter>
+    <filter
+       inkscape:label="Film Grain"
+       inkscape:menu="Image Effects"
+       inkscape:menu-tooltip="Adds a small scale graininess"
+       style="color-interpolation-filters:sRGB;"
+       id="filter22039"
+       x="0"
+       y="0"
+       width="1"
+       height="1">
+      <feTurbulence
+         type="fractalNoise"
+         numOctaves="3"
+         baseFrequency="1"
+         seed="0"
+         result="result0"
+         id="feTurbulence22029" />
+      <feColorMatrix
+         result="result4"
+         values="0"
+         type="saturate"
+         id="feColorMatrix22031" />
+      <feComposite
+         in="SourceGraphic"
+         in2="result4"
+         operator="arithmetic"
+         k1="1.25"
+         k2="0.5"
+         k3="0.5"
+         result="result2"
+         id="feComposite22033" />
+      <feBlend
+         result="result5"
+         mode="normal"
+         in="result2"
+         in2="SourceGraphic"
+         id="feBlend22035" />
+      <feComposite
+         in="result5"
+         in2="SourceGraphic"
+         operator="in"
+         result="result3"
+         id="feComposite22037" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#0b2228;fill-rule:evenodd;stroke:none;stroke-width:2.9763;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter22039)"
+       id="rect18266"
+       width="200"
+       height="200"
+       x="0"
+       y="0" />
+    <circle
+       style="fill:none;fill-rule:evenodd;stroke:#55ddff;stroke-width:3;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter19380)"
+       id="path5697"
+       cy="100"
+       cx="100"
+       r="75" />
+    <rect
+       style="fill:none;fill-rule:evenodd;stroke:#aaeeff;stroke-width:3;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter19392)"
+       id="rect17079"
+       width="50"
+       height="300"
+       x="-164.459"
+       y="-173.581"
+       transform="rotate(-145)" />
+    <path
+       id="path5697-8"
+       style="fill:#ffffff;fill-rule:evenodd;stroke:#aaeeff;stroke-width:3;stroke-dasharray:none;stroke-opacity:1"
+       d="M 120.17,27.7696 39.0967,143.552 a 75,75 0 0 0 40.979,28.652 L 161.052,56.5566 A 75,75 0 0 0 120.17,27.7696 Z" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-family:HGSKyokashotai;-inkscape-font-specification:'HGSKyokashotai, Normal';text-align:center;letter-spacing:30px;text-anchor:middle;fill:#2a7fff;fill-rule:evenodd;stroke:#5599ff;stroke-width:3;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter20868)"
+       x="-22.5412"
+       y="154.288"
+       id="text18686"
+       transform="rotate(-55)"><tspan
+         id="tspan18684"
+         x="-7.54122"
+         y="154.288"
+         sodipodi:role="line">SVG</tspan></text>
+  </g>
+</svg>
