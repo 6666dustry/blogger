@@ -1,0 +1,234 @@
+<p>千里の道も一歩から。</p>
+<p>このシリーズは一日一枚svgのデザインをつくるというシンプルな企画です。</p>
+<p>非商用、商用利用ともに自由です。Webページのデザインに組み込んだり、このデザインを改良して自分だけのデザインを作ってみてください！</p><p>もちろんコメントでのリクエストも受け付けています！コメントはこの記事の一番下にあります。ぜひ何かリクエストしてみてください！</p>
+<p>今日は38日目！</p>
+<p>今日のSVGはfeGaussianBlur&feOffset!</p>
+<p>どちらも扱いやすいシンプルなフィルターです。</p>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <title>feGaussianBlur&amp;feOffset</title>
+  <desc>どちらも扱いやすいシンプルなフィルターです。</desc>
+  <defs>
+    <filter id="blurFilter">
+      <feGaussianBlur stdDeviation="1" >
+        <animate attributeName="stdDeviation" dur="3s" repeatCount="indefinite" values="0;5;0" ></animate>
+        </feGaussianBlur>
+    </filter>
+    <filter x="-25%" y="-25%" id="offsetFilter" width="150%" height="150%">
+      <feOffset dx="5" dy="5" >
+        <animate attributeName="dx" dur="3s" repeatCount="indefinite" values="-5;5;-5" ></animate>
+        <animate attributeName="dy" dur="3.3s" repeatCount="indefinite" values="5;-5;5" ></animate>
+        </feOffset>
+    </filter>
+    <filter id="feOffset2">
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0" />
+      <feOffset dx="-2" dy="-2" result="g" />
+      <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0" />
+      <feOffset dx="3" dy="0" result="b" />
+      <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0" />
+      <feOffset dx="0" dy="2" />
+      <feComposite in="g" operator="lighter" />
+      <feComposite in="b" operator="lighter" />
+    </filter>
+    <linearGradient id="rainbowGradient" >
+      <stop offset="0%" stop-color="red" />
+      <stop offset="16.6%" stop-color="orange" />
+      <stop offset="33.3%" stop-color="yellow" />
+      <stop offset="50%" stop-color="green" />
+      <stop offset="66.6%" stop-color="blue" />
+      <stop offset="83.3%" stop-color="indigo" />
+      <stop offset="100%" stop-color="violet" />
+    </linearGradient>
+  <filter id="erode">
+    <feMorphology operator="erode" radius="0.2" />
+  </filter>
+  <filter id="dilate">
+    <feMorphology operator="dilate" radius="0.5" />
+  </filter>
+  <filter y="90" height="360" id="blurFilter2" filterUnits="userSpaceOnUse">
+      <feMorphology operator="dilate" radius="0.5" />
+      <feGaussianBlur stdDeviation="2.25" >
+        </feGaussianBlur>
+        <feOffset>
+          <animate attributeName="dy" dur="20s" repeatCount="indefinite" values="0;-250" ></animate>
+        </feOffset>
+    </filter>
+  </defs>
+  <rect id="backGround" width="200" height="200" fill="white" ></rect>
+  <rect x="5" y="5" width="20" height="20" fill="blue" filter="url(#blurFilter)" />
+  <rect x="30" y="5" width="20" height="20" fill="blue" filter="url(#offsetFilter)" />
+  <rect x="60" y="5" width="20" height="20" fill="url(#rainbowGradient)" filter="url(#feOffset2)" />
+  <text x="100" y="1em">Normal text</text>
+  <text x="100" id="thin" y="2em" filter="url(#erode)" >Thinned text</text>
+  <text x="100" id="thick" y="3em" filter="url(#dilate)" >Fattened text</text>
+  <text x="100" y="75" text-anchor="middle">
+    <tspan filter="url(#blurFilter)">
+      feGaussianBlur
+      </tspan>
+      <tspan filter="url(#dilate)">
+        &amp;
+      </tspan>
+      <tspan filter="url(#offsetFilter)">
+        feOffset
+      </tspan>
+  </text>
+  <g  filter="url(#blurFilter2)" y="100">
+    <text y="200">
+      どうもこんにちは、作者のとう
+    </text>
+    <text y="calc(215)">
+      バナです。今回はぼかしと要素
+    </text>
+    <text y="230">
+      の位置を変更できるフィルター
+    </text>
+    <text y="245">
+      を紹介しました。
+    </text>
+    <text y="260">
+      どちらも扱いやすいのでぜひ使
+    </text>
+    <text y="275">
+      ってみてくさい。
+    </text>
+    <text y="290">
+      この文書、ソースコードから読
+    </text>
+    <text y="305">
+      んだほうが早いですよ。
+    </text>
+    <!-- SVG内にこんな長い文章を入れるのはよほどのことがない限りやめましょう。 -->
+    <text y="400">
+      &lt;feMorphology&gt;に全く
+    </text>
+    <text y="415">
+      触れていないことには触れては
+    </text>
+    <text y="430">
+      いけません。
+    </text>
+  </g>
+  
+</svg>
+
+<h2>svgの中身</h2>
+<pre class="prettyprint linenums">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 200 200&quot;&gt;
+  &lt;title&gt;feGaussianBlur&amp;amp;feOffset&lt;/title&gt;
+  &lt;desc&gt;どちらも扱いやすいシンプルなフィルターです。&lt;/desc&gt;
+  &lt;defs&gt;
+    &lt;filter id=&quot;blurFilter&quot;&gt;
+      &lt;feGaussianBlur stdDeviation=&quot;1&quot; &gt;
+        &lt;animate attributeName=&quot;stdDeviation&quot; dur=&quot;3s&quot; repeatCount=&quot;indefinite&quot; values=&quot;0;5;0&quot; &gt;&lt;/animate&gt;
+        &lt;/feGaussianBlur&gt;
+    &lt;/filter&gt;
+    &lt;filter x=&quot;-25%&quot; y=&quot;-25%&quot; id=&quot;offsetFilter&quot; width=&quot;150%&quot; height=&quot;150%&quot;&gt;
+      &lt;feOffset dx=&quot;5&quot; dy=&quot;5&quot; &gt;
+        &lt;animate attributeName=&quot;dx&quot; dur=&quot;3s&quot; repeatCount=&quot;indefinite&quot; values=&quot;-5;5;-5&quot; &gt;&lt;/animate&gt;
+        &lt;animate attributeName=&quot;dy&quot; dur=&quot;3.3s&quot; repeatCount=&quot;indefinite&quot; values=&quot;5;-5;5&quot; &gt;&lt;/animate&gt;
+        &lt;/feOffset&gt;
+    &lt;/filter&gt;
+    &lt;filter id=&quot;feOffset2&quot;&gt;
+      &lt;feColorMatrix type=&quot;matrix&quot; values=&quot;0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0&quot; /&gt;
+      &lt;feOffset dx=&quot;-2&quot; dy=&quot;-2&quot; result=&quot;g&quot; /&gt;
+      &lt;feColorMatrix in=&quot;SourceGraphic&quot; type=&quot;matrix&quot; values=&quot;0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0&quot; /&gt;
+      &lt;feOffset dx=&quot;3&quot; dy=&quot;0&quot; result=&quot;b&quot; /&gt;
+      &lt;feColorMatrix in=&quot;SourceGraphic&quot; type=&quot;matrix&quot; values=&quot;1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0&quot; /&gt;
+      &lt;feOffset dx=&quot;0&quot; dy=&quot;2&quot; /&gt;
+      &lt;feComposite in=&quot;g&quot; operator=&quot;lighter&quot; /&gt;
+      &lt;feComposite in=&quot;b&quot; operator=&quot;lighter&quot; /&gt;
+    &lt;/filter&gt;
+    &lt;linearGradient id=&quot;rainbowGradient&quot; &gt;
+      &lt;stop offset=&quot;0%&quot; stop-color=&quot;red&quot; /&gt;
+      &lt;stop offset=&quot;16.6%&quot; stop-color=&quot;orange&quot; /&gt;
+      &lt;stop offset=&quot;33.3%&quot; stop-color=&quot;yellow&quot; /&gt;
+      &lt;stop offset=&quot;50%&quot; stop-color=&quot;green&quot; /&gt;
+      &lt;stop offset=&quot;66.6%&quot; stop-color=&quot;blue&quot; /&gt;
+      &lt;stop offset=&quot;83.3%&quot; stop-color=&quot;indigo&quot; /&gt;
+      &lt;stop offset=&quot;100%&quot; stop-color=&quot;violet&quot; /&gt;
+    &lt;/linearGradient&gt;
+  &lt;filter id=&quot;erode&quot;&gt;
+    &lt;feMorphology operator=&quot;erode&quot; radius=&quot;0.2&quot; /&gt;
+  &lt;/filter&gt;
+  &lt;filter id=&quot;dilate&quot;&gt;
+    &lt;feMorphology operator=&quot;dilate&quot; radius=&quot;0.5&quot; /&gt;
+  &lt;/filter&gt;
+  &lt;filter y=&quot;90&quot; height=&quot;360&quot; id=&quot;blurFilter2&quot; filterUnits=&quot;userSpaceOnUse&quot;&gt;
+      &lt;feMorphology operator=&quot;dilate&quot; radius=&quot;0.5&quot; /&gt;
+      &lt;feGaussianBlur stdDeviation=&quot;2.25&quot; &gt;
+        &lt;/feGaussianBlur&gt;
+        &lt;feOffset&gt;
+          &lt;animate attributeName=&quot;dy&quot; dur=&quot;20s&quot; repeatCount=&quot;indefinite&quot; values=&quot;0;-250&quot; &gt;&lt;/animate&gt;
+        &lt;/feOffset&gt;
+    &lt;/filter&gt;
+  &lt;/defs&gt;
+  &lt;rect id=&quot;backGround&quot; width=&quot;200&quot; height=&quot;200&quot; fill=&quot;white&quot; &gt;&lt;/rect&gt;
+  &lt;rect x=&quot;5&quot; y=&quot;5&quot; width=&quot;20&quot; height=&quot;20&quot; fill=&quot;blue&quot; filter=&quot;url(#blurFilter)&quot; /&gt;
+  &lt;rect x=&quot;30&quot; y=&quot;5&quot; width=&quot;20&quot; height=&quot;20&quot; fill=&quot;blue&quot; filter=&quot;url(#offsetFilter)&quot; /&gt;
+  &lt;rect x=&quot;60&quot; y=&quot;5&quot; width=&quot;20&quot; height=&quot;20&quot; fill=&quot;url(#rainbowGradient)&quot; filter=&quot;url(#feOffset2)&quot; /&gt;
+  &lt;text x=&quot;100&quot; y=&quot;1em&quot;&gt;Normal text&lt;/text&gt;
+  &lt;text x=&quot;100&quot; id=&quot;thin&quot; y=&quot;2em&quot; filter=&quot;url(#erode)&quot; &gt;Thinned text&lt;/text&gt;
+  &lt;text x=&quot;100&quot; id=&quot;thick&quot; y=&quot;3em&quot; filter=&quot;url(#dilate)&quot; &gt;Fattened text&lt;/text&gt;
+  &lt;text x=&quot;100&quot; y=&quot;75&quot; text-anchor=&quot;middle&quot;&gt;
+    &lt;tspan filter=&quot;url(#blurFilter)&quot;&gt;
+      feGaussianBlur
+      &lt;/tspan&gt;
+      &lt;tspan filter=&quot;url(#dilate)&quot;&gt;
+        &amp;amp;
+      &lt;/tspan&gt;
+      &lt;tspan filter=&quot;url(#offsetFilter)&quot;&gt;
+        feOffset
+      &lt;/tspan&gt;
+  &lt;/text&gt;
+  &lt;g  filter=&quot;url(#blurFilter2)&quot; y=&quot;100&quot;&gt;
+    &lt;text y=&quot;200&quot;&gt;
+      どうもこんにちは、作者のとう
+    &lt;/text&gt;
+    &lt;text y=&quot;calc(215)&quot;&gt;
+      バナです。今回はぼかしと要素
+    &lt;/text&gt;
+    &lt;text y=&quot;230&quot;&gt;
+      の位置を変更できるフィルター
+    &lt;/text&gt;
+    &lt;text y=&quot;245&quot;&gt;
+      を紹介しました。
+    &lt;/text&gt;
+    &lt;text y=&quot;260&quot;&gt;
+      どちらも扱いやすいのでぜひ使
+    &lt;/text&gt;
+    &lt;text y=&quot;275&quot;&gt;
+      ってみてくさい。
+    &lt;/text&gt;
+    &lt;text y=&quot;290&quot;&gt;
+      この文書、ソースコードから読
+    &lt;/text&gt;
+    &lt;text y=&quot;305&quot;&gt;
+      んだほうが早いですよ。
+    &lt;/text&gt;
+    &lt;!-- SVG内にこんな長い文章を入れるのはよほどのことがない限りやめましょう。 --&gt;
+    &lt;text y=&quot;400&quot;&gt;
+      &amp;lt;feMorphology&amp;gt;に全く
+    &lt;/text&gt;
+    &lt;text y=&quot;415&quot;&gt;
+      触れていないことには触れては
+    &lt;/text&gt;
+    &lt;text y=&quot;430&quot;&gt;
+      いけません。
+    &lt;/text&gt;
+  &lt;/g&gt;
+  
+&lt;/svg&gt;
+</pre>
+<h2>詳細な説明等</h2>
+<h2><code>&lt;feGaussianBlur&gt;</code>要素は、SVG（Scalable Vector Graphics）フィルターの一部として、ガウシアンぼかし（ぼかし効果）を追加するための要素です。</h2>
+<p>この要素は、主に以下のような属性を持ちます。</p>
+<ul>
+<li><code>stdDeviation</code>: ぼかしの程度を指定します。値が大きいほど、より強いぼかし効果が得られます。水平と垂直のぼかしの程度を同じく設定することが一般的です。</li>
+</ul>
+<p><code>&lt;feGaussianBlur&gt;</code>要素を使用することで、画像やオブジェクトにぼかしを追加することができます。これにより、視覚的に柔らかな効果を作成したり、特定の部分をぼかしたりすることが可能です。</p>
+<h2><code>&lt;feOffset&gt;</code>要素は、SVG（Scalable Vector Graphics）フィルターの一部として、オブジェクトを指定したオフセット量だけ移動させる効果を追加するための要素です。</h2>
+<p>この要素は、主に以下のような属性を持ちます。</p>
+<ul>
+<li><code>dx</code>: オフセットを水平方向（x軸方向）に移動させる量を指定します。</li>
+<li><code>dy</code>: オフセットを垂直方向（y軸方向）に移動させる量を指定します。</li>
+</ul>
+<p><code>&lt;feOffset&gt;</code>要素を使用することで、オブジェクトを一定のオフセット量だけ移動させることができます。これにより、立体感や影のような視覚的効果を演出することが可能です。</p>

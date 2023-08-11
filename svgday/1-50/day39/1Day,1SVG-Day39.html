@@ -1,0 +1,387 @@
+<p>千里の道も一歩から。</p>
+<p>このシリーズは一日一枚svgのデザインをつくるというシンプルな企画です。</p>
+<p>非商用、商用利用ともに自由です。Webページのデザインに組み込んだり、このデザインを改良して自分だけのデザインを作ってみてください！</p><p>もちろんコメントでのリクエストも受け付けています！コメントはこの記事の一番下にあります。ぜひ何かリクエストしてみてください！</p>
+<p>今日は39日目！</p>
+<p>今日のSVGはライト三種類!</p>
+<p><feDistantLight>と<feSpotLight>と<fePoint>です。そして今回でフィルターシリーズは最後です。</p>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <title>ライト三種類</title>
+  <desc>&lt;feDistantLight&gt;と&lt;feSpotLight&gt;と&lt;fePoint&gt;です。そして今回でフィルターシリーズは最後です。</desc>
+  <defs>
+    <filter id="distantLightFilter">
+      <feDiffuseLighting lighting-color="white" result="specOut" >
+        <feDistantLight elevation="60">
+          <animate attributeName="azimuth" dur="3s" repeatCount="indefinite" values="0;360" ></animate>
+          </feDistantLight>
+      </feDiffuseLighting>
+      <feComposite
+      in="SourceGraphic"
+      in2="specOut"
+      operator="arithmetic"
+      k1="0"
+      k2="1"
+      k3="1"
+      k4="0" />
+      <feComposite in2="SourceGraphic" operator="in" />
+    </filter>
+     <filter id="distantLightFilter2">
+      <feDiffuseLighting lighting-color="white" result="specOut" >
+        <feDistantLight elevation="60">
+          <animate attributeName="elevation" dur="3s" repeatCount="indefinite" values="0;360" ></animate>
+          </feDistantLight>
+      </feDiffuseLighting>
+      <feComposite
+      in="SourceGraphic"
+      in2="specOut"
+      operator="arithmetic"
+      k1="0"
+      k2="1"
+      k3="1"
+      k4="0" />
+      <feComposite in2="SourceGraphic" operator="in" />
+    </filter>
+     <filter id="distantLightFilter3">
+      <feDiffuseLighting lighting-color="white" result="specOut" >
+        <feDistantLight >
+          <animate attributeName="elevation" dur="3.3s" repeatCount="indefinite" values="0;360" ></animate>
+          <animate attributeName="azimuth" dur="2.2s" repeatCount="indefinite" values="0;360" ></animate>
+          </feDistantLight>
+      </feDiffuseLighting>
+      <feComposite
+      in="SourceGraphic"
+      in2="specOut"
+      operator="arithmetic"
+      k1="0"
+      k2="1"
+      k3="1"
+      k4="0" />
+      <feComposite in2="SourceGraphic" operator="in" />
+    </filter>
+    <filter id="pointLightFilter" primitiveUnits="objectBoundingBox">
+      <feDiffuseLighting lighting-color="red" diffuseConstant="0.5"  result="light" >
+        <fePointLight x="0.5" y="0.5" z="0.1" />
+      </feDiffuseLighting>
+      <feComposite
+      in="SourceGraphic"
+      in2="light"
+      operator="arithmetic"
+      k1="1"
+      k2="0"
+      k3="0"
+      k4="0" />
+    </filter>
+    <filter id="spotLightFilter" primitiveUnits="objectBoundingBox" >
+    <feDiffuseLighting lighting-color="white" diffuseConstant="0.5"  result="light" >
+      <feSpotLight x="0" y="0" z="0.2" limitingConeAngle="10" pointsAtX="0.5" pointsAtY="0.5" pointsAtZ="0" >
+        <animate attributeName="x" dur="4s" repeatCount="indefinite" values="0;1;1;0;0" ></animate>
+        <animate attributeName="y" dur="4s" repeatCount="indefinite" values="0;0;1;1;0" ></animate>
+        </feSpotLight>
+    </feDiffuseLighting>
+    <feComposite
+    in="SourceGraphic"
+    in2="light"
+    operator="arithmetic"
+    k1="1"
+    k2="0"
+    k3="0"
+    k4="0" />
+    </filter>
+    <filter id="spotLightFilter2" primitiveUnits="objectBoundingBox" >
+    <feDiffuseLighting lighting-color="white" diffuseConstant="0.5"  result="light" >
+      <feSpotLight x="0" y="0" z="0.33" limitingConeAngle="10" pointsAtX="0.5" pointsAtY="0.5" pointsAtZ="0" >
+       <animate attributeName="specularExponent" dur="3s" repeatCount="indefinite" values="0;300;0" ></animate>
+        </feSpotLight>
+    </feDiffuseLighting>
+    <feComposite
+    in="SourceGraphic"
+    in2="light"
+    operator="arithmetic"
+    k1="1"
+    k2="0"
+    k3="0"
+    k4="0" />
+    </filter>
+    <filter id="spotLightFilter3" primitiveUnits="objectBoundingBox" >
+    <feDiffuseLighting lighting-color="white" diffuseConstant="0.5"  result="light" >
+      <feSpotLight x="0" y="0" z="0.33" limitingConeAngle="10" pointsAtX="0.5" pointsAtY="0.5" pointsAtZ="0" >
+       <animate attributeName="limitingConeAngle" dur="4s" keyTimes="0;0.2;0.3;0.4;0.5;0.6;0.7;0.8;1" repeatCount="indefinite" values="0;30;33;27;33;27;33;30;0" ></animate>
+        </feSpotLight>
+    </feDiffuseLighting>
+    <feComposite
+    in="SourceGraphic"
+    in2="light"
+    operator="arithmetic"
+    k1="1"
+    k2="0"
+    k3="0"
+    k4="0" />
+    </filter>
+    <filter id="light">
+      <feSpecularLighting lighting-color="white" specularConstant="1" specularExponent="50"  result="light" primitiveUnits="objectBoundingBox" >
+        <feDistantLight elevation="75" azimuth="0"><animate attributeName="elevation" dur="5s" repeatCount="indefinite" values="0;90;180;360" ></animate></feDistantLight>
+      </feSpecularLighting>
+      <feComposite
+      in="SourceGraphic"
+      in2="light"
+      operator="arithmetic"
+      k1="1"
+      k2="0"
+      k3="0"
+      k4="0" />
+    </filter>
+    <marker
+      id="circle"
+      viewBox="0 0 10 10"
+      refX="5"
+      refY="5"
+      markerWidth="3"
+      markerHeight="3"
+      orient="auto-start-reverse">
+      <circle cx="5" cy="5" r="5" fill="white" />
+    </marker>
+    <!-- 皆勤賞かも。 -->
+    <linearGradient id="rainbowGradient" >
+      <stop offset="0%" stop-color="red" />
+      <stop offset="16.6%" stop-color="orange" />
+      <stop offset="33.3%" stop-color="yellow" />
+      <stop offset="50%" stop-color="green" />
+      <stop offset="66.6%" stop-color="blue" />
+      <stop offset="83.3%" stop-color="indigo" />
+      <stop offset="100%" stop-color="violet" />
+    </linearGradient>
+  </defs>
+  <rect id="backGround" width="200" height="200" fill="black"  ></rect>
+  <circle cx="15" cy="15" r="10" filter="url(#distantLightFilter)" />
+  <circle cx="40" cy="15" r="10" filter="url(#distantLightFilter2)" />
+  <circle cx="65" cy="15" r="10" filter="url(#distantLightFilter3)" />
+  <circle fill="white" cx="90" cy="15" r="10" filter="url(#pointLightFilter)" />
+  <circle fill="white" cx="115" cy="15" r="10" filter="url(#spotLightFilter)" />
+  <circle fill="white" cx="140" cy="15" r="10" filter="url(#spotLightFilter2)" />
+  <circle fill="white" cx="165" cy="15" r="10" filter="url(#spotLightFilter3)" />
+  <g  text-anchor="middle" fill="white">
+    <text x="100" y="50" filter="url(#distantLightFilter2)" fill="black">
+    feDistantLight
+    </text>
+    <text x="100" y="65" filter="url(#pointLightFilter)">
+    fePointLight
+    </text>
+    <text x="100" y="80" filter="url(#spotLightFilter)">
+    feSpotLight
+    </text>
+  </g>
+  <g filter="url(#light)" >
+    <rect y="100" width="20" fill="red" height="10" transform="rotate(45 10 105)"  />
+    <text y="145" fill="aqua" x="111">
+      JUST TEXT
+    </text>
+    <circle fill="none" stroke="green" cx="75" cy="180" r="10" />
+    <line marker-end="url(#circle)" marker-start="url(#circle)" stroke="url(#rainbowGradient)" x1="10" x2="100" y1="170" y2="100" />
+  </g>
+</svg>
+
+<h2>svgの中身</h2>
+<pre class="prettyprint linenums">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 200 200&quot;&gt;
+  &lt;title&gt;ライト三種類&lt;/title&gt;
+  &lt;desc&gt;&amp;lt;feDistantLight&amp;gt;と&amp;lt;feSpotLight&amp;gt;と&amp;lt;fePoint&amp;gt;です。そして今回でフィルターシリーズは最後です。&lt;/desc&gt;
+  &lt;defs&gt;
+    &lt;filter id=&quot;distantLightFilter&quot;&gt;
+      &lt;feDiffuseLighting lighting-color=&quot;white&quot; result=&quot;specOut&quot; &gt;
+        &lt;feDistantLight elevation=&quot;60&quot;&gt;
+          &lt;animate attributeName=&quot;azimuth&quot; dur=&quot;3s&quot; repeatCount=&quot;indefinite&quot; values=&quot;0;360&quot; &gt;&lt;/animate&gt;
+          &lt;/feDistantLight&gt;
+      &lt;/feDiffuseLighting&gt;
+      &lt;feComposite
+      in=&quot;SourceGraphic&quot;
+      in2=&quot;specOut&quot;
+      operator=&quot;arithmetic&quot;
+      k1=&quot;0&quot;
+      k2=&quot;1&quot;
+      k3=&quot;1&quot;
+      k4=&quot;0&quot; /&gt;
+      &lt;feComposite in2=&quot;SourceGraphic&quot; operator=&quot;in&quot; /&gt;
+    &lt;/filter&gt;
+     &lt;filter id=&quot;distantLightFilter2&quot;&gt;
+      &lt;feDiffuseLighting lighting-color=&quot;white&quot; result=&quot;specOut&quot; &gt;
+        &lt;feDistantLight elevation=&quot;60&quot;&gt;
+          &lt;animate attributeName=&quot;elevation&quot; dur=&quot;3s&quot; repeatCount=&quot;indefinite&quot; values=&quot;0;360&quot; &gt;&lt;/animate&gt;
+          &lt;/feDistantLight&gt;
+      &lt;/feDiffuseLighting&gt;
+      &lt;feComposite
+      in=&quot;SourceGraphic&quot;
+      in2=&quot;specOut&quot;
+      operator=&quot;arithmetic&quot;
+      k1=&quot;0&quot;
+      k2=&quot;1&quot;
+      k3=&quot;1&quot;
+      k4=&quot;0&quot; /&gt;
+      &lt;feComposite in2=&quot;SourceGraphic&quot; operator=&quot;in&quot; /&gt;
+    &lt;/filter&gt;
+     &lt;filter id=&quot;distantLightFilter3&quot;&gt;
+      &lt;feDiffuseLighting lighting-color=&quot;white&quot; result=&quot;specOut&quot; &gt;
+        &lt;feDistantLight &gt;
+          &lt;animate attributeName=&quot;elevation&quot; dur=&quot;3.3s&quot; repeatCount=&quot;indefinite&quot; values=&quot;0;360&quot; &gt;&lt;/animate&gt;
+          &lt;animate attributeName=&quot;azimuth&quot; dur=&quot;2.2s&quot; repeatCount=&quot;indefinite&quot; values=&quot;0;360&quot; &gt;&lt;/animate&gt;
+          &lt;/feDistantLight&gt;
+      &lt;/feDiffuseLighting&gt;
+      &lt;feComposite
+      in=&quot;SourceGraphic&quot;
+      in2=&quot;specOut&quot;
+      operator=&quot;arithmetic&quot;
+      k1=&quot;0&quot;
+      k2=&quot;1&quot;
+      k3=&quot;1&quot;
+      k4=&quot;0&quot; /&gt;
+      &lt;feComposite in2=&quot;SourceGraphic&quot; operator=&quot;in&quot; /&gt;
+    &lt;/filter&gt;
+    &lt;filter id=&quot;pointLightFilter&quot; primitiveUnits=&quot;objectBoundingBox&quot;&gt;
+      &lt;feDiffuseLighting lighting-color=&quot;red&quot; diffuseConstant=&quot;0.5&quot;  result=&quot;light&quot; &gt;
+        &lt;fePointLight x=&quot;0.5&quot; y=&quot;0.5&quot; z=&quot;0.1&quot; /&gt;
+      &lt;/feDiffuseLighting&gt;
+      &lt;feComposite
+      in=&quot;SourceGraphic&quot;
+      in2=&quot;light&quot;
+      operator=&quot;arithmetic&quot;
+      k1=&quot;1&quot;
+      k2=&quot;0&quot;
+      k3=&quot;0&quot;
+      k4=&quot;0&quot; /&gt;
+    &lt;/filter&gt;
+    &lt;filter id=&quot;spotLightFilter&quot; primitiveUnits=&quot;objectBoundingBox&quot; &gt;
+    &lt;feDiffuseLighting lighting-color=&quot;white&quot; diffuseConstant=&quot;0.5&quot;  result=&quot;light&quot; &gt;
+      &lt;feSpotLight x=&quot;0&quot; y=&quot;0&quot; z=&quot;0.2&quot; limitingConeAngle=&quot;10&quot; pointsAtX=&quot;0.5&quot; pointsAtY=&quot;0.5&quot; pointsAtZ=&quot;0&quot; &gt;
+        &lt;animate attributeName=&quot;x&quot; dur=&quot;4s&quot; repeatCount=&quot;indefinite&quot; values=&quot;0;1;1;0;0&quot; &gt;&lt;/animate&gt;
+        &lt;animate attributeName=&quot;y&quot; dur=&quot;4s&quot; repeatCount=&quot;indefinite&quot; values=&quot;0;0;1;1;0&quot; &gt;&lt;/animate&gt;
+        &lt;/feSpotLight&gt;
+    &lt;/feDiffuseLighting&gt;
+    &lt;feComposite
+    in=&quot;SourceGraphic&quot;
+    in2=&quot;light&quot;
+    operator=&quot;arithmetic&quot;
+    k1=&quot;1&quot;
+    k2=&quot;0&quot;
+    k3=&quot;0&quot;
+    k4=&quot;0&quot; /&gt;
+    &lt;/filter&gt;
+    &lt;filter id=&quot;spotLightFilter2&quot; primitiveUnits=&quot;objectBoundingBox&quot; &gt;
+    &lt;feDiffuseLighting lighting-color=&quot;white&quot; diffuseConstant=&quot;0.5&quot;  result=&quot;light&quot; &gt;
+      &lt;feSpotLight x=&quot;0&quot; y=&quot;0&quot; z=&quot;0.33&quot; limitingConeAngle=&quot;10&quot; pointsAtX=&quot;0.5&quot; pointsAtY=&quot;0.5&quot; pointsAtZ=&quot;0&quot; &gt;
+       &lt;animate attributeName=&quot;specularExponent&quot; dur=&quot;3s&quot; repeatCount=&quot;indefinite&quot; values=&quot;0;300;0&quot; &gt;&lt;/animate&gt;
+        &lt;/feSpotLight&gt;
+    &lt;/feDiffuseLighting&gt;
+    &lt;feComposite
+    in=&quot;SourceGraphic&quot;
+    in2=&quot;light&quot;
+    operator=&quot;arithmetic&quot;
+    k1=&quot;1&quot;
+    k2=&quot;0&quot;
+    k3=&quot;0&quot;
+    k4=&quot;0&quot; /&gt;
+    &lt;/filter&gt;
+    &lt;filter id=&quot;spotLightFilter3&quot; primitiveUnits=&quot;objectBoundingBox&quot; &gt;
+    &lt;feDiffuseLighting lighting-color=&quot;white&quot; diffuseConstant=&quot;0.5&quot;  result=&quot;light&quot; &gt;
+      &lt;feSpotLight x=&quot;0&quot; y=&quot;0&quot; z=&quot;0.33&quot; limitingConeAngle=&quot;10&quot; pointsAtX=&quot;0.5&quot; pointsAtY=&quot;0.5&quot; pointsAtZ=&quot;0&quot; &gt;
+       &lt;animate attributeName=&quot;limitingConeAngle&quot; dur=&quot;4s&quot; keyTimes=&quot;0;0.2;0.3;0.4;0.5;0.6;0.7;0.8;1&quot; repeatCount=&quot;indefinite&quot; values=&quot;0;30;33;27;33;27;33;30;0&quot; &gt;&lt;/animate&gt;
+        &lt;/feSpotLight&gt;
+    &lt;/feDiffuseLighting&gt;
+    &lt;feComposite
+    in=&quot;SourceGraphic&quot;
+    in2=&quot;light&quot;
+    operator=&quot;arithmetic&quot;
+    k1=&quot;1&quot;
+    k2=&quot;0&quot;
+    k3=&quot;0&quot;
+    k4=&quot;0&quot; /&gt;
+    &lt;/filter&gt;
+    &lt;filter id=&quot;light&quot;&gt;
+      &lt;feSpecularLighting lighting-color=&quot;white&quot; specularConstant=&quot;1&quot; specularExponent=&quot;50&quot;  result=&quot;light&quot; primitiveUnits=&quot;objectBoundingBox&quot; &gt;
+        &lt;feDistantLight elevation=&quot;75&quot; azimuth=&quot;0&quot;&gt;&lt;animate attributeName=&quot;elevation&quot; dur=&quot;5s&quot; repeatCount=&quot;indefinite&quot; values=&quot;0;90;180;360&quot; &gt;&lt;/animate&gt;&lt;/feDistantLight&gt;
+      &lt;/feSpecularLighting&gt;
+      &lt;feComposite
+      in=&quot;SourceGraphic&quot;
+      in2=&quot;light&quot;
+      operator=&quot;arithmetic&quot;
+      k1=&quot;1&quot;
+      k2=&quot;0&quot;
+      k3=&quot;0&quot;
+      k4=&quot;0&quot; /&gt;
+    &lt;/filter&gt;
+    &lt;marker
+      id=&quot;circle&quot;
+      viewBox=&quot;0 0 10 10&quot;
+      refX=&quot;5&quot;
+      refY=&quot;5&quot;
+      markerWidth=&quot;3&quot;
+      markerHeight=&quot;3&quot;
+      orient=&quot;auto-start-reverse&quot;&gt;
+      &lt;circle cx=&quot;5&quot; cy=&quot;5&quot; r=&quot;5&quot; fill=&quot;white&quot; /&gt;
+    &lt;/marker&gt;
+    &lt;!-- 皆勤賞かも。 --&gt;
+    &lt;linearGradient id=&quot;rainbowGradient&quot; &gt;
+      &lt;stop offset=&quot;0%&quot; stop-color=&quot;red&quot; /&gt;
+      &lt;stop offset=&quot;16.6%&quot; stop-color=&quot;orange&quot; /&gt;
+      &lt;stop offset=&quot;33.3%&quot; stop-color=&quot;yellow&quot; /&gt;
+      &lt;stop offset=&quot;50%&quot; stop-color=&quot;green&quot; /&gt;
+      &lt;stop offset=&quot;66.6%&quot; stop-color=&quot;blue&quot; /&gt;
+      &lt;stop offset=&quot;83.3%&quot; stop-color=&quot;indigo&quot; /&gt;
+      &lt;stop offset=&quot;100%&quot; stop-color=&quot;violet&quot; /&gt;
+    &lt;/linearGradient&gt;
+  &lt;/defs&gt;
+  &lt;rect id=&quot;backGround&quot; width=&quot;200&quot; height=&quot;200&quot; fill=&quot;black&quot;  &gt;&lt;/rect&gt;
+  &lt;circle cx=&quot;15&quot; cy=&quot;15&quot; r=&quot;10&quot; filter=&quot;url(#distantLightFilter)&quot; /&gt;
+  &lt;circle cx=&quot;40&quot; cy=&quot;15&quot; r=&quot;10&quot; filter=&quot;url(#distantLightFilter2)&quot; /&gt;
+  &lt;circle cx=&quot;65&quot; cy=&quot;15&quot; r=&quot;10&quot; filter=&quot;url(#distantLightFilter3)&quot; /&gt;
+  &lt;circle fill=&quot;white&quot; cx=&quot;90&quot; cy=&quot;15&quot; r=&quot;10&quot; filter=&quot;url(#pointLightFilter)&quot; /&gt;
+  &lt;circle fill=&quot;white&quot; cx=&quot;115&quot; cy=&quot;15&quot; r=&quot;10&quot; filter=&quot;url(#spotLightFilter)&quot; /&gt;
+  &lt;circle fill=&quot;white&quot; cx=&quot;140&quot; cy=&quot;15&quot; r=&quot;10&quot; filter=&quot;url(#spotLightFilter2)&quot; /&gt;
+  &lt;circle fill=&quot;white&quot; cx=&quot;165&quot; cy=&quot;15&quot; r=&quot;10&quot; filter=&quot;url(#spotLightFilter3)&quot; /&gt;
+  &lt;g  text-anchor=&quot;middle&quot; fill=&quot;white&quot;&gt;
+    &lt;text x=&quot;100&quot; y=&quot;50&quot; filter=&quot;url(#distantLightFilter2)&quot; fill=&quot;black&quot;&gt;
+    feDistantLight
+    &lt;/text&gt;
+    &lt;text x=&quot;100&quot; y=&quot;65&quot; filter=&quot;url(#pointLightFilter)&quot;&gt;
+    fePointLight
+    &lt;/text&gt;
+    &lt;text x=&quot;100&quot; y=&quot;80&quot; filter=&quot;url(#spotLightFilter)&quot;&gt;
+    feSpotLight
+    &lt;/text&gt;
+  &lt;/g&gt;
+  &lt;g filter=&quot;url(#light)&quot; &gt;
+    &lt;rect y=&quot;100&quot; width=&quot;20&quot; fill=&quot;red&quot; height=&quot;10&quot; transform=&quot;rotate(45 10 105)&quot;  /&gt;
+    &lt;text y=&quot;145&quot; fill=&quot;aqua&quot; x=&quot;111&quot;&gt;
+      JUST TEXT
+    &lt;/text&gt;
+    &lt;circle fill=&quot;none&quot; stroke=&quot;green&quot; cx=&quot;75&quot; cy=&quot;180&quot; r=&quot;10&quot; /&gt;
+    &lt;line marker-end=&quot;url(#circle)&quot; marker-start=&quot;url(#circle)&quot; stroke=&quot;url(#rainbowGradient)&quot; x1=&quot;10&quot; x2=&quot;100&quot; y1=&quot;170&quot; y2=&quot;100&quot; /&gt;
+  &lt;/g&gt;
+&lt;/svg&gt;
+</pre>
+<h2>詳細な説明等</h2>
+<h2><code>&lt;feDistantLight&gt;</code>要素は、SVG（Scalable Vector Graphics）フィルターの一部として、遠隔光源の影響を模倣するための要素です。</h2>
+<p>この要素は、主に以下のような属性を持ちます。</p>
+<ul>
+<li><code>azimuth</code>: 光源の方位角を指定します。角度は度数法（0度が上方向、90度が右方向）で指定されます。</li>
+<li><code>elevation</code>: 光源の仰角を指定します。角度は度数法で指定され、90度が水平、0度が垂直です。</li>
+</ul>
+<p><code>&lt;feDistantLight&gt;</code>要素を使用することで、オブジェクトに対する遠隔光源の方向や角度を指定して、影を作成することができます。これにより、オブジェクトの表面にリアルな影響を与えることができます。</p>
+<h2><code>&lt;fePointLight&gt;</code>要素は、SVG（Scalable Vector Graphics）フィルターの一部として、点光源の影響を模倣するための要素です。</h2>
+<p>この要素は、主に以下のような属性を持ちます。</p>
+<ul>
+<li><code>x</code>: 光源のx座標を指定します。</li>
+<li><code>y</code>: 光源のy座標を指定します。</li>
+<li><code>z</code>: 光源のz座標を指定します。この属性は3D空間内の光源の位置を指定します。</li>
+</ul>
+<p><code>&lt;fePointLight&gt;</code>要素を使用することで、オブジェクトに対する点光源の位置と方向を指定して、影や反射の効果を作成することができます。</p>
+<h2><code>&lt;feSpotLight&gt;</code>要素は、SVG（Scalable Vector Graphics）フィルターの一部として、スポットライトの影響を模倣するための要素です。</h2>
+<p>この要素は、主に以下のような属性を持ちます。</p>
+<ul>
+<li><code>x</code>: 光源のx座標を指定します。</li>
+<li><code>y</code>: 光源のy座標を指定します。</li>
+<li><code>z</code>: 光源のz座標を指定します。この属性は3D空間内の光源の位置を指定します。</li>
+<li><code>pointsAtX</code>: 光源が指す方向のx座標を指定します。</li>
+<li><code>pointsAtY</code>: 光源が指す方向のy座標を指定します。</li>
+<li><code>pointsAtZ</code>: 光源が指す方向のz座標を指定します。この属性は3D空間内の方向を指定します。</li>
+<li><code>specularExponent</code>: 光源の光沢の強さを指定します。この属性の値が大きいほど、光の反射がより集中的になります。</li>
+<li><code>limitingConeAngle</code>: 光源からの光の広がる大きさを設定します。</li>
+</ul>
+<p><code>&lt;feSpotLight&gt;</code>要素を使用することで、オブジェクトに対するスポットライトの位置、方向、光沢などを指定して、影やハイライトの効果を作成することができます。</p>

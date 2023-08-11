@@ -1,0 +1,160 @@
+<p>千里の道も一歩から。</p>
+<p>このシリーズは一日一枚svgのデザインをつくるというシンプルな企画です。</p>
+<p>コメントでのリクエストも受け付けています。</p>
+<p>今日は35日目。</p>
+<p>今日のSVGはfeConvolveMatrixとfeDisplacementMap!</p>
+<p>終わらないフィルター。計算したところあと五日ほど続きます。</p>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <title>feConvolveMatrixとfeDisplacementMap</title>
+  <desc>終わらないフィルター。計算したところあと五日ほど続きます。</desc>
+  <defs>
+    <filter id="embossFilter">
+      <feConvolveMatrix>
+        <animate attributeName="kernelMatrix" dur="2s" repeatCount="indefinite"
+          values="-3 0 0,0 0 0,0 0 3;3 0 0,0 0 0,0 0 -3;-3 0 0,0 0 0,0 0 3"></animate>
+      </feConvolveMatrix>
+    </filter>
+    <filter  x="-50%" y="-50%" width="200%" height="200%" id="rippleFilter">
+      <feTurbulence type="turbulence" baseFrequency="0.2" numOctaves="5" result="turbulence" />
+      <feDisplacementMap in2="turbulence" in="SourceGraphic" scale="10" xChannelSelector="R" yChannelSelector="G" >
+        <animate attributeName="scale" dur="10s" repeatCount="indefinite" values="-25;25;-25" ></animate></feDisplacementMap>
+    </filter>
+    <filter id="edgeDetectionFilter">
+      <feConvolveMatrix order="3" kernelMatrix="-1 -1 -1 -1 8 -1 -1 -1 -1" divisor="1" bias="0" targetX="1" targetY="1" edgeMode="duplicate" />
+    </filter>
+    <filter id="sharpenFilter">
+      <feConvolveMatrix order="3" kernelMatrix="0 -1 0 -1 5 -1 0 -1 0" divisor="1" bias="0" targetX="1" targetY="1" edgeMode="duplicate" />
+    </filter>
+    <filter id="embossWithDisplace">
+      <feTurbulence type="fractalNoise" baseFrequency="0.2" numOctaves="5" result="turbulence" />
+      <feDisplacementMap in2="turbulence" in="SourceGraphic" scale="10" xChannelSelector="R" yChannelSelector="G" >
+        <animate attributeName="scale" dur="10s" repeatCount="indefinite" values="-100;100;-100" ></animate></feDisplacementMap>
+      <feConvolveMatrix>
+        <animate attributeName="kernelMatrix" dur="20s" repeatCount="indefinite"
+          values="-10 0 0,0 0 0,0 0 10;10 0 0,0 0 0,0 0 -10;-10 0 0,0 0 0,0 0 10"></animate>
+      </feConvolveMatrix>
+      
+    </filter>
+    <linearGradient id="rainbowGradient" >
+      <stop offset="0%" stop-color="red" />
+      <stop offset="16.6%" stop-color="orange" />
+      <stop offset="33.3%" stop-color="yellow" />
+      <stop offset="50%" stop-color="green" />
+      <stop offset="66.6%" stop-color="blue" />
+      <stop offset="83.3%" stop-color="indigo" />
+      <stop offset="100%" stop-color="violet" />
+    </linearGradient>
+  </defs>
+  <rect id="backGround" width="200" height="200" fill="white"></rect>
+  <text x="0" y="15" filter="url(#embossFilter)" font-weight="900" font-size="20">
+    emboss
+  </text>
+  <rect x="75" width="20" height="20" filter="url(#rippleFilter)" />
+  
+  <g filter="url(#edgeDetectionFilter)">
+    <rect id="rainbowRect" x="110" width="20" height="20" fill="url(#rainbowGradient)" />
+    <use x="5" y="1" href="#rainbowRect">
+      
+    </use>
+    <use x="-2" y="-4" href="#rainbowRect" transform="rotate(45 110 10)">
+      
+    </use>
+  </g>
+  <g transform="translate(50)" filter="url(#sharpenFilter)">
+    <rect id="rainbowRect" x="110" width="20" height="20" fill="url(#rainbowGradient)" opacity="0.6" />
+    <use x="5" y="1" href="#rainbowRect" opacity="0.6" >
+      
+    </use>
+    <use x="-2" y="-4" href="#rainbowRect" transform="rotate(45 110 10)" opacity="0.6">
+      
+    </use>
+  </g>
+  <text x="100" y="105" text-anchor="middle" filter="url(#edgeDetectionFilter)" font-weight="900">
+    feConvolveMatrix
+  </text>
+  <text x="100" y="115" text-anchor="middle">
+    &amp;
+  </text>
+  <text x="100" y="125" text-anchor="middle"  filter="url(#sharpenFilter)" >
+    feDisplacementMap
+  </text>
+  <circle cx="100" cy="110" r="75" filter="url(#embossWithDisplace)" />
+</svg>
+<p>svgの中身</p>
+<pre class="prettyprint linenums">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 200 200&quot;&gt;
+  &lt;title&gt;feConvolveMatrixとfeDisplacementMap&lt;/title&gt;
+  &lt;desc&gt;終わらないフィルター。計算したところあと五日ほど続きます。&lt;/desc&gt;
+  &lt;defs&gt;
+    &lt;filter id=&quot;embossFilter&quot;&gt;
+      &lt;feConvolveMatrix&gt;
+        &lt;animate attributeName=&quot;kernelMatrix&quot; dur=&quot;2s&quot; repeatCount=&quot;indefinite&quot;
+          values=&quot;-3 0 0,0 0 0,0 0 3;3 0 0,0 0 0,0 0 -3;-3 0 0,0 0 0,0 0 3&quot;&gt;&lt;/animate&gt;
+      &lt;/feConvolveMatrix&gt;
+    &lt;/filter&gt;
+    &lt;filter  x=&quot;-50%&quot; y=&quot;-50%&quot; width=&quot;200%&quot; height=&quot;200%&quot; id=&quot;rippleFilter&quot;&gt;
+      &lt;feTurbulence type=&quot;turbulence&quot; baseFrequency=&quot;0.2&quot; numOctaves=&quot;5&quot; result=&quot;turbulence&quot; /&gt;
+      &lt;feDisplacementMap in2=&quot;turbulence&quot; in=&quot;SourceGraphic&quot; scale=&quot;10&quot; xChannelSelector=&quot;R&quot; yChannelSelector=&quot;G&quot; &gt;
+        &lt;animate attributeName=&quot;scale&quot; dur=&quot;10s&quot; repeatCount=&quot;indefinite&quot; values=&quot;-25;25;-25&quot; &gt;&lt;/animate&gt;&lt;/feDisplacementMap&gt;
+    &lt;/filter&gt;
+    &lt;filter id=&quot;edgeDetectionFilter&quot;&gt;
+      &lt;feConvolveMatrix order=&quot;3&quot; kernelMatrix=&quot;-1 -1 -1 -1 8 -1 -1 -1 -1&quot; divisor=&quot;1&quot; bias=&quot;0&quot; targetX=&quot;1&quot; targetY=&quot;1&quot; edgeMode=&quot;duplicate&quot; /&gt;
+    &lt;/filter&gt;
+    &lt;filter id=&quot;sharpenFilter&quot;&gt;
+      &lt;feConvolveMatrix order=&quot;3&quot; kernelMatrix=&quot;0 -1 0 -1 5 -1 0 -1 0&quot; divisor=&quot;1&quot; bias=&quot;0&quot; targetX=&quot;1&quot; targetY=&quot;1&quot; edgeMode=&quot;duplicate&quot; /&gt;
+    &lt;/filter&gt;
+    &lt;filter id=&quot;embossWithDisplace&quot;&gt;
+      &lt;feTurbulence type=&quot;fractalNoise&quot; baseFrequency=&quot;0.2&quot; numOctaves=&quot;5&quot; result=&quot;turbulence&quot; /&gt;
+      &lt;feDisplacementMap in2=&quot;turbulence&quot; in=&quot;SourceGraphic&quot; scale=&quot;10&quot; xChannelSelector=&quot;R&quot; yChannelSelector=&quot;G&quot; &gt;
+        &lt;animate attributeName=&quot;scale&quot; dur=&quot;10s&quot; repeatCount=&quot;indefinite&quot; values=&quot;-100;100;-100&quot; &gt;&lt;/animate&gt;&lt;/feDisplacementMap&gt;
+      &lt;feConvolveMatrix&gt;
+        &lt;animate attributeName=&quot;kernelMatrix&quot; dur=&quot;20s&quot; repeatCount=&quot;indefinite&quot;
+          values=&quot;-10 0 0,0 0 0,0 0 10;10 0 0,0 0 0,0 0 -10;-10 0 0,0 0 0,0 0 10&quot;&gt;&lt;/animate&gt;
+      &lt;/feConvolveMatrix&gt;
+      
+    &lt;/filter&gt;
+    &lt;linearGradient id=&quot;rainbowGradient&quot; &gt;
+      &lt;stop offset=&quot;0%&quot; stop-color=&quot;red&quot; /&gt;
+      &lt;stop offset=&quot;16.6%&quot; stop-color=&quot;orange&quot; /&gt;
+      &lt;stop offset=&quot;33.3%&quot; stop-color=&quot;yellow&quot; /&gt;
+      &lt;stop offset=&quot;50%&quot; stop-color=&quot;green&quot; /&gt;
+      &lt;stop offset=&quot;66.6%&quot; stop-color=&quot;blue&quot; /&gt;
+      &lt;stop offset=&quot;83.3%&quot; stop-color=&quot;indigo&quot; /&gt;
+      &lt;stop offset=&quot;100%&quot; stop-color=&quot;violet&quot; /&gt;
+    &lt;/linearGradient&gt;
+  &lt;/defs&gt;
+  &lt;rect id=&quot;backGround&quot; width=&quot;200&quot; height=&quot;200&quot; fill=&quot;white&quot;&gt;&lt;/rect&gt;
+  &lt;text x=&quot;0&quot; y=&quot;15&quot; filter=&quot;url(#embossFilter)&quot; font-weight=&quot;900&quot; font-size=&quot;20&quot;&gt;
+    emboss
+  &lt;/text&gt;
+  &lt;rect x=&quot;75&quot; width=&quot;20&quot; height=&quot;20&quot; filter=&quot;url(#rippleFilter)&quot; /&gt;
+  
+  &lt;g filter=&quot;url(#edgeDetectionFilter)&quot;&gt;
+    &lt;rect id=&quot;rainbowRect&quot; x=&quot;110&quot; width=&quot;20&quot; height=&quot;20&quot; fill=&quot;url(#rainbowGradient)&quot; /&gt;
+    &lt;use x=&quot;5&quot; y=&quot;1&quot; href=&quot;#rainbowRect&quot;&gt;
+      
+    &lt;/use&gt;
+    &lt;use x=&quot;-2&quot; y=&quot;-4&quot; href=&quot;#rainbowRect&quot; transform=&quot;rotate(45 110 10)&quot;&gt;
+      
+    &lt;/use&gt;
+  &lt;/g&gt;
+  &lt;g transform=&quot;translate(50)&quot; filter=&quot;url(#sharpenFilter)&quot;&gt;
+    &lt;rect id=&quot;rainbowRect&quot; x=&quot;110&quot; width=&quot;20&quot; height=&quot;20&quot; fill=&quot;url(#rainbowGradient)&quot; opacity=&quot;0.6&quot; /&gt;
+    &lt;use x=&quot;5&quot; y=&quot;1&quot; href=&quot;#rainbowRect&quot; opacity=&quot;0.6&quot; &gt;
+      
+    &lt;/use&gt;
+    &lt;use x=&quot;-2&quot; y=&quot;-4&quot; href=&quot;#rainbowRect&quot; transform=&quot;rotate(45 110 10)&quot; opacity=&quot;0.6&quot;&gt;
+      
+    &lt;/use&gt;
+  &lt;/g&gt;
+  &lt;text x=&quot;100&quot; y=&quot;105&quot; text-anchor=&quot;middle&quot; filter=&quot;url(#edgeDetectionFilter)&quot; font-weight=&quot;900&quot;&gt;
+    feConvolveMatrix
+  &lt;/text&gt;
+  &lt;text x=&quot;100&quot; y=&quot;115&quot; text-anchor=&quot;middle&quot;&gt;
+    &amp;amp;
+  &lt;/text&gt;
+  &lt;text x=&quot;100&quot; y=&quot;125&quot; text-anchor=&quot;middle&quot;  filter=&quot;url(#sharpenFilter)&quot; &gt;
+    feDisplacementMap
+  &lt;/text&gt;
+  &lt;circle cx=&quot;100&quot; cy=&quot;110&quot; r=&quot;75&quot; filter=&quot;url(#embossWithDisplace)&quot; /&gt;
+&lt;/svg&gt;</pre>

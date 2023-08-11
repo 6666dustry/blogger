@@ -1,0 +1,206 @@
+<p>千里の道も一歩から。</p>
+<p>このシリーズは一日一枚svgのデザインをつくるというシンプルな企画です。</p>
+<p>コメントでのリクエストも受け付けています。</p>
+<p>今日は34日目。</p>
+<p>今日のSVGはfeComponentTransferとfeComposite!</p>
+<p>昨日の続きです。まだまだフィルター要素関連の要素があるのでしばらくはフィルターばかりになります。</p>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <title>feComponentTransferとfeComposite</title>
+  <desc>昨日の続きです。まだまだフィルター要素関連の要素があるのでしばらくはフィルターばかりになります。</desc>
+  <rect id="backGround" width="200" height="200" fill="white" ></rect>
+   <defs>
+    <filter id="feComponentTransfer1">
+      <feComponentTransfer>
+        <feFuncR type="gamma" exponent="0.5"/>
+        <feFuncG type="gamma" exponent="2"/>
+        <feFuncB type="gamma">
+          <animate attributeName="exponent" dur="3s" repeatCount="indefinite" values="0;3;0" ></animate>
+          </feFuncB>
+      </feComponentTransfer>
+    </filter>
+    <filter id="feComponentTransfer2">
+      <feComponentTransfer>
+        <feFuncR type="linear" slope="0.1">
+          <animate attributeName="intercept" dur="4s" repeatCount="indefinite" values="0.5;-0.5;0.5" ></animate>
+          </feFuncR>
+        <feFuncG type="linear" slope="0.5" intercept="0.3"/>
+        <feFuncB type="linear" slope="0.75" intercept="0.1" >
+          <animate attributeName="slope" dur="1s" repeatCount="indefinite" values="-0.3;0.3;-0.3" ></animate>
+          </feFuncB>
+      </feComponentTransfer>
+    </filter>
+    <filter id="feComposite1">
+      <feTurbulence numOctaves="1" baseFrequency="1" result="noise">
+        
+      </feTurbulence>
+      <feComposite in="SourceGraphic" in2="noise" operator="in">
+        
+      </feComposite>
+    </filter>
+    <filter id="feComposite2">
+      <feTurbulence numOctaves="1" baseFrequency="1" result="noise">
+        
+      </feTurbulence>
+      <feComposite in="SourceGraphic" in2="noise" operator="out">
+        
+      </feComposite>
+    </filter>
+    <filter id="feComposite3">
+      <feTurbulence numOctaves="1" baseFrequency="1" result="noise">
+        
+      </feTurbulence>
+      <feComposite in="SourceGraphic" in2="noise" operator="arithmetic" k1="2" k2="0.125" >
+        
+      </feComposite>
+    </filter>
+    <linearGradient id="rainbowGradient">
+      <stop offset="0%" stop-color="red" />
+      <stop offset="16.6%" stop-color="orange" />
+      <stop offset="33.3%" stop-color="yellow" />
+      <stop offset="50%" stop-color="green" />
+      <stop offset="66.6%" stop-color="blue" />
+      <stop offset="83.3%" stop-color="indigo" />
+      <stop offset="100%" stop-color="violet" />
+    </linearGradient>
+    <filter id="feComposite4">
+      <feSpecularLighting  lighting-color="pink" specularConstant="1.5" specularExponent="250" result="light" >
+        <fePointLight x="100" y="150" z="50" />
+      </feSpecularLighting>
+      <feComposite in="SourceGraphic" in2="light" operator="lighter" k2="1" k3="1" result="pinked" >
+        
+      </feComposite>
+      <feSpecularLighting  lighting-color="lightgreen" specularExponent="80" result="light2" >
+        <animate attributeName="specularConstant" dur="1s" repeatCount="indefinite" values="1;10;1" ></animate>
+        <fePointLight x="50" y="150" z="25" />
+      </feSpecularLighting>
+      <feComposite in="pinked" in2="light2" operator="lighter" result="greened" >
+        
+      </feComposite>
+      <feSpecularLighting  lighting-color="orange" specularConstant="0.5" specularExponent="20" result="light3" >
+        <animate attributeName="specularConstant" dur="5s" repeatCount="indefinite" values="1;10;1;1" ></animate>
+        <animate attributeName="specularExponent" dur="5s" repeatCount="indefinite" values="200;20;100" ></animate>
+        <fePointLight x="150" y="150" z="25" />
+      </feSpecularLighting>
+      <feComposite in="greened" in2="light3" operator="lighter" >
+        
+      </feComposite>
+    </filter>
+  </defs>
+  <rect x="0" fill="url(#rainbowGradient)" width="20" height="20" />
+  <rect x="35" fill="url(#rainbowGradient)" filter="url(#feComponentTransfer1)" width="20" height="20" />
+  <rect x="70" fill="url(#rainbowGradient)" filter="url(#feComponentTransfer2)" width="20" height="20" />
+  <circle cx="115" cy="10" r="10" filter="url(#feComposite1)" />
+  <circle cx="150" cy="10" r="10" filter="url(#feComposite2)" />
+  <circle cx="185" cy="10" r="10" filter="url(#feComposite3)" />
+  <text x="100" y="40" text-anchor="middle" filter="url(#feComposite3)" >
+    feComponentTransfer
+  </text>
+  <text x="100" y="65" text-anchor="middle" filter="url(#feComposite2)" font-size="25"  >
+    &amp; 
+  </text>
+  <text x="100" y="80" text-anchor="middle"  filter="url(#feComposite1)" font-weight="900" >
+    feComposite
+  </text>
+  <rect y="90" width="200" height="110" filter="url(#feComposite4)" />
+</svg>
+<p>svgの中身</p>
+<pre class="prettyprint linenums">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 200 200&quot;&gt;
+  &lt;title&gt;feComponentTransferとfeComposite&lt;/title&gt;
+  &lt;desc&gt;昨日の続きです。まだまだフィルター要素関連の要素があるのでしばらくはフィルターばかりになります。&lt;/desc&gt;
+  &lt;rect id=&quot;backGround&quot; width=&quot;200&quot; height=&quot;200&quot; fill=&quot;white&quot; &gt;&lt;/rect&gt;
+   &lt;defs&gt;
+    &lt;filter id=&quot;feComponentTransfer1&quot;&gt;
+      &lt;feComponentTransfer&gt;
+        &lt;feFuncR type=&quot;gamma&quot; exponent=&quot;0.5&quot;/&gt;
+        &lt;feFuncG type=&quot;gamma&quot; exponent=&quot;2&quot;/&gt;
+        &lt;feFuncB type=&quot;gamma&quot;&gt;
+          &lt;animate attributeName=&quot;exponent&quot; dur=&quot;3s&quot; repeatCount=&quot;indefinite&quot; values=&quot;0;3;0&quot; &gt;&lt;/animate&gt;
+          &lt;/feFuncB&gt;
+      &lt;/feComponentTransfer&gt;
+    &lt;/filter&gt;
+    &lt;filter id=&quot;feComponentTransfer2&quot;&gt;
+      &lt;feComponentTransfer&gt;
+        &lt;feFuncR type=&quot;linear&quot; slope=&quot;0.1&quot;&gt;
+          &lt;animate attributeName=&quot;intercept&quot; dur=&quot;4s&quot; repeatCount=&quot;indefinite&quot; values=&quot;0.5;-0.5;0.5&quot; &gt;&lt;/animate&gt;
+          &lt;/feFuncR&gt;
+        &lt;feFuncG type=&quot;linear&quot; slope=&quot;0.5&quot; intercept=&quot;0.3&quot;/&gt;
+        &lt;feFuncB type=&quot;linear&quot; slope=&quot;0.75&quot; intercept=&quot;0.1&quot; &gt;
+          &lt;animate attributeName=&quot;slope&quot; dur=&quot;1s&quot; repeatCount=&quot;indefinite&quot; values=&quot;-0.3;0.3;-0.3&quot; &gt;&lt;/animate&gt;
+          &lt;/feFuncB&gt;
+      &lt;/feComponentTransfer&gt;
+    &lt;/filter&gt;
+    &lt;filter id=&quot;feComposite1&quot;&gt;
+      &lt;feTurbulence numOctaves=&quot;1&quot; baseFrequency=&quot;1&quot; result=&quot;noise&quot;&gt;
+        
+      &lt;/feTurbulence&gt;
+      &lt;feComposite in=&quot;SourceGraphic&quot; in2=&quot;noise&quot; operator=&quot;in&quot;&gt;
+        
+      &lt;/feComposite&gt;
+    &lt;/filter&gt;
+    &lt;filter id=&quot;feComposite2&quot;&gt;
+      &lt;feTurbulence numOctaves=&quot;1&quot; baseFrequency=&quot;1&quot; result=&quot;noise&quot;&gt;
+        
+      &lt;/feTurbulence&gt;
+      &lt;feComposite in=&quot;SourceGraphic&quot; in2=&quot;noise&quot; operator=&quot;out&quot;&gt;
+        
+      &lt;/feComposite&gt;
+    &lt;/filter&gt;
+    &lt;filter id=&quot;feComposite3&quot;&gt;
+      &lt;feTurbulence numOctaves=&quot;1&quot; baseFrequency=&quot;1&quot; result=&quot;noise&quot;&gt;
+        
+      &lt;/feTurbulence&gt;
+      &lt;feComposite in=&quot;SourceGraphic&quot; in2=&quot;noise&quot; operator=&quot;arithmetic&quot; k1=&quot;2&quot; k2=&quot;0.125&quot; &gt;
+        
+      &lt;/feComposite&gt;
+    &lt;/filter&gt;
+    &lt;linearGradient id=&quot;rainbowGradient&quot;&gt;
+      &lt;stop offset=&quot;0%&quot; stop-color=&quot;red&quot; /&gt;
+      &lt;stop offset=&quot;16.6%&quot; stop-color=&quot;orange&quot; /&gt;
+      &lt;stop offset=&quot;33.3%&quot; stop-color=&quot;yellow&quot; /&gt;
+      &lt;stop offset=&quot;50%&quot; stop-color=&quot;green&quot; /&gt;
+      &lt;stop offset=&quot;66.6%&quot; stop-color=&quot;blue&quot; /&gt;
+      &lt;stop offset=&quot;83.3%&quot; stop-color=&quot;indigo&quot; /&gt;
+      &lt;stop offset=&quot;100%&quot; stop-color=&quot;violet&quot; /&gt;
+    &lt;/linearGradient&gt;
+    &lt;filter id=&quot;feComposite4&quot;&gt;
+      &lt;feSpecularLighting  lighting-color=&quot;pink&quot; specularConstant=&quot;1.5&quot; specularExponent=&quot;250&quot; result=&quot;light&quot; &gt;
+        &lt;fePointLight x=&quot;100&quot; y=&quot;150&quot; z=&quot;50&quot; /&gt;
+      &lt;/feSpecularLighting&gt;
+      &lt;feComposite in=&quot;SourceGraphic&quot; in2=&quot;light&quot; operator=&quot;lighter&quot; k2=&quot;1&quot; k3=&quot;1&quot; result=&quot;pinked&quot; &gt;
+        
+      &lt;/feComposite&gt;
+      &lt;feSpecularLighting  lighting-color=&quot;lightgreen&quot; specularExponent=&quot;80&quot; result=&quot;light2&quot; &gt;
+        &lt;animate attributeName=&quot;specularConstant&quot; dur=&quot;1s&quot; repeatCount=&quot;indefinite&quot; values=&quot;1;10;1&quot; &gt;&lt;/animate&gt;
+        &lt;fePointLight x=&quot;50&quot; y=&quot;150&quot; z=&quot;25&quot; /&gt;
+      &lt;/feSpecularLighting&gt;
+      &lt;feComposite in=&quot;pinked&quot; in2=&quot;light2&quot; operator=&quot;lighter&quot; result=&quot;greened&quot; &gt;
+        
+      &lt;/feComposite&gt;
+      &lt;feSpecularLighting  lighting-color=&quot;orange&quot; specularConstant=&quot;0.5&quot; specularExponent=&quot;20&quot; result=&quot;light3&quot; &gt;
+        &lt;animate attributeName=&quot;specularConstant&quot; dur=&quot;5s&quot; repeatCount=&quot;indefinite&quot; values=&quot;1;10;1;1&quot; &gt;&lt;/animate&gt;
+        &lt;animate attributeName=&quot;specularExponent&quot; dur=&quot;5s&quot; repeatCount=&quot;indefinite&quot; values=&quot;200;20;100&quot; &gt;&lt;/animate&gt;
+        &lt;fePointLight x=&quot;150&quot; y=&quot;150&quot; z=&quot;25&quot; /&gt;
+      &lt;/feSpecularLighting&gt;
+      &lt;feComposite in=&quot;greened&quot; in2=&quot;light3&quot; operator=&quot;lighter&quot; &gt;
+        
+      &lt;/feComposite&gt;
+    &lt;/filter&gt;
+  &lt;/defs&gt;
+  &lt;rect x=&quot;0&quot; fill=&quot;url(#rainbowGradient)&quot; width=&quot;20&quot; height=&quot;20&quot; /&gt;
+  &lt;rect x=&quot;35&quot; fill=&quot;url(#rainbowGradient)&quot; filter=&quot;url(#feComponentTransfer1)&quot; width=&quot;20&quot; height=&quot;20&quot; /&gt;
+  &lt;rect x=&quot;70&quot; fill=&quot;url(#rainbowGradient)&quot; filter=&quot;url(#feComponentTransfer2)&quot; width=&quot;20&quot; height=&quot;20&quot; /&gt;
+  &lt;circle cx=&quot;115&quot; cy=&quot;10&quot; r=&quot;10&quot; filter=&quot;url(#feComposite1)&quot; /&gt;
+  &lt;circle cx=&quot;150&quot; cy=&quot;10&quot; r=&quot;10&quot; filter=&quot;url(#feComposite2)&quot; /&gt;
+  &lt;circle cx=&quot;185&quot; cy=&quot;10&quot; r=&quot;10&quot; filter=&quot;url(#feComposite3)&quot; /&gt;
+  &lt;text x=&quot;100&quot; y=&quot;40&quot; text-anchor=&quot;middle&quot; filter=&quot;url(#feComposite3)&quot; &gt;
+    feComponentTransfer
+  &lt;/text&gt;
+  &lt;text x=&quot;100&quot; y=&quot;65&quot; text-anchor=&quot;middle&quot; filter=&quot;url(#feComposite2)&quot; font-size=&quot;25&quot;  &gt;
+    &amp;amp; 
+  &lt;/text&gt;
+  &lt;text x=&quot;100&quot; y=&quot;80&quot; text-anchor=&quot;middle&quot;  filter=&quot;url(#feComposite1)&quot; font-weight=&quot;900&quot; &gt;
+    feComposite
+  &lt;/text&gt;
+  &lt;rect y=&quot;90&quot; width=&quot;200&quot; height=&quot;110&quot; filter=&quot;url(#feComposite4)&quot; /&gt;
+&lt;/svg&gt;</pre>

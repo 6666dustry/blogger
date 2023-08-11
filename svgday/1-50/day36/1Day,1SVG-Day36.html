@@ -1,0 +1,244 @@
+<p>千里の道も一歩から。</p>
+<p>このシリーズは一日一枚svgのデザインをつくるというシンプルな企画です。</p>
+<p>非商用、商用利用ともに自由です。Webページのデザインに組み込んだり、このデザインを改良して自分だけのデザインを作ってみてください！</p><p>もちろんコメントでのリクエストも受け付けています！コメントはこの記事の一番下にあります。ぜひ何かリクエストしてみてください！</p>
+<p>今日は36日目！</p>
+<p>今日のSVGはfeDiffuseLightingとfeSpecularLightingとfeDropShadow!</p>
+<p>今日は光と影です。</p>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <title>feDiffuseLightingとfeSpecularLightingとfeDropShadow</title>
+  <desc>今日は光と影です。</desc>
+  <defs>
+    <filter id="feDiffuse" primitiveUnits="objectBoundingBox">
+      <feDiffuseLighting lighting-color="white" diffuseConstant="2"  result="light" >
+        <fePointLight x="0.25" y="0.25" z="0.025" />
+      </feDiffuseLighting>
+      <feComposite
+      in="SourceGraphic"
+      in2="light"
+      operator="arithmetic"
+      k1="1"
+      k2="0"
+      k3="0"
+      k4="0" />
+    </filter>
+    <filter id="feSpecular" primitiveUnits="objectBoundingBox">
+      <feSpecularLighting lighting-color="white" specularConstant="2" specularExponent="33" result="specOut" >
+        <animate attributeName="lighting-color" dur="4s" repeatCount="indefinite" values="red;blue;green;red" ></animate>
+        <fePointLight x="0.25" y="0.25" z="0.5" />
+      </feSpecularLighting>
+      <feComposite
+      in="SourceGraphic"
+      in2="specOut"
+      operator="arithmetic"
+      k1="0"
+      k2="1"
+      k3="1"
+      k4="0" />
+      <feComposite in2="SourceGraphic" operator="in" >
+        
+      </feComposite>
+    </filter>
+    <filter id="feShadow">
+      <feDropShadow stdDeviation="2" dx="0" dy="0" >
+        <animate attributeName="dx" dur="10s" repeatCount="indefinite" values="-5;5" ></animate>
+        <animate attributeName="dy" dur="10s" repeatCount="indefinite" values="5;0;5" calcMode="spline" keySplines="0 0 0.4 0.6;0 0 0.6 0.4" ></animate>
+      </feDropShadow>
+    </filter>
+    <filter id="feShadow2" >
+      <feDropShadow stdDeviation="2" dx="0" dy="0"  >
+        <animate attributeName="stdDeviation" dur="1s" repeatCount="indefinite" values="0;4;0" ></animate>
+        <animate attributeName="flood-color" dur="1s" repeatCount="indefinite" values="cyan;magenta;yellow;cyan" ></animate>
+      </feDropShadow>
+    </filter>
+    <filter id="feLight" primitiveUnits="objectBoundingBox" >
+      <feSpecularLighting lighting-color="white" specularExponent="50" result="specOut" >
+        <animate attributeName="specularConstant" dur="3s" repeatCount="indefinite" values="0.25;1.25;0.25" calcMode="spline" keySplines="0.5 0 0.5 1;0.5 0 0.5 1" ></animate>
+        <fePointLight x="0.25" y="0.25" z="0.5" />
+      </feSpecularLighting>
+      <feComposite
+      in="SourceGraphic"
+      in2="specOut"
+      operator="arithmetic"
+      k1="0"
+      k2="1"
+      k3="1"
+      k4="0" />
+      <feComposite in2="SourceGraphic" operator="in" result="light" />
+      <feSpecularLighting lighting-color="white" specularConstant="0.5" result="specOut" >
+        <animate attributeName="specularExponent" dur="3s" repeatCount="indefinite" values="20;75;20" calcMode="spline" keySplines="0.5 0 0.5 1;0.5 0 0.5 1" ></animate>
+        <fePointLight x="0.75" y="0.75" z="0.5" />
+      </feSpecularLighting>
+      <feComposite
+      in="light"
+      in2="specOut"
+      operator="arithmetic"
+      k1="0"
+      k2="1"
+      k3="1"
+      k4="0" />
+      <feComposite in2="SourceGraphic" operator="in" />
+    </filter>
+    <filter id="metallic" >
+      <feSpecularLighting lighting-color="white" specularExponent="30" result="specOut" >
+        <animate attributeName="specularConstant" dur="3s" keyTimes="0;0.55;0.80;1" repeatCount="indefinite" values="1;0.75;3;0" ></animate>
+        <animate attributeName="specularExponent" dur="3s" repeatCount="indefinite" ></animate>
+       
+        <fePointLight x="100" y="110" z="10" >
+          <animate attributeName="y" dur="3s" repeatCount="indefinite" values="200;125;125" calcMode="spline" keySplines="0 0 0.1 0.9; 0 0 0 0" ></animate>
+          </fePointLight>
+      </feSpecularLighting>
+      <feComposite in="specOut" in2="SourceGraphic" operator="lighter" />
+       <feDropShadow stdDeviation="5">
+        
+      </feDropShadow>
+    </filter>
+  </defs>
+  <rect id="backGround" width="200" height="200" fill="white" ></rect>
+  <circle cx="20" cy="20" r="20" filter="url(#feDiffuse)"  >
+    <animate attributeName="fill" dur="4s" repeatCount="indefinite" values="red;green;blue;red" ></animate>
+    </circle>
+  <circle cx="60" cy="20" r="20" filter="url(#feSpecular)" />
+  <circle cx="100" cy="20" r="20" filter="url(#feShadow)" />
+  <circle cx="140" cy="20" r="20" filter="url(#feShadow2)" />
+  <circle cx="180" cy="20" r="20" filter="url(#feLight)" stroke="" />
+  <circle cx="180" cy="20" r="20"  stroke="black" fill="none" stroke-width="0.25" />
+  <g font-weight="900">
+     <text x="100" y="60" text-anchor="middle" filter="url(#feDiffuse)" fill="white" >
+    feDiffuseLighting
+  </text>
+    <text x="100" y="75" text-anchor="middle" filter="url(#feSpecular)" >
+    feSpecularLighting
+  </text>
+    <text x="100" y="90" text-anchor="middle" filter="url(#feShadow)" >
+    feDropShadow
+  </text>
+  </g>
+  <!-- シアター的な何か -->
+  <rect x="10" y="100" width="180" height="90" rx="10" ry="5" filter="url(#metallic)" fill="black" />
+  <path fill="#500" id="textPath"
+    d="M 0 150 h 15 c 0 0 10 0 10 10  v 30 c 0 0 0 10 10 10 h 30 c 0 0 10 0 10 -10 v-30 c 0 0 0 -10 10 -10 h 30 c 0 0 10 0 10 10 v 30 a 25 25 0 0 0 50 0 v -35 H 200 V 200 H 0 Z">
+  </path>
+</svg>
+
+<h2>svgの中身</h2>
+<pre class="prettyprint linenums">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 200 200&quot;&gt;
+  &lt;title&gt;feDiffuseLightingとfeSpecularLightingとfeDropShadow&lt;/title&gt;
+  &lt;desc&gt;今日は光と影です。&lt;/desc&gt;
+  &lt;defs&gt;
+    &lt;filter id=&quot;feDiffuse&quot; primitiveUnits=&quot;objectBoundingBox&quot;&gt;
+      &lt;feDiffuseLighting lighting-color=&quot;white&quot; diffuseConstant=&quot;2&quot;  result=&quot;light&quot; &gt;
+        &lt;fePointLight x=&quot;0.25&quot; y=&quot;0.25&quot; z=&quot;0.025&quot; /&gt;
+      &lt;/feDiffuseLighting&gt;
+      &lt;feComposite
+      in=&quot;SourceGraphic&quot;
+      in2=&quot;light&quot;
+      operator=&quot;arithmetic&quot;
+      k1=&quot;1&quot;
+      k2=&quot;0&quot;
+      k3=&quot;0&quot;
+      k4=&quot;0&quot; /&gt;
+    &lt;/filter&gt;
+    &lt;filter id=&quot;feSpecular&quot; primitiveUnits=&quot;objectBoundingBox&quot;&gt;
+      &lt;feSpecularLighting lighting-color=&quot;white&quot; specularConstant=&quot;2&quot; specularExponent=&quot;33&quot; result=&quot;specOut&quot; &gt;
+        &lt;animate attributeName=&quot;lighting-color&quot; dur=&quot;4s&quot; repeatCount=&quot;indefinite&quot; values=&quot;red;blue;green;red&quot; &gt;&lt;/animate&gt;
+        &lt;fePointLight x=&quot;0.25&quot; y=&quot;0.25&quot; z=&quot;0.5&quot; /&gt;
+      &lt;/feSpecularLighting&gt;
+      &lt;feComposite
+      in=&quot;SourceGraphic&quot;
+      in2=&quot;specOut&quot;
+      operator=&quot;arithmetic&quot;
+      k1=&quot;0&quot;
+      k2=&quot;1&quot;
+      k3=&quot;1&quot;
+      k4=&quot;0&quot; /&gt;
+      &lt;feComposite in2=&quot;SourceGraphic&quot; operator=&quot;in&quot; &gt;
+        
+      &lt;/feComposite&gt;
+    &lt;/filter&gt;
+    &lt;filter id=&quot;feShadow&quot;&gt;
+      &lt;feDropShadow stdDeviation=&quot;2&quot; dx=&quot;0&quot; dy=&quot;0&quot; &gt;
+        &lt;animate attributeName=&quot;dx&quot; dur=&quot;10s&quot; repeatCount=&quot;indefinite&quot; values=&quot;-5;5&quot; &gt;&lt;/animate&gt;
+        &lt;animate attributeName=&quot;dy&quot; dur=&quot;10s&quot; repeatCount=&quot;indefinite&quot; values=&quot;5;0;5&quot; calcMode=&quot;spline&quot; keySplines=&quot;0 0 0.4 0.6;0 0 0.6 0.4&quot; &gt;&lt;/animate&gt;
+      &lt;/feDropShadow&gt;
+    &lt;/filter&gt;
+    &lt;filter id=&quot;feShadow2&quot; &gt;
+      &lt;feDropShadow stdDeviation=&quot;2&quot; dx=&quot;0&quot; dy=&quot;0&quot;  &gt;
+        &lt;animate attributeName=&quot;stdDeviation&quot; dur=&quot;1s&quot; repeatCount=&quot;indefinite&quot; values=&quot;0;4;0&quot; &gt;&lt;/animate&gt;
+        &lt;animate attributeName=&quot;flood-color&quot; dur=&quot;1s&quot; repeatCount=&quot;indefinite&quot; values=&quot;cyan;magenta;yellow;cyan&quot; &gt;&lt;/animate&gt;
+      &lt;/feDropShadow&gt;
+    &lt;/filter&gt;
+    &lt;filter id=&quot;feLight&quot; primitiveUnits=&quot;objectBoundingBox&quot; &gt;
+      &lt;feSpecularLighting lighting-color=&quot;white&quot; specularExponent=&quot;50&quot; result=&quot;specOut&quot; &gt;
+        &lt;animate attributeName=&quot;specularConstant&quot; dur=&quot;3s&quot; repeatCount=&quot;indefinite&quot; values=&quot;0.25;1.25;0.25&quot; calcMode=&quot;spline&quot; keySplines=&quot;0.5 0 0.5 1;0.5 0 0.5 1&quot; &gt;&lt;/animate&gt;
+        &lt;fePointLight x=&quot;0.25&quot; y=&quot;0.25&quot; z=&quot;0.5&quot; /&gt;
+      &lt;/feSpecularLighting&gt;
+      &lt;feComposite
+      in=&quot;SourceGraphic&quot;
+      in2=&quot;specOut&quot;
+      operator=&quot;arithmetic&quot;
+      k1=&quot;0&quot;
+      k2=&quot;1&quot;
+      k3=&quot;1&quot;
+      k4=&quot;0&quot; /&gt;
+      &lt;feComposite in2=&quot;SourceGraphic&quot; operator=&quot;in&quot; result=&quot;light&quot; /&gt;
+      &lt;feSpecularLighting lighting-color=&quot;white&quot; specularConstant=&quot;0.5&quot; result=&quot;specOut&quot; &gt;
+        &lt;animate attributeName=&quot;specularExponent&quot; dur=&quot;3s&quot; repeatCount=&quot;indefinite&quot; values=&quot;20;75;20&quot; calcMode=&quot;spline&quot; keySplines=&quot;0.5 0 0.5 1;0.5 0 0.5 1&quot; &gt;&lt;/animate&gt;
+        &lt;fePointLight x=&quot;0.75&quot; y=&quot;0.75&quot; z=&quot;0.5&quot; /&gt;
+      &lt;/feSpecularLighting&gt;
+      &lt;feComposite
+      in=&quot;light&quot;
+      in2=&quot;specOut&quot;
+      operator=&quot;arithmetic&quot;
+      k1=&quot;0&quot;
+      k2=&quot;1&quot;
+      k3=&quot;1&quot;
+      k4=&quot;0&quot; /&gt;
+      &lt;feComposite in2=&quot;SourceGraphic&quot; operator=&quot;in&quot; /&gt;
+    &lt;/filter&gt;
+    &lt;filter id=&quot;metallic&quot; &gt;
+      &lt;feSpecularLighting lighting-color=&quot;white&quot; specularExponent=&quot;30&quot; result=&quot;specOut&quot; &gt;
+        &lt;animate attributeName=&quot;specularConstant&quot; dur=&quot;3s&quot; keyTimes=&quot;0;0.55;0.80;1&quot; repeatCount=&quot;indefinite&quot; values=&quot;1;0.75;3;0&quot; &gt;&lt;/animate&gt;
+        &lt;animate attributeName=&quot;specularExponent&quot; dur=&quot;3s&quot; repeatCount=&quot;indefinite&quot; &gt;&lt;/animate&gt;
+       
+        &lt;fePointLight x=&quot;100&quot; y=&quot;110&quot; z=&quot;10&quot; &gt;
+          &lt;animate attributeName=&quot;y&quot; dur=&quot;3s&quot; repeatCount=&quot;indefinite&quot; values=&quot;200;125;125&quot; calcMode=&quot;spline&quot; keySplines=&quot;0 0 0.1 0.9; 0 0 0 0&quot; &gt;&lt;/animate&gt;
+          &lt;/fePointLight&gt;
+      &lt;/feSpecularLighting&gt;
+      &lt;feComposite in=&quot;specOut&quot; in2=&quot;SourceGraphic&quot; operator=&quot;lighter&quot; /&gt;
+       &lt;feDropShadow stdDeviation=&quot;5&quot;&gt;
+        
+      &lt;/feDropShadow&gt;
+    &lt;/filter&gt;
+  &lt;/defs&gt;
+  &lt;rect id=&quot;backGround&quot; width=&quot;200&quot; height=&quot;200&quot; fill=&quot;white&quot; &gt;&lt;/rect&gt;
+  &lt;circle cx=&quot;20&quot; cy=&quot;20&quot; r=&quot;20&quot; filter=&quot;url(#feDiffuse)&quot;  &gt;
+    &lt;animate attributeName=&quot;fill&quot; dur=&quot;4s&quot; repeatCount=&quot;indefinite&quot; values=&quot;red;green;blue;red&quot; &gt;&lt;/animate&gt;
+    &lt;/circle&gt;
+  &lt;circle cx=&quot;60&quot; cy=&quot;20&quot; r=&quot;20&quot; filter=&quot;url(#feSpecular)&quot; /&gt;
+  &lt;circle cx=&quot;100&quot; cy=&quot;20&quot; r=&quot;20&quot; filter=&quot;url(#feShadow)&quot; /&gt;
+  &lt;circle cx=&quot;140&quot; cy=&quot;20&quot; r=&quot;20&quot; filter=&quot;url(#feShadow2)&quot; /&gt;
+  &lt;circle cx=&quot;180&quot; cy=&quot;20&quot; r=&quot;20&quot; filter=&quot;url(#feLight)&quot; stroke=&quot;&quot; /&gt;
+  &lt;circle cx=&quot;180&quot; cy=&quot;20&quot; r=&quot;20&quot;  stroke=&quot;black&quot; fill=&quot;none&quot; stroke-width=&quot;0.25&quot; /&gt;
+  &lt;g font-weight=&quot;900&quot;&gt;
+     &lt;text x=&quot;100&quot; y=&quot;60&quot; text-anchor=&quot;middle&quot; filter=&quot;url(#feDiffuse)&quot; fill=&quot;white&quot; &gt;
+    feDiffuseLighting
+  &lt;/text&gt;
+    &lt;text x=&quot;100&quot; y=&quot;75&quot; text-anchor=&quot;middle&quot; filter=&quot;url(#feSpecular)&quot; &gt;
+    feSpecularLighting
+  &lt;/text&gt;
+    &lt;text x=&quot;100&quot; y=&quot;90&quot; text-anchor=&quot;middle&quot; filter=&quot;url(#feShadow)&quot; &gt;
+    feDropShadow
+  &lt;/text&gt;
+  &lt;/g&gt;
+  &lt;!-- シアター的な何か --&gt;
+  &lt;rect x=&quot;10&quot; y=&quot;100&quot; width=&quot;180&quot; height=&quot;90&quot; rx=&quot;10&quot; ry=&quot;5&quot; filter=&quot;url(#metallic)&quot; fill=&quot;black&quot; /&gt;
+  &lt;path fill=&quot;#500&quot; id=&quot;textPath&quot;
+    d=&quot;M 0 150 h 15 c 0 0 10 0 10 10  v 30 c 0 0 0 10 10 10 h 30 c 0 0 10 0 10 -10 v-30 c 0 0 0 -10 10 -10 h 30 c 0 0 10 0 10 10 v 30 a 25 25 0 0 0 50 0 v -35 H 200 V 200 H 0 Z&quot;&gt;
+  &lt;/path&gt;
+&lt;/svg&gt;
+</pre>
+<h2>詳細な説明等</h2>
+<p>feDiffuseLightingは拡散反射をシミュレートするために使用されます。拡散反射は、光が物体の表面に当たって反射し、その表面から均等に広がる現象です。これにより、物体の明るさが変化し、立体感や陰影が付加されます。
+一方、feSpecularLightingは鏡面反射をシミュレートするために使用されます。鏡面反射は、光が物体の表面に当たり、反射角が入射角と等しくなる現象です。これにより、光が物体の表面から跳ね返る効果が生じ、輝きや光沢が表現されます。(by ChatGPT)
+つまり、feDiffuseLightingは普通の物体にあった時の光の反射、feSpecularLightingは鏡や金属にあたった時の光の反射ということですが、正直、特にこだわりがなければどちらを使ってもほぼ同じです。<p> 
